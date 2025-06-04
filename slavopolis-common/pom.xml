@@ -22,6 +22,7 @@
         <mockito.version>5.14.2</mockito.version>
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <guava.version>33.3.1-jre</guava.version>
+        <redisson.version>3.27.2</redisson.version>
     </properties>
 
     <dependencies>
@@ -37,6 +38,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- Redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redisson.version}</version>
         </dependency>
 
         <!-- Validation -->
