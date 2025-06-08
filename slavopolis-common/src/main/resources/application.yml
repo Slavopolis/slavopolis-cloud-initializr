@@ -1,0 +1,57 @@
+#=======================================================================================================================
+# 日志配置
+#=======================================================================================================================
+logging:
+  level:
+    root: info
+    club.slavopolis: debug
+  file:
+    path: ./logs
+  logback:
+    rollingpolicy:
+      max-history: 30
+      max-file-size: 100MB
+      total-size-cap: 10GB
+
+#=======================================================================================================================
+# 日志配置
+#=======================================================================================================================
+common:
+  log:
+    # 是否启用日志模块
+    enabled: true
+    # 排除的路径模式
+    exclude-patterns:
+      - /actuator/**
+      - /swagger-ui/**
+      - /v3/api-docs/**
+    # 访问日志配置
+    access:
+      # 是否启用访问日志
+      enabled: true
+      # 是否记录请求体
+      log-request-body: true
+      # 是否记录响应体
+      log-response-body: false
+      # 最大请求体记录大小（字节）
+      max-payload-length: 2048
+      # 慢请求阈值（毫秒）
+      slow-request-threshold: 3000
+    # 性能日志配置
+    performance:
+      # 是否启用性能日志
+      enabled: true
+      # 默认慢方法阈值（毫秒）
+      default-slow-threshold: 1000
+      # 是否默认记录参数
+      log-args: true
+      # 是否默认记录结果
+      log-result: false
+    # 业务日志配置
+    business:
+      # 是否启用业务日志
+      enabled: true
+      # 是否异步记录
+      async: true
+      # 队列大小
+      queue-size: 1024

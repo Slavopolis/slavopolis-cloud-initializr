@@ -23,6 +23,7 @@
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <guava.version>33.3.1-jre</guava.version>
         <redisson.version>3.27.2</redisson.version>
+        <logstash.logback.encoder.version>7.4</logstash.logback.encoder.version>
     </properties>
 
     <dependencies>
@@ -98,6 +99,13 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Logstash JSON 编码器 (JSON 格式的日志输出（用于 ELK Stack 等日志系统）) -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash.logback.encoder.version}</version>
         </dependency>
 
         <!-- Test Dependencies -->

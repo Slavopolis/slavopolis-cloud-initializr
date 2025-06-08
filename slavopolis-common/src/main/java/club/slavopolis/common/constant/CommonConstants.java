@@ -164,4 +164,49 @@ public class CommonConstants {
      * 反斜杠
      */
     public static final String BACKSLASH = "\\";
+
+    /**
+     * 未知
+     */
+    public static final String UNKNOWN = "unknown";
+
+    /**
+     * 换行
+     */
+    public static final String NEW_LINE = "\n";
+
+    /**
+     * 制表符
+     */
+    public static final String TAB = "\t";
+
+    /**
+     * 左大括号
+     */
+    public static final String LEFT_BRACE = "{";
+
+    /**
+     * 右大括号
+     */
+    public static final String RIGHT_BRACE = "}";
+
+    /**
+     * 左中括号
+     */
+    public static final String LEFT_BRACKET = "[";
+
+    /**
+     * 右中括号
+     */
+    public static final String RIGHT_BRACKET = "]";
+
+    /**
+     * 左小括号
+     */
+    public static final String LEFT_PARENTHESIS = "(";
+
+    /**
+     * 右小括号
+     */
+    public static final String RIGHT_PARENTHESIS = ")";
 }

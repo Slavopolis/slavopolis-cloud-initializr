@@ -26,6 +26,11 @@ public class HttpConstants {
     public static final String BEARER_PREFIX = "Bearer ";
 
     /**
+     * Cookie 前缀
+     */
+    public static final String COOKIE_PREFIX = "Cookie";
+
+    /**
      * 内容类型
      */
     public static final String HEADER_CONTENT_TYPE = "Content-Type";
@@ -54,6 +59,26 @@ public class HttpConstants {
      * 转发IP
      */
     public static final String HEADER_FORWARDED_FOR = "X-Forwarded-For";
+
+    /**
+     * 代理客户端IP
+     */
+    public static final String HEADER_PROXY_CLIENT_IP = "Proxy-Client-IP";
+
+    /**
+     * WebLogic代理客户端IP
+     */
+    public static final String HEADER_WL_PROXY_CLIENT_IP = "WL-Proxy-Client-IP";
+
+    /**
+     * HTTP客户端IP
+     */
+    public static final String HEADER_HTTP_CLIENT_IP = "HTTP_CLIENT_IP";
+
+    /**
+     * HTTP转发IP
+     */
+    public static final String HEADER_HTTP_X_FORWARDED_FOR = "HTTP_X_FORWARDED_FOR";
 
     /**
      * 语言
