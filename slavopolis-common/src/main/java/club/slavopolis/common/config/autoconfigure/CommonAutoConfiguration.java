@@ -1,5 +1,6 @@
-package club.slavopolis.common.config;
+package club.slavopolis.common.config.autoconfigure;
 
+import club.slavopolis.common.config.JacksonConfig;
 import club.slavopolis.common.handler.GlobalExceptionHandler;
 import club.slavopolis.common.handler.ResponseAdvice;
 import com.fasterxml.jackson.databind.ObjectMapper;

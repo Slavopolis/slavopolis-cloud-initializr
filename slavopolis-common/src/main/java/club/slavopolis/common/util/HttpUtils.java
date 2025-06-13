@@ -1,23 +1,30 @@
 package club.slavopolis.common.util;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
+
+import org.springframework.web.util.ContentCachingRequestWrapper;
+
 import club.slavopolis.common.constant.CommonConstants;
 import club.slavopolis.common.constant.HttpConstants;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.util.ContentCachingRequestWrapper;
-
-import java.nio.charset.StandardCharsets;
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * slavopolis-boot
  *
  * @author: slavopolis
  * @date: 2025/6/7
- * @description: HTTP 请求工具类
+ * @description: HTTP 请求工具类，基于Spring WebClient实现
  */
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

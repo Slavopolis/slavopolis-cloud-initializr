@@ -108,6 +108,20 @@
             <version>${logstash.logback.encoder.version}</version>
         </dependency>
 
+        <!-- Spring WebFlux (包含 WebClient) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Reactor Netty (WebClient 底层依赖，通常由 spring-boot-starter-webflux 自动引入) -->
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-http</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
