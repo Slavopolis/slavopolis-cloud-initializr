@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 全局异常处理器, 统一处理所有Controller层抛出的异常
  */
 @Slf4j

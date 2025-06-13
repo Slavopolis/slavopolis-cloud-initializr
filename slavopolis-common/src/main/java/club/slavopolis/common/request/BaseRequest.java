@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 基础请求对象, 所有请求参数的基类
  */
 @Data

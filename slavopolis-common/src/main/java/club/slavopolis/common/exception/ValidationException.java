@@ -10,7 +10,7 @@ import java.util.Map;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 参数验证异常, 用于处理请求参数验证失败的情况
  */
 @Getter

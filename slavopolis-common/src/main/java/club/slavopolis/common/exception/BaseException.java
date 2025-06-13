@@ -9,7 +9,7 @@ import java.io.Serial;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 基础异常类, 所有自定义异常的父类
  */
 @Getter

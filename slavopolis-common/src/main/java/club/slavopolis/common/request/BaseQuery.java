@@ -11,7 +11,7 @@ import java.util.List;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 基础查询对象, 用于复杂查询条件的封装
  */
 @Data

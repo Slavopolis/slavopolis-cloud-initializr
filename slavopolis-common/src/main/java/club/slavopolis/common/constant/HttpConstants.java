@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: HTTP相关常量定义
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

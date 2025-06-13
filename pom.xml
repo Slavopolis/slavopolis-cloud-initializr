@@ -13,6 +13,7 @@
 
     <modules>
         <module>slavopolis-common</module>
+        <module>slavopolis-excel</module>
     </modules>
 
     <properties>
@@ -31,16 +32,25 @@
         <mockito.version>5.14.2</mockito.version>
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <guava.version>33.3.1-jre</guava.version>
+        <easyexcel.version>4.0.3</easyexcel.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Boot BOM -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Slavopolis Common -->
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-common</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -6,7 +6,7 @@ import club.slavopolis.common.enums.ResultCode;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 响应构建器, 提供链式调用的响应构建方式
  */
 public class ResultBuilder {

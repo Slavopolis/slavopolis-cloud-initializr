@@ -9,7 +9,7 @@ import java.io.Serial;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 第三方服务异常, 用于处理调用第三方服务时的异常
  */
 @Getter

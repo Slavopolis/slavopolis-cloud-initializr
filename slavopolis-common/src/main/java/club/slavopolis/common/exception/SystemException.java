@@ -8,7 +8,7 @@ import java.io.Serial;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 系统异常, 用于处理系统级别的异常
  */
 public class SystemException extends BaseException {

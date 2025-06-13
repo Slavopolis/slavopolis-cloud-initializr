@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 统一响应处理, 自动包装Controller返回值为Result格式
  */
 @Slf4j

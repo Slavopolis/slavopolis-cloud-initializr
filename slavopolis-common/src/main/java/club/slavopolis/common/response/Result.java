@@ -12,7 +12,7 @@ import java.io.Serializable;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 统一响应体, REST API统一返回格式
  */
 @Data

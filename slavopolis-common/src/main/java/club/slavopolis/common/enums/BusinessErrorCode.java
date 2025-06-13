@@ -7,7 +7,7 @@ import lombok.Getter;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 业务错误码枚举, 用于更细分的业务错误定义
  */
 @Getter

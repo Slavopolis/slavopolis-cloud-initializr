@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: Common 模块自动配置类
  */
 @Slf4j

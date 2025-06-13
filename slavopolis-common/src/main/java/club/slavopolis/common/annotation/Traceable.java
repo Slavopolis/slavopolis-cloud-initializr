@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 请求追踪注解, 标记需要追踪的接口
  */
 @Target({ElementType.METHOD, ElementType.TYPE})

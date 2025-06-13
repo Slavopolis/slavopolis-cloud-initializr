@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 限流注解, 用于接口访问频率限制
  */
 @Target({ElementType.METHOD})

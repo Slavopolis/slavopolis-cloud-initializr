@@ -7,7 +7,7 @@ import lombok.Getter;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: 数据状态枚举
  */
 @Getter

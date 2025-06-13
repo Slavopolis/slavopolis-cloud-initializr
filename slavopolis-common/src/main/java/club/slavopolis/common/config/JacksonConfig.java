@@ -32,7 +32,7 @@ import java.util.TimeZone;
  * slavopolis-boot
  *
  * @author slavopolis
- * @date: 2025/6/1
+ * @date: 2025/6/10
  * @description: Jackson配置类， 配置JSON序列化和反序列化规则
  */
 @Slf4j
