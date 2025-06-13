@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <groupId>club.slavopolis</groupId>
         <artifactId>slavopolis-boot</artifactId>
@@ -10,23 +12,13 @@
     <artifactId>slavopolis-common</artifactId>
     <packaging>jar</packaging>
 
-    <name>Common Module</name>
-    <description>common module for SpringBoot 3.5 projects</description>
-
-    <properties>
-        <jackson.version>2.18.0</jackson.version>
-        <jakarta.validation.version>3.1.0</jakarta.validation.version>
-        <lombok.version>1.18.36</lombok.version>
-        <slf4j.version>2.0.16</slf4j.version>
-        <junit.version>5.11.3</junit.version>
-        <mockito.version>5.14.2</mockito.version>
-        <commons-lang3.version>3.17.0</commons-lang3.version>
-        <guava.version>33.3.1-jre</guava.version>
-        <redisson.version>3.27.2</redisson.version>
-        <logstash.logback.encoder.version>7.4</logstash.logback.encoder.version>
-    </properties>
+    <name>Slavopolis Common</name>
+    <description>Slavopolis 通用基础模块 - 提供通用工具类、异常处理、HTTP客户端等基础能力</description>
 
     <dependencies>
+        <!-- ================================ 
+               Spring Boot 核心依赖
+             ================================ -->
         <!-- Spring Boot Starter Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,71 +33,16 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Redisson -->
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>${redisson.version}</version>
-        </dependency>
-
-        <!-- Validation -->
+        <!-- Spring Boot Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- AOP for aspects -->
+        <!-- Spring Boot AOP -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Jackson -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-
-        <!-- Commons Lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-
-        <!-- Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-
-        <!-- SLF4J -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <!-- Logstash JSON 编码器 (JSON 格式的日志输出（用于 ELK Stack 等日志系统）) -->
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>${logstash.logback.encoder.version}</version>
         </dependency>
 
         <!-- Spring WebFlux (包含 WebClient) -->
@@ -115,53 +52,100 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Reactor Netty (WebClient 底层依赖，通常由 spring-boot-starter-webflux 自动引入) -->
+        <!-- ================================ 
+               Redis 和分布式锁依赖
+             ================================ -->
+        <!-- Redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+
+        <!-- ================================ 
+               JSON 处理依赖
+             ================================ -->
+        <!-- Jackson Core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        
+        <!-- Jackson JSR310 时间处理 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!-- ================================ 
+               工具类库依赖
+             ================================ -->
+        <!-- Apache Commons Lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- Google Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <!-- ================================ 
+               日志相关依赖
+             ================================ -->
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Logstash JSON 编码器 -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+
+        <!-- ================================ 
+               Reactor Netty (WebClient 底层依赖)
+             ================================ -->
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty-http</artifactId>
             <scope>provided</scope>
         </dependency>
 
-        <!-- Test Dependencies -->
+        <!-- ================================ 
+               测试依赖
+             ================================ -->
+        <!-- Spring Boot Test Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        
+        <!-- JUnit Jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- Mockito Core -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
+            <!-- Maven 编译插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
                 <configuration>
                     <source>${maven.compiler.target}</source>
                     <target>${maven.compiler.target}</target>
@@ -170,27 +154,21 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven 单元测试插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
             </plugin>
 
+            <!-- Maven 源码插件 - 生成源码包 -->
             <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>attach-sources</id>
                         <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>

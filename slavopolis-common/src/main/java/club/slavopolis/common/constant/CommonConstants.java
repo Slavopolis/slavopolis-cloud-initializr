@@ -103,6 +103,33 @@ public class CommonConstants {
      */
     public static final long CACHE_DEFAULT_EXPIRE = 3600L;
 
+    // ==================== 算法常量 ====================
+
+    /**
+     * AES 加密算法
+     */
+    public static final String AES_ALGORITHM = "AES";
+
+    /**
+     * SHA 加密算法
+     */
+    public static final String SHA_ALGORITHM = "SHA-256";
+
+    /**
+     * HMAC 加密算法
+     */
+    public static final String HMAC_ALGORITHM = "HmacSHA256";
+
+    /**
+     * RSA 加密算法
+     */
+    public static final String RSA_ALGORITHM = "RSA";
+
+    /**
+     * MD5 加密算法
+     */
+    public static final String MD5_ALGORITHM = "MD5";
+
     // ==================== 业务常量 ====================
 
     /**

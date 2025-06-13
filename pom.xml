@@ -8,63 +8,63 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>slavopolis-boot</name>
-    <description>slavopolis-boot</description>
+    <name>Slavopolis Boot</name>
+    <description>Slavopolis Boot 微服务基础框架 - 提供统一的基础能力和最佳实践</description>
 
     <modules>
+        <module>slavopolis-dependencies</module>
         <module>slavopolis-common</module>
         <module>slavopolis-excel</module>
+        <module>slavopolis-cache</module>
     </modules>
 
     <properties>
+        <!-- 基础编译配置 -->
         <java.version>21</java.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <spring-boot.version>3.5.0</spring-boot.version>
-
-        <jackson.version>2.18.0</jackson.version>
-        <jakarta.validation.version>3.1.0</jakarta.validation.version>
-        <lombok.version>1.18.36</lombok.version>
-        <slf4j.version>2.0.16</slf4j.version>
-        <junit.version>5.11.3</junit.version>
-        <mockito.version>5.14.2</mockito.version>
-        <commons-lang3.version>3.17.0</commons-lang3.version>
-        <guava.version>33.3.1-jre</guava.version>
-        <easyexcel.version>4.0.3</easyexcel.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        
+        <!-- 跳过测试标识 -->
+        <maven.test.skip>false</maven.test.skip>
+        <skipTests>false</skipTests>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot BOM -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Slavopolis Common -->
+            <!-- Slavopolis Dependencies BOM - 统一依赖管理 -->
             <dependency>
                 <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-common</artifactId>
+                <artifactId>slavopolis-dependencies</artifactId>
                 <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <!-- 所有子模块共同依赖 -->
     <dependencies>
-
+        <!-- 代码简化工具 - 所有模块都需要 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Maven 编译插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <parameters>true</parameters>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -73,6 +73,8 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+
+            <!-- Spring Boot Maven 插件 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -85,7 +87,48 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <!-- 单元测试插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>${skipTests}</skipTests>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <!-- Maven 仓库配置 -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Plugin Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>club.slavopolis</groupId>
+    <artifactId>slavopolis-dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Slavopolis Dependencies</name>
+    <description>Slavopolis 统一依赖管理模块 - 管理所有第三方依赖版本</description>
+
+    <properties>
+        <!-- 基础编译配置 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- 核心框架版本 -->
+        <spring-boot.version>3.5.0</spring-boot.version>
+        
+        <!-- JSON 处理 -->
+        <jackson.version>2.18.0</jackson.version>
+        
+        <!-- 参数验证 -->
+        <jakarta.validation.version>3.1.0</jakarta.validation.version>
+        
+        <!-- 代码简化工具 -->
+        <lombok.version>1.18.36</lombok.version>
+        
+        <!-- 日志相关 -->
+        <slf4j.version>2.0.16</slf4j.version>
+        <logstash.logback.encoder.version>7.4</logstash.logback.encoder.version>
+        
+        <!-- 测试框架 -->
+        <junit.version>5.11.3</junit.version>
+        <mockito.version>5.14.2</mockito.version>
+        
+        <!-- 工具类库 -->
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <guava.version>33.3.1-jre</guava.version>
+        
+        <!-- Excel 处理 -->
+        <easyexcel.version>4.0.3</easyexcel.version>
+        
+        <!-- 缓存相关 -->
+        <redisson.version>3.27.2</redisson.version>
+        <caffeine.version>3.1.8</caffeine.version>
+        <lettuce.version>6.4.0.RELEASE</lettuce.version>
+        <commons.pool2.version>2.12.0</commons.pool2.version>
+        
+        <!-- Reactor -->
+        <reactor.netty.version>1.2.7</reactor.netty.version>
+        
+        <!-- 监控指标 -->
+        <micrometer.version>1.14.2</micrometer.version>
+        
+        <!-- Maven 插件版本 -->
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.5.2</maven.surefire.plugin.version>
+        <maven.source.plugin.version>3.3.1</maven.source.plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot BOM - 优先级最高 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- ================================ 
+                   Slavopolis 内部模块依赖管理
+                 ================================ -->
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-common</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-excel</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-cache</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- ================================ 
+                   核心工具类依赖管理
+                 ================================ -->
+            <!-- Jackson JSON 处理 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- 代码简化工具 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- 日志相关 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash.logback.encoder.version}</version>
+            </dependency>
+
+            <!-- 工具类库 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- ================================ 
+                   业务功能依赖管理
+                 ================================ -->
+            <!-- Excel 处理 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
+            <!-- ================================ 
+                   缓存相关依赖管理
+                 ================================ -->
+            <!-- Redisson 分布式锁和缓存 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- Caffeine 本地缓存 -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <!-- Lettuce Redis 客户端 -->
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce.version}</version>
+            </dependency>
+
+            <!-- Reactor Netty HTTP -->
+            <dependency>
+                <groupId>io.projectreactor.netty</groupId>
+                <artifactId>reactor-netty-http</artifactId>
+                <version>${reactor.netty.version}</version>
+            </dependency>
+
+            <!-- Commons Pool2 连接池 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons.pool2.version}</version>
+            </dependency>
+
+            <!-- ================================ 
+                   监控指标依赖管理
+                 ================================ -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-core</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+
+            <!-- ================================ 
+                   测试框架依赖管理
+                 ================================ -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+
+            <!-- ================================ 
+                   验证框架依赖管理
+                 ================================ -->
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- ================================ 
+           Maven 插件统一版本管理
+         ================================ -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven.source.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
