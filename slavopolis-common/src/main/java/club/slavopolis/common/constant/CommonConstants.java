@@ -173,6 +173,11 @@ public class CommonConstants {
     public static final String DOT = ".";
 
     /**
+     * 星号
+     */
+    public static final String ASTERISK = "*";
+
+    /**
      * 下划线
      */
     public static final String UNDERSCORE = "_";
@@ -206,6 +211,11 @@ public class CommonConstants {
      * 制表符
      */
     public static final String TAB = "\t";
+
+    /**
+     * 回车符
+     */
+    public static final String CARRIAGE_RETURN = "\r";
 
     /**
      * 左大括号

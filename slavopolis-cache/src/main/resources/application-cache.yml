@@ -1,0 +1,42 @@
+# Slavopolis Cache 模块默认配置
+slavopolis:
+  cache:
+    # 是否启用缓存模块
+    enabled: true
+    # 全局缓存键前缀
+    key-prefix: slavopolis
+    # 默认缓存过期时间（ISO-8601 duration格式）
+    default-expiration: PT1H  # 1小时
+    # 是否允许空值缓存，防止缓存穿透
+    allow-null-values: true
+    # 空值缓存时间
+    null-value-expiration: PT5M  # 5分钟
+    # 是否启用缓存统计
+    enable-statistics: false
+    # 批量操作默认大小
+    batch-size: 1000
+    
+    # 序列化配置
+    serialization:
+      # 键序列化类型：STRING, JSON
+      key-type: STRING
+      # 值序列化类型：STRING, JSON, JDK, FASTJSON2
+      value-type: JSON
+      # 哈希键序列化类型
+      hash-key-type: STRING
+      # 哈希值序列化类型
+      hash-value-type: JSON
+    
+    # 具体缓存配置（可选）
+    caches:
+      # 用户缓存配置示例
+      user:
+        expiration: PT30M  # 30分钟
+        allow-null-values: true
+        null-value-expiration: PT1M  # 1分钟
+        key-prefix: user
+      
+      # 系统配置缓存示例
+      system:
+        expiration: PT24H  # 24小时
+        allow-null-values: false 
