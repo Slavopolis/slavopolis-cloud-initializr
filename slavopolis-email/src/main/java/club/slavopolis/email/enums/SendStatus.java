@@ -12,6 +12,12 @@ package club.slavopolis.email.enums;
  * All rights reserved.
  */
 public enum SendStatus {
+
+    /**
+     * 待发送
+     */
+    PENDING,
+
     /**
      * 发送中
      */
@@ -21,6 +27,11 @@ public enum SendStatus {
      * 发送成功
      */
     SUCCESS,
+
+    /**
+     * 部分成功
+     */
+    PARTIAL_SUCCESS,
     
     /**
      * 发送失败
@@ -30,5 +41,15 @@ public enum SendStatus {
     /**
      * 已取消
      */
-    CANCELLED
+    CANCELLED,
+
+    /**
+     * 超时
+     */
+    TIMEOUT,
+
+    /**
+     * 重试
+     */
+    RETRY
 }
