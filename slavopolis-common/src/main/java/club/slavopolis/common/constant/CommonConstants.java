@@ -246,4 +246,9 @@ public class CommonConstants {
      * 右小括号
      */
     public static final String RIGHT_PARENTHESIS = ")";
+
+    /**
+     * @ 符号
+     */
+    public static final String AT = "@";
 }

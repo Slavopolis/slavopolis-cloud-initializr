@@ -16,6 +16,7 @@
         <module>slavopolis-common</module>
         <module>slavopolis-excel</module>
         <module>slavopolis-cache</module>
+        <module>slavopolis-email</module>
     </modules>
 
     <properties>

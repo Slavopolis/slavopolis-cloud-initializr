@@ -1,0 +1,260 @@
+# ==================== Slavopolis Email 模块配置 ====================
+# 版本: 1.0.0
+# 作者: slavopolis
+# 更新时间: 2025/6/14
+
+slavopolis:
+  email:
+    # ==================== 基础配置 ====================
+    # 邮件服务总开关
+    enabled: true
+    
+    # ==================== 发送方信息配置 ====================
+    default-sender:
+      # 发送方邮箱地址（必填）
+      from: noreply@yourcompany.com
+      # 发送方显示名称
+      from-name: 您的公司名称
+      # 回复地址
+      reply-to: support@yourcompany.com
+    
+    # ==================== SMTP 服务器配置 ====================
+    smtp:
+      # SMTP服务器地址（必填）
+      host: smtp.yourcompany.com
+      # SMTP服务器端口
+      port: 587
+      # SMTP用户名（必填）
+      username: your-smtp-username
+      # SMTP密码（必填）
+      password: your-smtp-password
+      # 是否启用SSL（端口465时设为true）
+      ssl: false
+      # 是否启用STARTTLS（推荐）
+      starttls: true
+      # 是否启用认证
+      auth: true
+      # 连接超时时间（毫秒）
+      connection-timeout: 5000
+      # 读取超时时间（毫秒）
+      read-timeout: 10000
+      # 写入超时时间（毫秒）
+      write-timeout: 10000
+      # 额外的SMTP属性
+      properties:
+        mail.smtp.ssl.trust: "*"
+        mail.debug: false
+    
+    # ==================== 模板引擎配置 ====================
+    template:
+      # 模板引擎类型：FREEMARKER | THYMELEAF | VELOCITY
+      engine: FREEMARKER
+      # 模板文件路径
+      template-path: classpath:/templates/email/
+      # 模板文件后缀
+      template-suffix: .ftl
+      # 模板编码
+      encoding: UTF-8
+      # 是否启用模板缓存
+      cache-enabled: true
+      # 模板缓存大小
+      cache-size: 100
+      # 模板缓存更新延迟（秒）
+      cache-update-delay: 300
+      # 预定义模板配置
+      predefined:
+        welcome:
+          name: welcome
+          path: user/welcome
+          default-subject: 欢迎加入我们！
+          description: 用户注册欢迎邮件
+          required-params:
+            - username
+            - activationLink
+        reset-password:
+          name: reset-password
+          path: user/reset-password
+          default-subject: 重置密码
+          description: 密码重置邮件
+          required-params:
+            - username
+            - resetLink
+            - expirationTime
+    
+    # ==================== 发送策略配置 ====================
+    send-strategy:
+      # 发送模式：SYNC | ASYNC | BATCH
+      mode: ASYNC
+      # 异步发送线程池大小
+      async-pool-size: 10
+      # 异步发送队列大小
+      async-queue-size: 1000
+      # 是否启用重试机制
+      retry-enabled: true
+      # 最大重试次数
+      max-retries: 3
+      # 重试间隔（毫秒）
+      retry-interval: 1000
+      # 批量发送大小
+      batch-size: 50
+      # 批量发送间隔（毫秒）
+      batch-interval: 100
+    
+    # ==================== 限流配置 ====================
+    rate-limit:
+      # 是否启用限流
+      enabled: true
+      # 限流时间窗口（ISO-8601格式：PT1M=1分钟，PT1H=1小时）
+      window: PT1M
+      # 时间窗口内最大请求数
+      max-requests: 100
+      # 限流算法：sliding_window | token_bucket | fixed_window | leaky_bucket
+      algorithm: sliding_window
+      # 是否按发送方限流
+      per-sender: false
+      # 是否按收件人限流
+      per-recipient: false
+      # 是否按业务标签限流
+      per-business-tag: false
+      # 限流检查失败时是否抛出异常
+      fail-on-limit-error: true
+      # 限流阈值配置
+      max-send-per-second: 10
+      max-send-per-minute: 100
+      max-send-per-hour: 1000
+      max-send-per-recipient-per-hour: 10
+    
+    # ==================== 缓存配置 ====================
+    # 是否使用Redis缓存存储邮件发送结果
+    # true: 使用Redis缓存（推荐生产环境，支持分布式状态查询）
+    # false: 使用内存缓存（默认，适合单实例开发环境）
+    use-redis-cache-for-results: false
+    
+    # ==================== 监控配置 ====================
+    monitor:
+      # 是否启用监控
+      enabled: true
+      # 是否记录发送详情
+      record-details: true
+      # 记录保留天数
+      record-retention-days: 30
+      # 告警阈值配置
+      alarm-threshold:
+        # 失败率阈值（百分比）
+        failure-rate-threshold: 10.0
+        # 超时率阈值（百分比）
+        timeout-rate-threshold: 5.0
+        # 队列积压阈值
+        queue-backlog-threshold: 500
+
+# ==================== 不同环境配置示例 ====================
+
+---
+# 开发环境配置
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+slavopolis:
+  email:
+    # 开发环境关闭真实发送，使用调试模式
+    enabled: true
+    use-redis-cache-for-results: false
+    
+    smtp:
+      # 开发环境可以使用测试SMTP服务
+      host: smtp.mailtrap.io
+      port: 2525
+      username: your-mailtrap-username
+      password: your-mailtrap-password
+      ssl: false
+      starttls: true
+    
+    rate-limit:
+      # 开发环境放宽限流
+      enabled: false
+      max-requests: 1000
+    
+    template:
+      # 开发环境关闭模板缓存，便于调试
+      cache-enabled: false
+
+---
+# 测试环境配置
+spring:
+  config:
+    activate:
+      on-profile: test
+
+slavopolis:
+  email:
+    enabled: true
+    use-redis-cache-for-results: true
+    
+    smtp:
+      host: test-smtp.yourcompany.com
+      port: 587
+      username: test-smtp-user
+      password: test-smtp-pass
+    
+    rate-limit:
+      enabled: true
+      window: PT5M
+      max-requests: 500
+    
+    template:
+      cache-enabled: true
+      cache-size: 50
+
+---
+# 生产环境配置
+spring:
+  config:
+    activate:
+      on-profile: production
+
+slavopolis:
+  email:
+    enabled: true
+    use-redis-cache-for-results: true
+    
+    smtp:
+      host: smtp.prod-company.com
+      port: 465
+      ssl: true
+      starttls: false
+      connection-timeout: 3000
+      read-timeout: 5000
+      write-timeout: 5000
+      properties:
+        mail.smtp.ssl.trust: "smtp.prod-company.com"
+    
+    send-strategy:
+      mode: ASYNC
+      async-pool-size: 20
+      async-queue-size: 2000
+      retry-enabled: true
+      max-retries: 5
+    
+    rate-limit:
+      enabled: true
+      window: PT5M
+      max-requests: 1000
+      per-sender: true
+      per-business-tag: true
+      max-send-per-hour: 5000
+    
+    template:
+      cache-enabled: true
+      cache-size: 200
+      cache-update-delay: 600
+    
+    monitor:
+      enabled: true
+      record-details: true
+      record-retention-days: 90
+      alarm-threshold:
+        failure-rate-threshold: 5.0
+        timeout-rate-threshold: 3.0
+        queue-backlog-threshold: 1000

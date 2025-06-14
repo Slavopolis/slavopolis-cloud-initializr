@@ -85,6 +85,11 @@ public class HttpConstants {
      */
     public static final String HEADER_ACCEPT_LANGUAGE = "Accept-Language";
 
+    /**
+     * 邮件优先级
+     */
+    public static final String HEADER_X_PRIORITY = "X-Priority";
+
     // ==================== Content-Type常量 ====================
 
     /**
