@@ -168,6 +168,16 @@ public class CommonConstants {
     public static final String COMMA = ",";
 
     /**
+     * 冒号
+     */
+    public static final String COLON = ":";
+
+    /**
+     * 带空格的冒号
+     */
+    public static final String COLON_WITH_SPACE = ": ";
+
+    /**
      * 点
      */
     public static final String DOT = ".";

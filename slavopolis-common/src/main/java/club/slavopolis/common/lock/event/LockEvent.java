@@ -1,8 +1,9 @@
 package club.slavopolis.common.lock.event;
 
+import org.springframework.context.ApplicationEvent;
+
 import club.slavopolis.common.lock.core.LockInfo;
 import lombok.Getter;
-import org.springframework.context.ApplicationEvent;
 
 /**
  * slavopolis-boot
@@ -30,15 +31,15 @@ public class LockEvent extends ApplicationEvent {
     private final EventType eventType;
 
     /**
-     * 事件时间戳
+     * 事件发生时间戳
      */
-    private final long timestamp;
+    private final long eventTimestamp;
 
     public LockEvent(Object source, LockInfo lockInfo, EventType eventType) {
         super(source);
         this.lockInfo = lockInfo;
         this.eventType = eventType;
-        this.timestamp = System.currentTimeMillis();
+        this.eventTimestamp = System.currentTimeMillis();
     }
 
     /**

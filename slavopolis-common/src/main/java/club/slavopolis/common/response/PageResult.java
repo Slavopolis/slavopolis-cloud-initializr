@@ -1,12 +1,13 @@
 package club.slavopolis.common.response;
 
-import club.slavopolis.common.enums.ResultCode;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.io.Serial;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import club.slavopolis.common.enums.ResultCode;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * slavopolis-boot
@@ -63,6 +64,16 @@ public class PageResult<T> extends Result<PageResult.PageData<T>>  {
          */
         private boolean hasNext;
 
+        /**
+         * 是否为第一页
+         */
+        private boolean isFirst;
+
+        /**
+         * 是否为最后一页
+         */
+        private boolean isLast;
+
         public PageData() {
         }
 
@@ -71,9 +82,86 @@ public class PageResult<T> extends Result<PageResult.PageData<T>>  {
             this.size = size;
             this.total = total;
             this.records = records;
-            this.pages = (total + size - 1) / size;
+            this.pages = total > 0 ? (total + size - 1) / size : 0;
             this.hasPrevious = current > 1;
             this.hasNext = current < this.pages;
+            this.isFirst = current == 1;
+            this.isLast = current == this.pages || this.pages == 0;
+        }
+
+        /**
+         * 创建分页数据 - 兼容 int 类型参数
+         * 
+         * @param pageNum 页码
+         * @param pageSize 每页大小  
+         * @param total 总记录数
+         * @param records 数据列表
+         * @return 分页数据
+         */
+        public static <T> PageData<T> of(int pageNum, int pageSize, long total, List<T> records) {
+            return new PageData<>((long) pageNum, (long) pageSize, total, records);
+        }
+
+        /**
+         * 创建分页数据
+         * 
+         * @param current 页码
+         * @param size 每页大小  
+         * @param total 总记录数
+         * @param records 数据列表
+         * @return 分页数据
+         */
+        public static <T> PageData<T> of(long current, long size, long total, List<T> records) {
+            return new PageData<>(current, size, total, records);
+        }
+
+        /**
+         * 创建空分页数据
+         * 
+         * @param pageNum 页码
+         * @param pageSize 每页大小
+         * @return 空分页数据
+         */
+        public static <T> PageData<T> empty(int pageNum, int pageSize) {
+            return new PageData<>((long) pageNum, (long) pageSize, 0L, List.of());
+        }
+
+        /**
+         * 创建空分页数据
+         * 
+         * @param current 页码
+         * @param size 每页大小
+         * @return 空分页数据
+         */
+        public static <T> PageData<T> empty(long current, long size) {
+            return new PageData<>(current, size, 0L, List.of());
+        }
+
+        /**
+         * 获取页码（int类型，兼容方法）
+         * 
+         * @return 页码
+         */
+        public int getPageNum() {
+            return Math.toIntExact(this.current);
+        }
+
+        /**
+         * 获取每页大小（int类型，兼容方法）
+         * 
+         * @return 每页大小
+         */
+        public int getPageSize() {
+            return Math.toIntExact(this.size);
+        }
+
+        /**
+         * 获取总页数（int类型，兼容方法）
+         * 
+         * @return 总页数
+         */
+        public int getPagesAsInt() {
+            return Math.toIntExact(this.pages);
         }
     }
 
