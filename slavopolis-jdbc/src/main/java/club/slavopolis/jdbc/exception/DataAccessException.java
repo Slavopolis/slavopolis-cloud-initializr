@@ -1,5 +1,7 @@
 package club.slavopolis.jdbc.exception;
 
+import club.slavopolis.jdbc.enums.ExceptionCategory;
+
 /**
  * 数据访问异常 - 包括连接异常、SQL执行异常等
  *
