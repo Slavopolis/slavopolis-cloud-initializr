@@ -1,0 +1,83 @@
+# ================================ 
+# 开发环境配置 - Slavopolis Gateway
+# ================================ 
+
+spring:
+  # Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10000ms
+      lettuce:
+        pool:
+          max-active: 50
+          max-idle: 20
+          min-idle: 5
+
+  # Spring Cloud Gateway配置
+  cloud:
+    gateway:
+      routes:
+        # 认证服务路由
+        - id: slavopolis-auth
+          uri: http://localhost:9000
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        
+        # 其他服务路由（示例）
+        - id: slavopolis-api
+          uri: http://localhost:9001
+          predicates:
+            - Path=/api/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.requestedTokens: 1
+      
+      # 全局CORS配置
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+            exposedHeaders: "Content-Disposition"
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    club.slavopolis.gateway: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive: DEBUG
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  file:
+    name: logs/slavopolis-gateway-dev.log
+
+# Slavopolis 自定义配置
+slavopolis:
+  # 网关配置
+  gateway:
+    # JWT验证配置
+    jwt:
+      secret: slavopolis-jwt-secret-key-2025
+    # 限流配置
+    rate-limit:
+      enabled: true
+      default-capacity: 100
+      default-tokens: 10
+    # 白名单配置（不需要认证的路径）
+    whitelist:
+      - /auth/oauth2/**
+      - /auth/login/**
+      - /auth/register/**
+      - /auth/captcha/**
+      - /actuator/** 

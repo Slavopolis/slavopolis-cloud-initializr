@@ -1,10 +1,10 @@
 package club.slavopolis.common.log.aspect;
 
-import club.slavopolis.common.constant.CommonConstants;
+import club.slavopolis.common.core.constants.CommonConstants;
 import club.slavopolis.common.log.annotation.BusinessLog;
 import club.slavopolis.common.log.model.BusinessLogInfo;
-import club.slavopolis.common.util.HttpUtils;
 import club.slavopolis.common.util.JsonUtils;
+import club.slavopolis.common.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -110,7 +110,7 @@ public class BusinessLogAspect {
             // 记录异常信息（如果启用）
             if (businessLog.logException()) {
                 logInfo.setErrorMsg(e.getMessage());
-                logInfo.setErrorDetail(HttpUtils.getStackTrace(e));
+                logInfo.setErrorDetail(StringUtils.getStackTrace(e));
             }
 
             // 抛出异常，以便上层处理
@@ -134,11 +134,11 @@ public class BusinessLogAspect {
      */
     private String parseDescription(String descriptionExpression, ProceedingJoinPoint joinPoint) {
         if (descriptionExpression == null || descriptionExpression.isEmpty()) {
-            return "";
+            return CommonConstants.EMPTY;
         }
 
         // 如果不包含 SpEL 表达式，直接返回
-        if (!descriptionExpression.contains("#")) {
+        if (!descriptionExpression.contains(CommonConstants.HASH)) {
             return descriptionExpression;
         }
 

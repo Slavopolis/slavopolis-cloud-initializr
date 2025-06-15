@@ -1,12 +1,13 @@
 package club.slavopolis.common.log.filter;
 
-import club.slavopolis.common.constant.CommonConstants;
-import club.slavopolis.common.constant.HttpConstants;
-import club.slavopolis.common.enums.ResultCode;
+import club.slavopolis.common.core.constants.CommonConstants;
+import club.slavopolis.common.core.constants.HttpConstants;
+import club.slavopolis.common.core.result.ResultCode;
 import club.slavopolis.common.log.config.properties.LogProperties;
 import club.slavopolis.common.log.model.AccessLog;
+import club.slavopolis.common.security.util.SecurityUtil;
 import club.slavopolis.common.util.JsonUtils;
-import club.slavopolis.common.util.HttpUtils;
+import club.slavopolis.common.web.util.RequestUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -52,7 +53,7 @@ public class AccessLogFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
         // 检查是否需要忽略
-        if (HttpUtils.shouldIgnore(request)) {
+        if (SecurityUtil.shouldIgnore(request)) {
             filterChain.doFilter(request, response);
             return;
         }
@@ -72,18 +73,18 @@ public class AccessLogFilter extends OncePerRequestFilter {
         accessLog.setMethod(request.getMethod());
         accessLog.setUri(request.getRequestURI());
         accessLog.setQueryString(request.getQueryString());
-        accessLog.setClientIp(HttpUtils.getClientIp(request));
+        accessLog.setClientIp(RequestUtil.getClientIp(request));
         accessLog.setUserAgent(request.getHeader(HttpConstants.HEADER_USER_AGENT));
-        accessLog.setHeaders(HttpUtils.getHeaders(request));
+        accessLog.setHeaders(RequestUtil.getAllHeaders(request));
 
         try {
             // 执行请求
             filterChain.doFilter(wrappedRequest, wrappedResponse);
 
             // 记录请求体
-            String requestBody = HttpUtils.getRequestBody(wrappedRequest);
+            String requestBody = RequestUtil.getRequestBody(wrappedRequest);
             if (requestBody != null && !requestBody.isEmpty()) {
-                accessLog.setRequestBody(HttpUtils.maskSensitiveData(requestBody));
+                accessLog.setRequestBody(SecurityUtil.maskSensitiveData(requestBody));
             }
 
             // 记录响应信息

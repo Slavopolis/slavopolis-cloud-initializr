@@ -1,5 +1,7 @@
 package club.slavopolis.common.annotation;
 
+import club.slavopolis.common.core.constants.CommonConstants;
+
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +20,7 @@ public @interface RateLimit {
     /**
      * 限流key前缀
      */
-    String key() default "";
+    String key() default CommonConstants.EMPTY;
 
     /**
      * 时间窗口内最大请求数

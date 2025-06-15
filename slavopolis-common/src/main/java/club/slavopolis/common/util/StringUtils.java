@@ -1,11 +1,12 @@
 package club.slavopolis.common.util;
 
-import club.slavopolis.common.constant.CommonConstants;
+import club.slavopolis.common.core.constants.CommonConstants;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -194,5 +195,39 @@ public final class StringUtils {
             return CommonConstants.EMPTY;
         }
         return str.repeat(count);
+    }
+
+    /**
+     * 获取异常堆栈信息
+     */
+    public static String getStackTrace(Exception e) {
+        if (Objects.isNull(e)) {
+            return null;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(e.getClass().getName())
+                .append(CommonConstants.CACHE_KEY_SEPARATOR)
+                .append(e.getMessage())
+                .append(CommonConstants.NEW_LINE);
+
+        StackTraceElement[] stackTrace = e.getStackTrace();
+        // 只记录前10行堆栈信息
+        int limit = Math.min(stackTrace.length, 10);
+        for (int i = 0; i < limit; i++) {
+            sb.append(CommonConstants.TAB)
+                    .append("at ").append(stackTrace[i])
+                    .append(CommonConstants.NEW_LINE);
+        }
+
+        if (stackTrace.length > 10) {
+            sb.append(CommonConstants.TAB)
+                    .append("... ")
+                    .append(stackTrace.length - 10)
+                    .append(" more")
+                    .append(CommonConstants.NEW_LINE);
+        }
+
+        return sb.toString();
     }
 }

@@ -1,9 +1,9 @@
 package club.slavopolis.common.log.interceptor;
 
-import club.slavopolis.common.constant.CommonConstants;
-import club.slavopolis.common.constant.HttpConstants;
-import club.slavopolis.common.util.HttpUtils;
+import club.slavopolis.common.core.constants.CommonConstants;
+import club.slavopolis.common.core.constants.HttpConstants;
 import club.slavopolis.common.util.StringUtils;
+import club.slavopolis.common.web.util.RequestUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -47,13 +47,13 @@ public class TraceInterceptor implements HandlerInterceptor {
         // 获取或生成 traceId
         String traceId = request.getHeader(HttpConstants.HEADER_TRACE_ID);
         if (StringUtils.isBlank(traceId)) {
-            traceId = HttpUtils.generateTraceId();
+            traceId = RequestUtil.generateTraceId();
         }
 
         // 获取或生成 requestId
         String requestId = request.getHeader(HttpConstants.HEADER_REQUEST_ID);
         if (StringUtils.isBlank(requestId)) {
-            requestId = HttpUtils.generateRequestId();
+            requestId = RequestUtil.generateRequestId();
         }
 
         // 获取用户信息（如果有）
@@ -75,7 +75,7 @@ public class TraceInterceptor implements HandlerInterceptor {
         // 记录请求信息
         MDC.put("method", request.getMethod());
         MDC.put("uri", request.getRequestURI());
-        MDC.put("clientIp", HttpUtils.getClientIp(request));
+        MDC.put("clientIp", RequestUtil.getClientIp(request));
 
         // 将 traceId 设置到响应头，便于客户端追踪
         response.setHeader(HttpConstants.HEADER_TRACE_ID, traceId);
@@ -85,7 +85,7 @@ public class TraceInterceptor implements HandlerInterceptor {
         request.setAttribute("startTime", System.currentTimeMillis());
 
         log.info("Request started - method: {}, uri: {}, clientIp: {}",
-                request.getMethod(), request.getRequestURI(), HttpUtils.getClientIp(request));
+                request.getMethod(), request.getRequestURI(), RequestUtil.getClientIp(request));
 
         return true;
     }

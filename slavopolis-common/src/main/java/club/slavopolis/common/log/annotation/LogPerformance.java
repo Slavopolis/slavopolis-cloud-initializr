@@ -1,5 +1,7 @@
 package club.slavopolis.common.log.annotation;
 
+import club.slavopolis.common.core.constants.CommonConstants;
+
 import java.lang.annotation.*;
 
 /**
@@ -42,5 +44,5 @@ public @interface LogPerformance {
     /**
      * 业务描述
      */
-    String description() default "";
+    String description() default CommonConstants.EMPTY;
 }

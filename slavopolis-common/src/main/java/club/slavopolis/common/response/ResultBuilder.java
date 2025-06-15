@@ -1,6 +1,7 @@
 package club.slavopolis.common.response;
 
-import club.slavopolis.common.enums.ResultCode;
+import club.slavopolis.common.core.result.Result;
+import club.slavopolis.common.core.result.ResultCode;
 
 /**
  * slavopolis-boot

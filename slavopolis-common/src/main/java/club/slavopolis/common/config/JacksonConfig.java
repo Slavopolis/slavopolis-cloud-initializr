@@ -1,7 +1,7 @@
 package club.slavopolis.common.config;
 
-import club.slavopolis.common.constant.CommonConstants;
-import club.slavopolis.common.constant.DateConstants;
+import club.slavopolis.common.core.constants.CommonConstants;
+import club.slavopolis.common.core.util.DateTimeUtil;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,22 +52,40 @@ public class JacksonConfig {
             builder.timeZone(TimeZone.getTimeZone(CommonConstants.DEFAULT_TIMEZONE));
 
             // 设置日期格式
-            builder.simpleDateFormat(DateConstants.DATETIME_PATTERN);
+            builder.simpleDateFormat(DateTimeUtil.DATETIME_PATTERN);
 
             // Java 8 时间模块
             JavaTimeModule javaTimeModule = new JavaTimeModule();
 
             // LocalDateTime
-            javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DateConstants.DATETIME_PATTERN)));
-            javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DateConstants.DATETIME_PATTERN)));
+            javaTimeModule.addSerializer(
+                    LocalDateTime.class,
+                    new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DateTimeUtil.DATETIME_PATTERN))
+            );
+            javaTimeModule.addDeserializer(
+                    LocalDateTime.class,
+                    new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DateTimeUtil.DATETIME_PATTERN))
+            );
 
             // LocalDate
-            javaTimeModule.addSerializer(LocalDate.class, new LocalDateSerializer(DateTimeFormatter.ofPattern(DateConstants.DATE_PATTERN)));
-            javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern(DateConstants.DATE_PATTERN)));
+            javaTimeModule.addSerializer(
+                    LocalDate.class,
+                    new LocalDateSerializer(DateTimeFormatter.ofPattern(DateTimeUtil.DATE_PATTERN))
+            );
+            javaTimeModule.addDeserializer(
+                    LocalDate.class,
+                    new LocalDateDeserializer(DateTimeFormatter.ofPattern(DateTimeUtil.DATE_PATTERN))
+            );
 
             // LocalTime
-            javaTimeModule.addSerializer(LocalTime.class, new LocalTimeSerializer(DateTimeFormatter.ofPattern(DateConstants.TIME_PATTERN)));
-            javaTimeModule.addDeserializer(LocalTime.class, new LocalTimeDeserializer(DateTimeFormatter.ofPattern(DateConstants.TIME_PATTERN)));
+            javaTimeModule.addSerializer(
+                    LocalTime.class,
+                    new LocalTimeSerializer(DateTimeFormatter.ofPattern(DateTimeUtil.TIME_PATTERN))
+            );
+            javaTimeModule.addDeserializer(
+                    LocalTime.class,
+                    new LocalTimeDeserializer(DateTimeFormatter.ofPattern(DateTimeUtil.TIME_PATTERN))
+            );
 
             builder.modules(javaTimeModule);
 

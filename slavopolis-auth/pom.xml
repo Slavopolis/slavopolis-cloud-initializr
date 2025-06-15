@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>club.slavopolis</groupId>
+        <artifactId>slavopolis-boot</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>slavopolis-auth</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Slavopolis Auth Service</name>
+    <description>认证授权服务 - 基于DDD的用户身份认证与权限管理</description>
+
+    <modules>
+        <!-- 对外接口层 -->
+        <module>auth-api</module>
+        <!-- 领域层 -->
+        <module>auth-domain</module>
+        <!-- 应用层 -->
+        <module>auth-application</module>
+        <!-- 基础设施层 -->
+        <module>auth-infrastructure</module>
+        <!-- 接口层 -->
+        <module>auth-interface</module>
+        <!-- 启动模块 -->
+        <module>auth-start</module>
+    </modules>
+
+    <dependencies>
+        <!-- 通用工具依赖 -->
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-common</artifactId>
+        </dependency>
+    </dependencies>
+</project>

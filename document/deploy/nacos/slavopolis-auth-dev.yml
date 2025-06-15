@@ -1,0 +1,154 @@
+# Slavopolis Auth Service - 开发环境配置
+# Data ID: slavopolis-auth-dev.yml
+# Group: DEFAULT_GROUP
+
+spring:
+  application:
+    name: slavopolis-auth
+  profiles:
+    active: dev
+    
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/slavopolis_auth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: AuthHikariCP
+      max-lifetime: 900000
+      connection-timeout: 10000
+      connection-test-query: SELECT 1
+      leak-detection-threshold: 60000
+      
+  # Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      password: ""
+      timeout: 6000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+# 服务器配置
+server:
+  port: 9000
+  servlet:
+    context-path: /auth
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+
+# 日志配置
+logging:
+  level:
+    club.slavopolis: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+
+# OAuth2 配置
+oauth2:
+  # JWT密钥配置
+  jwt:
+    # 建议生产环境使用更安全的密钥管理方式
+    rsa-private-key: |
+      -----BEGIN PRIVATE KEY-----
+      开发环境密钥，生产环境请更换
+      -----END PRIVATE KEY-----
+    rsa-public-key: |
+      -----BEGIN PUBLIC KEY-----
+      开发环境公钥，生产环境请更换
+      -----END PUBLIC KEY-----
+  
+  # 客户端配置
+  clients:
+    web:
+      client-id: slavopolis-web
+      client-secret: '{noop}slavopolis-web-secret'
+      redirect-uris: 
+        - http://localhost:3000/callback
+        - http://localhost:8080/callback
+      scopes: 
+        - read
+        - write
+        - openid
+        - profile
+        - email
+    mobile:
+      client-id: slavopolis-mobile
+      client-secret: '{noop}slavopolis-mobile-secret'
+      redirect-uris:
+        - app://callback
+      scopes:
+        - read
+        - write
+        - offline_access
+
+# 认证配置
+auth:
+  # 验证码配置
+  captcha:
+    # 验证码长度
+    length: 6
+    # 过期时间（秒）
+    expire: 300
+    # 发送间隔（秒）
+    interval: 60
+    # 每日发送上限
+    daily-limit: 10
+    
+  # 短信配置
+  sms:
+    enabled: true
+    # 阿里云短信配置
+    aliyun:
+      access-key-id: your-access-key-id
+      access-key-secret: your-access-key-secret
+      sign-name: 斯拉夫城邦
+      template-code: SMS_123456789
+      
+  # 邮件配置  
+  email:
+    enabled: true
+    # 验证码邮件模板
+    template: auth-code
+    
+  # 安全配置
+  security:
+    # 登录失败锁定
+    login-lock:
+      enabled: true
+      max-attempts: 5
+      lock-duration: 1800
+    # IP限制
+    ip-limit:
+      enabled: true
+      max-requests: 100
+      window-seconds: 60
+    # 设备指纹
+    device-fingerprint:
+      enabled: true
+      
+# Actuator监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized 

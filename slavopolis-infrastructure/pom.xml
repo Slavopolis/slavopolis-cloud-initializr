@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>club.slavopolis</groupId>
+        <artifactId>slavopolis-boot</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>slavopolis-infrastructure</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Slavopolis Infrastructure</name>
+    <description>基础设施模块 - 提供统一的基础设施能力</description>
+
+    <modules>
+        <module>slavopolis-infrastructure-core</module>
+        <module>slavopolis-infrastructure-cache</module>
+        <module>slavopolis-infrastructure-messaging</module>
+        <module>slavopolis-infrastructure-persistence</module>
+        <module>slavopolis-infrastructure-integration</module>
+    </modules>
+
+    <dependencies>
+        <!-- 所有基础设施模块的公共依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+</project>

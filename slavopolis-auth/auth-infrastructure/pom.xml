@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>club.slavopolis</groupId>
+        <artifactId>slavopolis-auth</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>auth-infrastructure</artifactId>
+
+    <name>Auth Infrastructure</name>
+    <description>认证服务基础设施层 - 数据持久化、消息发布、外部服务集成</description>
+
+    <dependencies>
+        <!-- 应用层依赖 -->
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>auth-application</artifactId>
+        </dependency>
+
+        <!-- 基础设施模块依赖 -->
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-infrastructure-persistence</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-infrastructure-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-infrastructure-messaging</artifactId>
+        </dependency>
+
+        <!-- JDBC支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- Redis支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- 消息队列支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
+        <!-- 服务调用支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- MySQL驱动 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- 数据库连接池 -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+    </dependencies>
+</project>

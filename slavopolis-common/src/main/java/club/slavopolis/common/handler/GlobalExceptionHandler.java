@@ -1,12 +1,12 @@
 package club.slavopolis.common.handler;
 
-import club.slavopolis.common.constant.CommonConstants;
-import club.slavopolis.common.enums.ResultCode;
-import club.slavopolis.common.exception.BusinessException;
-import club.slavopolis.common.exception.SystemException;
-import club.slavopolis.common.exception.ThirdPartyException;
-import club.slavopolis.common.exception.ValidationException;
-import club.slavopolis.common.response.Result;
+import club.slavopolis.common.core.constants.CommonConstants;
+import club.slavopolis.common.core.exception.BusinessException;
+import club.slavopolis.common.core.exception.SystemException;
+import club.slavopolis.common.core.exception.ThirdPartyException;
+import club.slavopolis.common.core.exception.ValidationException;
+import club.slavopolis.common.core.result.Result;
+import club.slavopolis.common.core.result.ResultCode;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;

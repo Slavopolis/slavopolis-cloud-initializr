@@ -1,0 +1,106 @@
+# Slavopolis Common Configuration - 开发环境
+# Data ID: slavopolis-common-dev.yml
+# Group: DEFAULT_GROUP
+
+# Nacos服务注册发现配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        # Nacos 服务器地址
+        server-addr: 127.0.0.1:8848
+        # 命名空间
+        namespace: slavopolis-dev
+        # 分组
+        group: DEFAULT_GROUP
+        # 心跳间隔
+        heart-beat-interval: 5000
+        # 心跳超时时间
+        heart-beat-timeout: 15000
+        # IP删除超时时间
+        ip-delete-timeout: 30000
+        # 集群名称
+        cluster-name: DEFAULT
+        # 权重
+        weight: 1.0
+        # 是否注册
+        register-enabled: true
+        # 元数据
+        metadata:
+          version: 1.0.0
+          environment: dev
+
+# 通用日志配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    club.slavopolis: DEBUG
+    org.springframework.cloud: DEBUG
+    com.alibaba.nacos: INFO
+    
+# 通用Jackson配置
+spring:
+  jackson:
+    # 时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    # 序列化配置
+    serialization:
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+    # 反序列化配置
+    deserialization:
+      fail-on-unknown-properties: false
+      
+  # 通用MVC配置
+  mvc:
+    format:
+      date: yyyy-MM-dd
+      date-time: yyyy-MM-dd HH:mm:ss
+      time: HH:mm:ss
+
+# 通用线程池配置
+thread-pool:
+  core-pool-size: 10
+  maximum-pool-size: 20
+  keep-alive-time: 60
+  queue-capacity: 1000
+  thread-name-prefix: slavopolis-
+
+# 通用安全配置
+security:
+  # CORS配置
+  cors:
+    allowed-origins: "*"
+    allowed-methods: "*"
+    allowed-headers: "*"
+    allow-credentials: true
+    max-age: 3600
+    
+  # CSP配置
+  csp:
+    enabled: true
+    policy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+
+# 通用监控配置
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true 

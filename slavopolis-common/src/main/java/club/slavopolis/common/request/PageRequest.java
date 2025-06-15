@@ -1,6 +1,6 @@
 package club.slavopolis.common.request;
 
-import club.slavopolis.common.constant.CommonConstants;
+import club.slavopolis.common.core.constants.CommonConstants;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

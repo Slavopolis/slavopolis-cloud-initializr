@@ -1,5 +1,6 @@
 package club.slavopolis.common.log.annotation;
 
+import club.slavopolis.common.core.constants.CommonConstants;
 import club.slavopolis.common.enums.OperationType;
 
 import java.lang.annotation.*;
@@ -24,7 +25,7 @@ public @interface BusinessLog {
     /**
      * 业务模块
      */
-    String module() default "";
+    String module() default CommonConstants.EMPTY;
 
     /**
      * 操作类型
@@ -35,7 +36,7 @@ public @interface BusinessLog {
      * 操作描述
      * 支持 SpEL 表达式，例如："删除用户 #{#user.name}"
      */
-    String description() default "";
+    String description() default CommonConstants.EMPTY;
 
     /**
      * 是否记录请求参数

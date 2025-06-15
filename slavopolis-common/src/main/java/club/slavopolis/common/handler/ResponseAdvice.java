@@ -1,8 +1,8 @@
 package club.slavopolis.common.handler;
 
 import club.slavopolis.common.annotation.NoResponseWrap;
-import club.slavopolis.common.constant.CommonConstants;
-import club.slavopolis.common.response.Result;
+import club.slavopolis.common.core.constants.CommonConstants;
+import club.slavopolis.common.core.result.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

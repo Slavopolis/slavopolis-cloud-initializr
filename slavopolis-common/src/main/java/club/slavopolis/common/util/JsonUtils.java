@@ -1,6 +1,6 @@
 package club.slavopolis.common.util;
 
-import club.slavopolis.common.exception.SystemException;
+import club.slavopolis.common.core.exception.SystemException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;

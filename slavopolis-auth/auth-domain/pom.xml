@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>club.slavopolis</groupId>
+        <artifactId>slavopolis-auth</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>auth-domain</artifactId>
+
+    <name>Auth Domain</name>
+    <description>认证服务领域层 - 包含聚合根、实体、值对象、领域服务等</description>
+
+    <dependencies>
+        <!-- API层依赖 -->
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>auth-api</artifactId>
+        </dependency>
+
+        <!-- 通用工具依赖 -->
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-common</artifactId>
+        </dependency>
+
+        <!-- Spring Context支持 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!-- 数据验证 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+    </dependencies>
+</project>

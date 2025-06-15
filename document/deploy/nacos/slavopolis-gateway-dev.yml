@@ -1,0 +1,166 @@
+# Slavopolis Gateway Service - 开发环境配置
+# Data ID: slavopolis-gateway-dev.yml
+# Group: DEFAULT_GROUP
+
+spring:
+  application:
+    name: slavopolis-gateway
+  profiles:
+    active: dev
+    
+  # Redis配置（响应式）
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 1
+      password: ""
+      timeout: 6000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+          
+  # Gateway配置
+  cloud:
+    gateway:
+      # 全局CORS配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+            allow-credentials: true
+            max-age: 3600
+            
+      # 路由配置
+      routes:
+        # 认证服务路由
+        - id: slavopolis-auth
+          uri: lb://slavopolis-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+            
+        # API服务路由（示例）
+        - id: slavopolis-api
+          uri: lb://slavopolis-api
+          predicates:
+            - Path=/api/**
+          filters:
+            - name: AuthGatewayFilter
+            - StripPrefix=1
+            
+      # 默认过滤器
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            statuses: BAD_GATEWAY,GATEWAY_TIMEOUT
+            methods: GET,POST
+            backoff:
+              firstBackoff: 10ms
+              maxBackoff: 50ms
+              factor: 2
+              basedOnPreviousValue: false
+              
+        - name: CircuitBreaker
+          args:
+            name: defaultCircuitBreaker
+            fallbackUri: forward:/fallback
+            
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+            redis-rate-limiter.requestedTokens: 1
+
+# 服务器配置
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+
+# 日志配置
+logging:
+  level:
+    club.slavopolis: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.security: DEBUG
+    reactor.netty: INFO
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+
+# JWT配置
+jwt:
+  # 从认证服务获取公钥的端点
+  jwk-set-uri: http://localhost:9000/auth/oauth2/jwks
+  # 本地公钥（可选，用于离线验证）
+  public-key: |
+    -----BEGIN PUBLIC KEY-----
+    开发环境公钥，应与认证服务保持一致
+    -----END PUBLIC KEY-----
+
+# 网关安全配置
+gateway:
+  security:
+    # 白名单路径（不需要认证）
+    whitelist:
+      - /auth/**
+      - /actuator/health
+      - /favicon.ico
+      - /error
+      - /fallback
+      
+    # 黑名单IP（拒绝访问）
+    blacklist:
+      - "192.168.1.100"
+      
+    # 限流配置
+    rate-limit:
+      enabled: true
+      # 每个IP每分钟请求次数
+      requests-per-minute: 1000
+      
+# 熔断器配置
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        # 滑动窗口大小
+        sliding-window-size: 10
+        # 最小调用次数
+        minimum-number-of-calls: 5
+        # 失败率阈值
+        failure-rate-threshold: 50
+        # 半开状态下允许的调用次数
+        permitted-number-of-calls-in-half-open-state: 3
+        # 等待时间
+        wait-duration-in-open-state: 10s
+        # 慢调用阈值
+        slow-call-rate-threshold: 50
+        # 慢调用时间阈值
+        slow-call-duration-threshold: 2s
+        
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 3s
+
+# Actuator监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,gateway
+  endpoint:
+    health:
+      show-details: when_authorized
+    gateway:
+      enabled: true 

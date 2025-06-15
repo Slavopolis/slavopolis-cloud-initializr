@@ -1,6 +1,6 @@
 package club.slavopolis.common.util;
 
-import club.slavopolis.common.constant.DateConstants;
+import club.slavopolis.common.core.util.DateTimeUtil;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -50,14 +50,14 @@ public final class DateUtils {
      * 格式化为标准日期时间格式
      */
     public static String formatDateTime(LocalDateTime dateTime) {
-        return format(dateTime, DateConstants.DATETIME_PATTERN);
+        return format(dateTime, DateTimeUtil.DATETIME_PATTERN);
     }
 
     /**
      * 格式化为标准日期格式
      */
     public static String formatDate(LocalDate date) {
-        return format(date, DateConstants.DATE_PATTERN);
+        return format(date, DateTimeUtil.DATE_PATTERN);
     }
 
     // ==================== 解析 ====================
@@ -86,14 +86,14 @@ public final class DateUtils {
      * 解析标准日期时间格式
      */
     public static LocalDateTime parseDateTime(String dateTime) {
-        return parseDateTime(dateTime, DateConstants.DATETIME_PATTERN);
+        return parseDateTime(dateTime, DateTimeUtil.DATETIME_PATTERN);
     }
 
     /**
      * 解析标准日期格式
      */
     public static LocalDate parseDate(String date) {
-        return parseDate(date, DateConstants.DATE_PATTERN);
+        return parseDate(date, DateTimeUtil.DATE_PATTERN);
     }
 
     // ==================== 转换 ====================

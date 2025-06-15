@@ -1,6 +1,6 @@
 package club.slavopolis.common.util;
 
-import club.slavopolis.common.exception.ValidationException;
+import club.slavopolis.common.core.exception.ValidationException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import lombok.AccessLevel;

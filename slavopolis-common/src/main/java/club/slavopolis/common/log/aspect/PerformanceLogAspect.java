@@ -1,5 +1,6 @@
 package club.slavopolis.common.log.aspect;
 
+import club.slavopolis.common.core.constants.CommonConstants;
 import club.slavopolis.common.log.annotation.LogPerformance;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -32,7 +33,7 @@ import java.util.Objects;
 @Component
 public class PerformanceLogAspect {
 
-    private static final Logger performanceLogger = LoggerFactory.getLogger("club.slavopolis.common.log.performance");
+    private static final Logger performanceLogger = LoggerFactory.getLogger("club.slavopolis.common.log.annotation.LogPerformance");
 
     /**
      * 环绕通知，监控方法执行性能
@@ -78,7 +79,7 @@ public class PerformanceLogAspect {
 
             // 构建性能日志信息
             StringBuilder logMessage = new StringBuilder();
-            logMessage.append("方法: ").append(className).append(".").append(methodName);
+            logMessage.append("方法: ").append(className).append(CommonConstants.DOT).append(methodName);
             logMessage.append(", 执行时长: ").append(duration).append("ms");
 
             if (logPerformance.logResult() && Objects.isNull(error)) {
