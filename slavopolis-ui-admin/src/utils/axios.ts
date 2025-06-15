@@ -1,6 +1,6 @@
- import axios from './axios.ts';
+ import axios from 'axios';
 
- const axiosServices = axios.create();
+const axiosServices = axios.create();
  
  // interceptor for http
  axiosServices.interceptors.response.use(

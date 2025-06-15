@@ -1,6 +1,9 @@
+/**
+ * 自定义logo
+ */
 import { FC } from 'react';
-import { useSelector } from 'src/store/Store';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'src/store/Store';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { ReactComponent as LogoDark } from 'src/assets/images/logos/dark-logo.svg';
@@ -12,8 +15,8 @@ import { ReactComponent as LogoDarkRTL } from 'src/assets/images/logos/dark-rtl-
 import { ReactComponent as LogoLight } from 'src/assets/images/logos/light-logo.svg';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { ReactComponent as LogoLightRTL } from 'src/assets/images/logos/light-logo-rtl.svg';
 import { styled } from '@mui/material';
+import { ReactComponent as LogoLightRTL } from 'src/assets/images/logos/light-logo-rtl.svg';
 import { AppState } from 'src/store/Store';
 
 const Logo: FC = () => {

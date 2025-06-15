@@ -69,7 +69,7 @@ const Login = () => (
       >
         <Box p={4}>
           <AuthLogin
-            title="Welcome to Modernize"
+            title="Welcome to Slavopolis"
             subtext={
               <Typography variant="subtitle1" color="textSecondary" mb={1}>
                 Your Admin Dashboard

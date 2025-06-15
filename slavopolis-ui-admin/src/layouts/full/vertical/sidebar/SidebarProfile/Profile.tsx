@@ -1,9 +1,11 @@
-import { Box, Avatar, Typography, IconButton, Tooltip, useMediaQuery } from '@mui/material';
-import { useSelector } from 'src/store/Store';
-import img1 from 'src/assets/images/profile/user-1.jpg';
+/**
+ * 用户信息
+ */
+import { Avatar, Box, IconButton, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import { IconPower } from '@tabler/icons-react';
-import { AppState } from 'src/store/Store';
 import { Link } from 'react-router-dom';
+import img1 from 'src/assets/images/profile/user-1.jpg';
+import { AppState, useSelector } from 'src/store/Store';
 
 export const Profile = () => {
   const customizer = useSelector((state: AppState) => state.customizer);
@@ -22,8 +24,8 @@ export const Profile = () => {
           <Avatar alt="Remy Sharp" src={img1} />
 
           <Box>
-            <Typography variant="h6">Mathew </Typography>
-            <Typography variant="caption">Designer</Typography>
+            <Typography variant="h6">Slavopolis </Typography>
+            <Typography variant="caption">Developer</Typography>
           </Box>
           <Box sx={{ ml: 'auto' }}>
             <Tooltip title="Logout" placement="top">

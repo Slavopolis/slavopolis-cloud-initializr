@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
-import fs from 'fs/promises';
 import svgr from '@svgr/rollup';
+import react from '@vitejs/plugin-react';
+import fs from 'fs/promises';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,7 +36,7 @@ export default defineConfig({
     },
 
 
-    
+
     // plugins: [react(),svgr({
     //   exportAsDefault: true
     // })],

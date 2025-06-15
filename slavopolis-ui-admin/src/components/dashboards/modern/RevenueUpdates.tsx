@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Box, Button, Grid, MenuItem, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { MenuItem, Grid, Stack, Typography, Button, Avatar, Box } from '@mui/material';
 import { IconGridDots } from '@tabler/icons-react';
-import DashboardCard from '../../shared/DashboardCard.tsx';
+import React from 'react';
+import Chart, { Props } from 'react-apexcharts';
 import CustomSelect from '../../forms/theme-elements/CustomSelect.tsx';
-import { Props } from 'react-apexcharts';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 const RevenueUpdates = () => {
   const [month, setMonth] = React.useState('1');
@@ -69,7 +68,7 @@ const RevenueUpdates = () => {
       tickAmount: 4,
     },
     xaxis: {
-      categories: ['16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08'],
+      categories: ['8/16', '8/17', '8/18', '8/19', '8/20', '8/21', '8/22'],
       axisBorder: {
         show: false,
       },
@@ -81,19 +80,19 @@ const RevenueUpdates = () => {
   };
   const seriescolumnchart = [
     {
-      name: 'Eanings this month',
+      name: '本月收入',
       data: [1.5, 2.7, 2.2, 3.6, 1.5, 1.0],
     },
     {
-      name: 'Expense this month',
+      name: '本月支出',
       data: [-1.8, -1.1, -2.5, -1.5, -0.6, -1.8],
     },
   ];
 
   return (
     <DashboardCard
-      title="Revenue Updates"
-      subtitle="Overview of Profit"
+      title="收入更新"
+      subtitle="利润概览"
       action={
         <CustomSelect
           labelId="month-dd"
@@ -102,9 +101,9 @@ const RevenueUpdates = () => {
           value={month}
           onChange={handleChange}
         >
-          <MenuItem value={1}>March 2023</MenuItem>
-          <MenuItem value={2}>April 2023</MenuItem>
-          <MenuItem value={3}>May 2023</MenuItem>
+          <MenuItem value={1}>2023年3月</MenuItem>
+          <MenuItem value={2}>2023年4月</MenuItem>
+          <MenuItem value={3}>2023年5月</MenuItem>
         </CustomSelect>
       }
     >
@@ -141,7 +140,7 @@ const RevenueUpdates = () => {
                   $63,489.50
                 </Typography>
                 <Typography variant="subtitle2" color="textSecondary">
-                  Total Earnings
+                  总收入
                 </Typography>
               </Box>
             </Stack>
@@ -153,7 +152,7 @@ const RevenueUpdates = () => {
               ></Avatar>
               <Box>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Earnings this month
+                  本月收入
                 </Typography>
                 <Typography variant="h5">$48,820</Typography>
               </Box>
@@ -164,14 +163,14 @@ const RevenueUpdates = () => {
               ></Avatar>
               <Box>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Expense this month
+                  本月支出
                 </Typography>
                 <Typography variant="h5">$26,498</Typography>
               </Box>
             </Stack>
           </Stack>
           <Button color="primary" variant="contained" fullWidth>
-            View Full Report
+            查看完整报告
           </Button>
         </Grid>
       </Grid>

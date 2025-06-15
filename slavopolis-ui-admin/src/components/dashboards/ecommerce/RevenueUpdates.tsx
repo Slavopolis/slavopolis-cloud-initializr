@@ -1,11 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Typography, Avatar, Box } from '@mui/material';
+import React from 'react';
+import Chart, { Props } from 'react-apexcharts';
 import DashboardCard from '../../shared/DashboardCard.tsx';
-import { Props } from 'react-apexcharts';
 
 const RevenueUpdates: React.FC = () => {
 
@@ -57,7 +56,7 @@ const RevenueUpdates: React.FC = () => {
       tickAmount: 4,
     },
     xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      categories: ['一月', '二月', '三月', '四月', '五月'],
       axisTicks: {
         show: false,
       }
@@ -69,19 +68,19 @@ const RevenueUpdates: React.FC = () => {
   };
   const seriescolumnchart = [
     {
-      name: 'Footware',
+      name: '鞋类',
       data: [2.5, 3.7, 3.2, 2.6, 1.9],
     },
     {
-      name: 'Fashionware',
+      name: '服饰',
       data: [-2.8, -1.1, -3.0, -1.5, -1.9],
     },
   ];
 
   return (
     <DashboardCard
-      title="Revenue Updates"
-      subtitle="Overview of Profit">
+      title="收入更新"
+      subtitle="利润概览">
       <>
         <Stack direction="row" spacing={3}>
           <Stack direction="row" alignItems="center" spacing={1}>
@@ -90,7 +89,7 @@ const RevenueUpdates: React.FC = () => {
             ></Avatar>
             <Box>
               <Typography variant="subtitle2" fontSize="12px" color="textSecondary">
-                Footware
+                鞋类
               </Typography>
             </Box>
           </Stack>
@@ -100,7 +99,7 @@ const RevenueUpdates: React.FC = () => {
             ></Avatar>
             <Box>
               <Typography variant="subtitle2" fontSize="12px" color="textSecondary">
-                Fashionware
+                服饰
               </Typography>
             </Box>
           </Stack>

@@ -39,8 +39,8 @@ const Welcome = () => {
           variant="filled"
           sx={{ width: '100%', color: 'white' }}
         >
-          <AlertTitle>Welcome To Modernize</AlertTitle>
-          Easy to customize the Template!!!
+          <AlertTitle>Welcome To Slavopolis</AlertTitle>
+          Slavopolis is a platform for managing and analyzing data.
         </Alert>
       </Snackbar>
     </React.Fragment>
