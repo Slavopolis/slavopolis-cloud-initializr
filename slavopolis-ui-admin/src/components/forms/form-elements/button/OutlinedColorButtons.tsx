@@ -6,19 +6,19 @@ import { Button, Stack } from '@mui/material';
 const OutlinedColorButtons = () => (
   <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
     <Button variant="outlined" color="primary">
-      Primary
+      主要
     </Button>
     <Button variant="outlined" color="secondary">
-      Secondary
+      次要
     </Button>
     <Button variant="outlined" color="error">
-      Error
+      错误
     </Button>
     <Button variant="outlined" color="warning">
-      Warning
+      警告
     </Button>
     <Button variant="outlined" color="success">
-      Success
+      成功
     </Button>
   </Stack>
 );

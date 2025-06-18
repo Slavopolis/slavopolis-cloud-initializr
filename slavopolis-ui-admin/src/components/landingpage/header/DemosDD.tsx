@@ -111,9 +111,9 @@ const DemosDD = () => {
   return (
     <>
       <Box p={4}>
-        <Typography variant="h5">Different Demos</Typography>
+        <Typography variant="h5">不同演示</Typography>
         <Typography variant="subtitle1" color="textSecondary">
-          Included with the package
+          包含在套件中
         </Typography>
 
         <Stack mt={2} spacing={3} direction={{ xs: 'column', lg: 'row' }}>
@@ -136,7 +136,7 @@ const DemosDD = () => {
                   href={demo.link}
                   target="_blank"
                 >
-                  Live Preview
+                  在线预览
                 </Button>
               </StyledBox>
               {/* </Link> */}
@@ -154,7 +154,7 @@ const DemosDD = () => {
         </Stack>
 
         <Typography variant="h5" mt={5}>
-          Different Apps
+          不同应用
         </Typography>
 
         <Stack mt={2} spacing={3} mb={2} direction={{ xs: 'column', lg: 'row' }}>
@@ -172,7 +172,7 @@ const DemosDD = () => {
                 />
                 <NavLink to={app.link}>
                   <Button variant="contained" color="primary" size="small">
-                    Live Preview
+                    在线预览
                   </Button>
                 </NavLink>
                 {/* </Link> */}

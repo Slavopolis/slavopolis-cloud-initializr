@@ -10,7 +10,7 @@ const Banner3 = () => {
     <BlankCard>
       <CardContent sx={{ p: '30px' }}>
         <Typography variant="h5" textAlign="center" mb={3}>
-          Mutual Friend Revealed
+          共同好友已揭晓
         </Typography>
         <Box textAlign="center">
           <Badge badgeContent={1} color="error" overlap="circular">
@@ -21,15 +21,15 @@ const Banner3 = () => {
             Tommoie Henderson
           </Typography>
           <Typography variant="subtitle1" color="textSecondary" mt={1} mb={2}>
-            Accept the request and <br/> type a message
+            接受请求并<br/> 输入消息
           </Typography>
 
           <Stack direction="row" spacing={2} justifyContent="center">
             <Button color="primary" variant="contained" size="large">
-              Accept
+              接受
             </Button>
             <Button color="error" variant="outlined" size="large">
-              Remove
+              移除
             </Button>
           </Stack>
         </Box>

@@ -7,17 +7,17 @@ import { IconBell } from '@tabler/icons-react';
 const FabSizeButtons = () => (
   <>
     <Stack spacing={1} direction="row" justifyContent="center">
-      <Tooltip title="Bell">
+      <Tooltip title="铃铛">
         <Fab size="small" color="primary" aria-label="small-bell">
           <IconBell width={16} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Bell">
+      <Tooltip title="铃铛">
         <Fab size="medium" color="secondary" aria-label="medium-bell">
           <IconBell width={18} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Bell">
+      <Tooltip title="铃铛">
         <Fab size="large" color="warning" aria-label="large-bell">
           <IconBell width={20} />
         </Fab>

@@ -82,7 +82,7 @@ const Growth = () => {
           </span>
         </Typography>
         <Typography variant="subtitle2" color="textSecondary">
-          Growth
+          增长
         </Typography>
       </>
     </DashboardCard>

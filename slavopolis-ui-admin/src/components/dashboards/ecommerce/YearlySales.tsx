@@ -1,11 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
 import { useTheme } from '@mui/material/styles';
+import Chart from 'react-apexcharts';
 
-import DashboardWidgetCard from '../../shared/DashboardWidgetCard.tsx';
 import { Props } from 'react-apexcharts';
+import DashboardWidgetCard from '../../shared/DashboardWidgetCard.tsx';
 
 const YearlySales = () => {
   // chart color
@@ -70,11 +69,11 @@ const YearlySales = () => {
 
   return (
     <DashboardWidgetCard
-      title="Yearly Sales"
-      subtitle="Total Sales"
-      dataLabel1="Salary"
+      title="年度销售额"
+      subtitle="总销售额"
+      dataLabel1="薪资"
       dataItem1="$36,358"
-      dataLabel2="Expance"
+      dataLabel2="支出"
       dataItem2="$5,296"
     >
       <>

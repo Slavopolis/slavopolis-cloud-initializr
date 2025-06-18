@@ -25,45 +25,45 @@ interface SliderType {
 const SliderData: SliderType[] = [
   {
     title: 'Jenny Wilson',
-    subtitle: 'Features avaibility',
+    subtitle: '功能可用性',
     avatar: img1,
     subtext:
-      'The dashboard template from adminmart has helped me provide a clean and sleek look to my dashboard and made it look exactly the way I wanted it to, mainly without having.',
+      'adminmart的仪表板模板帮助我为我的仪表板提供了一个干净流畅的外观，使其完全符合我的期望。'
   },
   {
-    title: 'Minshan Cui',
-    subtitle: 'Features avaibility',
+    title: '崔民山',
+    subtitle: '功能可用性',
     avatar: img2,
     subtext:
-      'The quality of design is excellent, customizability and flexibility much better than the other products available in the market.I strongly recommend the AdminMart to other.',
+      '设计质量非常出色，定制性和灵活性都比市场上其他产品要好得多。我强烈推荐AdminMart给其他人。'
   },
   {
     title: 'Eminson Mendoza',
-    subtitle: 'Features avaibility',
+    subtitle: '功能可用性',
     avatar: img3,
     subtext:
-      'This template is great, UI-rich and up-to-date. Although it is pretty much complete, I suggest to improve a bit of documentation. Thanks & Highly recomended!',
+      '这个模板很棒，UI丰富且与时俱进。虽然已经相当完整，但我建议改进一下文档。感谢！强烈推荐！'
   },
   {
     title: 'Jenny Wilson',
-    subtitle: 'Features avaibility',
+    subtitle: '功能可用性',
     avatar: img1,
     subtext:
-      'The dashboard template from adminmart has helped me provide a clean and sleek look to my dashboard and made it look exactly the way I wanted it to, mainly without having.',
+      'adminmart的仪表板模板帮助我为我的仪表板提供了一个干净流畅的外观，使其完全符合我的期望。',
   },
   {
-    title: 'Minshan Cui',
-    subtitle: 'Features avaibility',
+    title: '崔民山',
+    subtitle: '功能可用性',
     avatar: img2,
     subtext:
-      'The quality of design is excellent, customizability and flexibility much better than the other products available in the market.I strongly recommend the AdminMart to other.',
+      '设计质量非常出色，定制性和灵活性都比市场上其他产品要好得多。我强烈推荐AdminMart给其他人。',
   },
   {
     title: 'Eminson Mendoza',
-    subtitle: 'Features avaibility',
+    subtitle: '功能可用性',
     avatar: img3,
     subtext:
-      'This template is great, UI-rich and up-to-date. Although it is pretty much complete, I suggest to improve a bit of documentation. Thanks & Highly recomended!',
+      '这个模板很棒，UI丰富且与时俱进。虽然已经相当完整，但我建议改进一下文档。感谢！强烈推荐！'
   },
 ];
 

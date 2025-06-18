@@ -169,7 +169,7 @@ const CurrentValue = () => {
       },
       height: 220,
     },
-    labels: ['Income', 'Current', 'Expance'],
+    labels: ['收入', '当前', '支出'],
     colors: [primary, primarylight, secondary],
     plotOptions: {
       pie: {
@@ -219,13 +219,13 @@ const CurrentValue = () => {
     <BlankCard>
       <CardContent sx={{ p: '30px' }}>
         <Stack direction="row" spacing={2} justifyContent="space-between">
-          <Typography variant="h5">Current Value</Typography>
+          <Typography variant="h5">当前价值</Typography>
           <Stack spacing={1} direction="row">
             <Button color="primary" variant="contained">
-              Buy
+              购买
             </Button>
             <Button color="primary" variant="outlined">
-              Sell
+              出售
             </Button>
           </Stack>
         </Stack>
@@ -245,7 +245,7 @@ const CurrentValue = () => {
                 </Box>
                 <Box mt={4}>
                   <Typography variant="h6" fontWeight={400} mb={1}>
-                    Income
+                    收入
                   </Typography>
                   <Stack direction="row" spacing={2} justifyContent="space-between">
                     <Typography variant="h4">$25,260</Typography>
@@ -271,7 +271,7 @@ const CurrentValue = () => {
                 </Box>
                 <Box mt={4}>
                   <Typography variant="h6" fontWeight={400} mb={1}>
-                    Expance
+                    支出
                   </Typography>
                   <Stack direction="row" spacing={2} justifyContent="space-between">
                     <Typography variant="h4">$12,260</Typography>
@@ -297,7 +297,7 @@ const CurrentValue = () => {
                 </Box>
                 <Box mt={4}>
                   <Typography variant="h6" fontWeight={400} mb={1}>
-                    Current Year
+                    当前年度
                   </Typography>
                   <Stack direction="row" spacing={2} justifyContent="space-between">
                     <Typography variant="h4">$98,260</Typography>

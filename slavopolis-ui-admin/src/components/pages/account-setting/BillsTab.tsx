@@ -27,13 +27,13 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Billing Information
+                账单信息
               </Typography>
 
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bname">
-                    Business Name*
+                    企业名称*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-bname"
@@ -44,7 +44,7 @@ const BillsTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bsector">
-                    Business Sector*
+                    企业行业*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-bsector"
@@ -55,25 +55,25 @@ const BillsTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-baddress">
-                    Business Address*
+                    企业地址*
                   </CustomFormLabel>
                   <CustomTextField id="text-baddress" value="" variant="outlined" fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bcy">
-                    Country*
+                    国家*
                   </CustomFormLabel>
                   <CustomTextField id="text-bcy" value="Romania" variant="outlined" fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-fname">
-                    First Name*
+                    名字*
                   </CustomFormLabel>
                   <CustomTextField id="text-fname" value="" variant="outlined" fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-lname">
-                    Last Name*
+                    姓氏*
                   </CustomFormLabel>
                   <CustomTextField id="text-lname" value="" variant="outlined" fullWidth />
                 </Grid>
@@ -87,13 +87,13 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" display="flex" mb={2}>
-                Current Plan :
+                当前套餐：
                 <Typography variant="h4" component="div" ml="2px" color="success.main">
                   Executive
                 </Typography>
               </Typography>
               <Typography color="textSecondary">
-                Thanks for being a premium member and supporting our development.
+                感谢您成为高级会员并支持我们的发展。
               </Typography>
 
               {/* list 1 */}
@@ -106,14 +106,14 @@ const BillsTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Current Plan
+                    当前套餐
                   </Typography>
                   <Typography variant="h6" mb={1}>
-                    750.000 Monthly Visits
+                    每月750,000次访问
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
-                  <Tooltip title="Add">
+                  <Tooltip title="添加">
                     <IconButton>
                       <IconCirclePlus size="22" />
                     </IconButton>
@@ -123,10 +123,10 @@ const BillsTab = () => {
 
               <Stack direction="row" spacing={2}>
                 <Button variant="contained" color="primary">
-                  Change Plan
+                  更改套餐
                 </Button>
                 <Button variant="outlined" color="error">
-                  Reset Plan
+                  重置套餐
                 </Button>
               </Stack>
             </CardContent>
@@ -138,9 +138,9 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Payment Method
+                支付方式
               </Typography>
-              <Typography color="textSecondary">On 26 December, 2023</Typography>
+              <Typography color="textSecondary">2023年12月26日</Typography>
               {/* list 1 */}
               <Stack direction="row" spacing={2} mt={4}>
                 <Avatar
@@ -158,7 +158,7 @@ const BillsTab = () => {
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
-                  <Tooltip title="Edit">
+                  <Tooltip title="编辑">
                     <IconButton>
                       <IconPencilMinus size="22" />
                     </IconButton>
@@ -166,11 +166,10 @@ const BillsTab = () => {
                 </Box>
               </Stack>
               <Typography color="textSecondary" my={1}>
-                If you updated your payment method, it will only be dislpayed here after your next
-                billing cycle.
+                如果您更新了支付方式，它将在下一个计费周期后才会显示在这里。
               </Typography>
               <Button variant="outlined" color="error">
-                Cancel Subscription
+                取消订阅
               </Button>
             </CardContent>
           </BlankCard>
@@ -179,10 +178,10 @@ const BillsTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: 'end' }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
-        </Button>
-        <Button size="large" variant="text" color="error">
-          Cancel
+          保存
+          </Button>
+          <Button size="large" variant="text" color="error">
+            取消
         </Button>
       </Stack>
     </>

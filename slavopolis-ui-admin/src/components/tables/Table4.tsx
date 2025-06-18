@@ -45,8 +45,8 @@ const rows: rowType[] = [
     status: 'active',
     avatar: img1,
     users: '4300',
-    title: 'Top Authors',
-    subtitle: 'Successful Fellas',
+    title: '顶级作者',
+    subtitle: '成功人士',
     teams: [
       { name: 'Angular', bgcolor: 'error.light', textcolor: 'error.main' },
       { name: 'PHP', bgcolor: 'primary.light', textcolor: 'primary.main' },
@@ -56,16 +56,16 @@ const rows: rowType[] = [
     status: 'offline',
     avatar: img2,
     users: '1200',
-    title: 'Popular Authors',
-    subtitle: 'Most Successful',
+    title: '热门作者',
+    subtitle: '最成功的',
     teams: [{ name: 'Bootstrap', bgcolor: 'primary.light', textcolor: 'primary.main' }],
   },
   {
     status: 'active',
     avatar: img3,
     users: '2000',
-    title: 'New Users',
-    subtitle: 'Awesome Users',
+    title: '新用户',
+    subtitle: '优秀用户',
     teams: [
       { name: 'Reactjs', bgcolor: 'success.light', textcolor: 'success.main' },
       { name: 'Angular', bgcolor: 'error.light', textcolor: 'error.main' },
@@ -75,16 +75,16 @@ const rows: rowType[] = [
     status: 'offline',
     avatar: img4,
     users: '1500',
-    title: 'Active Customers',
-    subtitle: 'Best Customers',
+    title: '活跃客户',
+    subtitle: '最佳客户',
     teams: [{ name: 'Bootstrap', bgcolor: 'primary.light', textcolor: 'primary.main' }],
   },
   {
     status: 'active',
     avatar: img5,
     users: '9500',
-    title: 'Bestseller Theme',
-    subtitle: 'Amazing Templates',
+    title: '畅销主题',
+    subtitle: '精彩模板',
     teams: [
       { name: 'Angular', bgcolor: 'error.light', textcolor: 'error.main' },
       { name: 'Reactjs', bgcolor: 'success.light', textcolor: 'success.main' },
@@ -109,13 +109,13 @@ const Table4 = () => {
           <TableHead>
             <TableRow>
               <TableCell>
-                <Typography variant="h6">Authors</Typography>
+                <Typography variant="h6">作者</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Courses</Typography>
+                <Typography variant="h6">课程</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Users</Typography>
+                <Typography variant="h6">用户</Typography>
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
@@ -159,7 +159,7 @@ const Table4 = () => {
                 </TableCell>
                 <TableCell>
                   <Typography variant="subtitle1" color="textSecondary">
-                    {row.users} Users
+                    {row.users} 用户
                   </Typography>
                 </TableCell>
                 <TableCell>
@@ -185,19 +185,19 @@ const Table4 = () => {
                       <ListItemIcon>
                         <IconPlus width={18} />
                       </ListItemIcon>
-                      Add
+                      添加
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconEdit width={18} />
                       </ListItemIcon>
-                      Edit
+                      编辑
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconTrash width={18} />
                       </ListItemIcon>
-                      Delete
+                      删除
                     </MenuItem>
                   </Menu>
                 </TableCell>

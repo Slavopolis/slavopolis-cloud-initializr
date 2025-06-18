@@ -1,14 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Typography, Avatar } from '@mui/material';
 import { IconArrowUpLeft } from '@tabler/icons-react';
+import Chart from 'react-apexcharts';
 
-import DashboardCard from '../../shared/DashboardCard.tsx';
-import icon1Img from 'src/assets/images/svgs/icon-master-card-2.svg';
 import { Props } from 'react-apexcharts';
+import icon1Img from 'src/assets/images/svgs/icon-master-card-2.svg';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 const MonthlyEarnings = () => {
   // chart color
@@ -61,7 +60,7 @@ const MonthlyEarnings = () => {
 
   return (
     <DashboardCard
-      title="Monthly Earnings"
+      title="每月收入"
       action={
         <Avatar
           variant="rounded"

@@ -1,26 +1,26 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React, { useState } from 'react';
 import {
-  IconApps,
-  IconCalendarEvent,
-  IconChevronDown,
-  IconChevronUp,
-  IconGridDots,
-  IconMail,
-  IconMessages,
-} from '@tabler/icons-react';
-import {
-  Box,
-  Typography,
-  Drawer,
-  IconButton,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Collapse,
+    Box,
+    Collapse,
+    Drawer,
+    IconButton,
+    List,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Typography,
 } from '@mui/material';
+import {
+    IconApps,
+    IconCalendarEvent,
+    IconChevronDown,
+    IconChevronUp,
+    IconGridDots,
+    IconMail,
+    IconMessages,
+} from '@tabler/icons-react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import AppLinks from './AppLinks.tsx';
@@ -52,7 +52,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Chats
+                聊天
               </Typography>
             </ListItemText>
           </ListItemButton>
@@ -62,7 +62,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Calendar
+                日历
               </Typography>
             </ListItemText>
           </ListItemButton>
@@ -72,7 +72,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Email
+                电子邮件
               </Typography>
             </ListItemText>
           </ListItemButton>
@@ -82,7 +82,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Apps
+                应用程序
               </Typography>
             </ListItemText>
             {open ? (
@@ -130,7 +130,7 @@ const MobileRightSidebar = () => {
       >
         <Box p={3} pb={0}>
           <Typography variant="h5" fontWeight={600}>
-            Navigation
+            导航
           </Typography>
         </Box>
 

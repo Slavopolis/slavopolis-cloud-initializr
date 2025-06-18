@@ -38,7 +38,7 @@ interface rowsType {
 
 const rows:rowsType[] = [
   {
-    status: 'active',
+    status: '活跃',
     avatar: img1,
     name: 'Olivia Rhye',
     project: 'Xtreme admin',
@@ -46,7 +46,7 @@ const rows:rowsType[] = [
     users: [{ img: img1 }, { img: img2 }],
   },
   {
-    status: 'cancel',
+    status: '已取消',
     avatar: img2,
     name: 'Barbara Steele',
     project: 'Adminpro admin',
@@ -62,7 +62,7 @@ const rows:rowsType[] = [
     users: [{ img: img3 }, { img: img2 }],
   },
   {
-    status: 'pending',
+    status: '待处理',
     avatar: img4,
     name: 'Evelyn Pope',
     project: 'Materialpro admin',
@@ -104,16 +104,16 @@ const Table2 = () => {
           <TableHead>
             <TableRow>
               <TableCell>
-                <Typography variant="h6">User</Typography>
+                <Typography variant="h6">用户</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Project Name</Typography>
+                <Typography variant="h6">项目名称</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Users</Typography>
+                <Typography variant="h6">用户</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Status</Typography>
+                <Typography variant="h6">状态</Typography>
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
@@ -151,9 +151,9 @@ const Table2 = () => {
                     label={row.status}
                     sx={{
                       backgroundColor:
-                        row.status == 'active'
+                        row.status == '活跃'
                           ? (theme) => theme.palette.primary.light
-                          : row.status == 'cancel'
+                          : row.status == '已取消'
                             ? (theme) => theme.palette.error.light
                             : (theme) => theme.palette.success.light,
                       color:
@@ -189,19 +189,19 @@ const Table2 = () => {
                       <ListItemIcon>
                         <IconPlus width={18} />
                       </ListItemIcon>
-                      Add
+                      添加
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconEdit width={18} />
                       </ListItemIcon>
-                      Edit
+                      编辑
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconTrash width={18} />
                       </ListItemIcon>
-                      Delete
+                      删除
                     </MenuItem>
                   </Menu>
                 </TableCell>

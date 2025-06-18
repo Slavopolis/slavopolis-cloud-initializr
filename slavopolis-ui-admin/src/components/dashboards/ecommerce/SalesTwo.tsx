@@ -126,7 +126,7 @@ const SalesTwo = () => {
 
         <Typography variant="h4">$16.5k<span><IconArrowUpRight width={18} color="#39B69A" /></span></Typography>
         <Typography variant="subtitle2" color="textSecondary">
-          Sales
+          销售额
         </Typography>
       </>
     </DashboardCard>

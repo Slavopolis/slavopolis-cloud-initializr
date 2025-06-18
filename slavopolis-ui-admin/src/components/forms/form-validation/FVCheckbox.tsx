@@ -7,7 +7,7 @@ import { Box, Button, Stack, FormHelperText } from '@mui/material';
 import CustomCheckbox from '../theme-elements/CustomCheckbox.tsx';
 
 const validationSchema = yup.object({
-  color: yup.array().min(1, 'At least one color is required'),
+  color: yup.array().min(1, '至少需要选择一种颜色'),
 });
 
 const FVCheckbox = () => {
@@ -47,7 +47,7 @@ const FVCheckbox = () => {
         </Box>
         <Stack direction="row" justifyContent="flex-end">
           <Button variant="contained" type="submit">
-            Submit
+            提交
           </Button>
         </Stack>
       </Stack>

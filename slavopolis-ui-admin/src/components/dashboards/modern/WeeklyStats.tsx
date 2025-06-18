@@ -1,12 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Typography, Avatar, Box } from '@mui/material';
-import DashboardCard from '../../shared/DashboardCard.tsx';
 import { IconGridDots } from '@tabler/icons-react';
-import { Props } from 'react-apexcharts';
+import React from 'react';
+import Chart, { Props } from 'react-apexcharts';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 interface Stat {
   title: string;
@@ -68,7 +67,7 @@ const WeeklyStats: React.FC = () => {
   };
   const seriescolumnchart = [
     {
-      name: 'Weekly Stats',
+      name: '每周统计',
       color: primary,
       data: [5, 15, 5, 10, 5],
     },
@@ -76,7 +75,7 @@ const WeeklyStats: React.FC = () => {
 
   const stats: Stat[] = [
     {
-      title: 'Top Sales',
+      title: '顶级销售',
       subtitle: 'Johnathan Doe',
       percent: '68',
       color: primary,
@@ -84,16 +83,16 @@ const WeeklyStats: React.FC = () => {
       icon: <IconGridDots width={18} />,
     },
     {
-      title: 'Best Seller',
-      subtitle: 'Footware',
+      title: '最佳卖家',
+      subtitle: '鞋类',
       percent: '45',
       color: secondary,
       lightcolor: secondarylight,
       icon: <IconGridDots width={18} />,
     },
     {
-      title: 'Most Commented',
-      subtitle: 'Fashionware',
+      title: '评论最多',
+      subtitle: '时尚用品',
       percent: '14',
       color: error,
       lightcolor: errorlight,
@@ -102,7 +101,7 @@ const WeeklyStats: React.FC = () => {
   ];
 
   return (
-    <DashboardCard title="Weekly Stats" subtitle="Average sales">
+    <DashboardCard title="每周统计" subtitle="平均销售额">
       <>
         <Stack mt={4}>
           <Chart

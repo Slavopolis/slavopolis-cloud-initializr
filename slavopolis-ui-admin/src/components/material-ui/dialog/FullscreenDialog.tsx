@@ -40,7 +40,7 @@ const FullscreenDialog = () => {
   return (
     <>
       <Button variant="contained" color="error" fullWidth onClick={handleClickOpen}>
-        Open Fullscreen Dialog
+        打开全屏对话框
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar sx={{ position: 'relative' }}>
@@ -49,20 +49,20 @@ const FullscreenDialog = () => {
               <IconX width={24} height={24} />
             </IconButton>
             <Typography ml={2} flex={1} variant="h6" component="div">
-              Sound
+              声音
             </Typography>
             <Button autoFocus color="inherit" onClick={handleClose}>
-              Save
+              保存
             </Button>
           </Toolbar>
         </AppBar>
         <List>
           <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
+            <ListItemText primary="手机铃声" secondary="Titania" />
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+            <ListItemText primary="默认通知铃声" secondary="Tethys" />
           </ListItem>
         </List>
       </Dialog>

@@ -33,7 +33,7 @@ const BannerContent = () => {
           <Typography color={'secondary'}>
             <IconRocket size={'21'} />
           </Typography>{' '}
-          Kick start your project with
+          开始你的项目
         </Typography>
 
         <Typography
@@ -48,11 +48,11 @@ const BannerContent = () => {
             },
           }}
         >
-          Most powerful &{' '}
+          最强大且{' '}
           <Typography component={'span'} variant="inherit" color={'primary'}>
-            Developer friendly
+            对开发者友好的
           </Typography>{' '}
-          React dashboard
+          React仪表盘
         </Typography>
       </motion.div>
       <Box pt={4} pb={3}>
@@ -67,8 +67,7 @@ const BannerContent = () => {
           }}
         >
           <Typography variant="h5" fontWeight={300}>
-            Modernize comes with light & dark color skins, well designed dashboards, applications
-            and pages.
+            Modernize提供明暗两种主题，精心设计的仪表盘、应用程序和页面。
           </Typography>
         </motion.div>
       </Box>
@@ -84,11 +83,11 @@ const BannerContent = () => {
       >
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} mt={3}>
           <StyledButton variant="contained" color="primary" href="/auth/login">
-            Login
+            登录
           </StyledButton>
 
           <StyledButton variant="outlined" href="/dashboards/modern">
-            Live Preview
+            在线预览
           </StyledButton>
         </Stack>
       </motion.div>

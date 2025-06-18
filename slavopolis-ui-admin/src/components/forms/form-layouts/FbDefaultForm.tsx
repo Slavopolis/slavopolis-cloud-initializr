@@ -17,19 +17,19 @@ interface numberType {
 const numbers: numberType[] = [
   {
     value: 'one',
-    label: 'One',
+    label: '一',
   },
   {
     value: 'two',
-    label: 'Two',
+    label: '二',
   },
   {
     value: 'three',
-    label: 'Three',
+    label: '三',
   },
   {
     value: 'four',
-    label: 'Four',
+    label: '四',
   },
 ];
 
@@ -57,7 +57,7 @@ const FbDefaultForm = () => {
   };
 
   return (
-    <ParentCard title="Default Form">
+    <ParentCard title="默认表单">
       <form>
         <CustomFormLabel
           sx={{
@@ -65,17 +65,17 @@ const FbDefaultForm = () => {
           }}
           htmlFor="default-value"
         >
-          Default Text
+          默认文本
         </CustomFormLabel>
         <CustomTextField
           id="default-value"
           variant="outlined"
-          defaultValue="George deo"
+          defaultValue="张三"
           fullWidth
         />
-        <CustomFormLabel htmlFor="email-text">Email</CustomFormLabel>
+        <CustomFormLabel htmlFor="email-text">邮箱</CustomFormLabel>
         <CustomTextField id="email-text" type="email" variant="outlined" fullWidth />
-        <CustomFormLabel htmlFor="default-outlined-password-input">Password</CustomFormLabel>
+        <CustomFormLabel htmlFor="default-outlined-password-input">密码</CustomFormLabel>
 
         <CustomTextField
           id="default-outlined-password-input"
@@ -84,7 +84,7 @@ const FbDefaultForm = () => {
           variant="outlined"
           fullWidth
         />
-        <CustomFormLabel htmlFor="outlined-multiline-static">Textarea</CustomFormLabel>
+        <CustomFormLabel htmlFor="outlined-multiline-static">文本区域</CustomFormLabel>
 
         <CustomTextField
           id="outlined-multiline-static"
@@ -93,11 +93,11 @@ const FbDefaultForm = () => {
           variant="outlined"
           fullWidth
         />
-        <CustomFormLabel htmlFor="readonly-text">Read Only</CustomFormLabel>
+        <CustomFormLabel htmlFor="readonly-text">只读</CustomFormLabel>
 
         <CustomTextField
           id="readonly-text"
-          defaultValue="Hello World"
+          defaultValue="你好世界"
           InputProps={{
             readOnly: true,
           }}
@@ -115,7 +115,7 @@ const FbDefaultForm = () => {
                   color="primary"
                 />
               }
-              label="Check this custom checkbox"
+              label="选中这个自定义复选框"
             />
             <FormControlLabel
               control={
@@ -126,7 +126,7 @@ const FbDefaultForm = () => {
                   color="primary"
                 />
               }
-              label="Check this custom checkbox"
+              label="选中这个自定义复选框"
             />
             <FormControlLabel
               control={
@@ -137,7 +137,7 @@ const FbDefaultForm = () => {
                   color="primary"
                 />
               }
-              label="Check this custom checkbox"
+              label="选中这个自定义复选框"
             />
           </Grid>
           <Grid item lg={4} md={6} sm={12}>
@@ -146,23 +146,23 @@ const FbDefaultForm = () => {
                 <FormControlLabel
                   value="radio1"
                   control={<CustomRadio />}
-                  label="Toggle this custom radio"
+                  label="切换这个自定义单选按钮"
                 />
                 <FormControlLabel
                   value="radio2"
                   control={<CustomRadio />}
-                  label="Toggle this custom radio"
+                  label="切换这个自定义单选按钮"
                 />
                 <FormControlLabel
                   value="radio3"
                   control={<CustomRadio />}
-                  label="Toggle this custom radio"
+                  label="切换这个自定义单选按钮"
                 />
               </RadioGroup>
             </FormControl>
           </Grid>
         </Grid>
-        <CustomFormLabel htmlFor="standard-select-number">Select</CustomFormLabel>
+        <CustomFormLabel htmlFor="standard-select-number">选择</CustomFormLabel>
         <CustomSelect
           fullWidth
           id="standard-select-number"
@@ -181,7 +181,7 @@ const FbDefaultForm = () => {
         </CustomSelect>
         <div>
           <Button color="primary" variant="contained">
-            Submit
+            提交
           </Button>
         </div>
       </form>

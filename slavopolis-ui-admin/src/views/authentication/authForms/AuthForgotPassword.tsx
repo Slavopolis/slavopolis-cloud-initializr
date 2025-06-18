@@ -10,14 +10,14 @@ import CustomFormLabel from '../../../components/forms/theme-elements/CustomForm
 const AuthForgotPassword = () => (
   <>
     <Stack mt={4} spacing={2}>
-      <CustomFormLabel htmlFor="reset-email">Email Adddress</CustomFormLabel>
+      <CustomFormLabel htmlFor="reset-email">邮箱地址</CustomFormLabel>
       <CustomTextField id="reset-email" variant="outlined" fullWidth />
 
       <Button color="primary" variant="contained" size="large" fullWidth component={Link} to="/">
-        Forgot Password
+        忘记密码
       </Button>
       <Button color="primary" size="large" fullWidth component={Link} to="/auth/login">
-        Back to Login
+        返回登录
       </Button>
     </Stack>
   </>

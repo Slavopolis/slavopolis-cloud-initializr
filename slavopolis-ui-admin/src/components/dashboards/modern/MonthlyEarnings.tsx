@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Fab, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Typography, Avatar, Fab } from '@mui/material';
 import { IconArrowDownRight, IconCurrencyDollar } from '@tabler/icons-react';
+import Chart from 'react-apexcharts';
 
-import DashboardCard from '../../shared/DashboardCard.tsx';
 import { Props } from 'react-apexcharts';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 
 const MonthlyEarnings = () => {
@@ -61,7 +60,7 @@ const MonthlyEarnings = () => {
 
   return (
     <DashboardCard
-      title="Monthly Earnings"
+      title="每月收入"
       action={
         <Fab color="secondary" size="medium">
           <IconCurrencyDollar width={24} />
@@ -82,9 +81,7 @@ const MonthlyEarnings = () => {
           <Typography variant="subtitle2" fontWeight="600">
             +9%
           </Typography>
-          <Typography variant="subtitle2" color="textSecondary">
-            last year
-          </Typography>
+          <Typography variant="subtitle2" color="textSecondary"> 去年 </Typography>
         </Stack>
       </>
     </DashboardCard>

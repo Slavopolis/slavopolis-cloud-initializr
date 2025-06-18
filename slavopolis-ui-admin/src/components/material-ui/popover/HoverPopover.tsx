@@ -6,7 +6,7 @@ import { Popover, Box, Typography } from '@mui/material';
 const HoverPopover = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handlePopoverOpen = (event: any) => {
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -24,7 +24,7 @@ const HoverPopover = () => {
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
       >
-        Hover with a Popover.
+        悬停显示弹出框
       </Typography>
       <Popover
         id="mouse-over-popover"
@@ -46,10 +46,10 @@ const HoverPopover = () => {
       >
         <Box p={2}>
           <Typography variant="h6" mb={1}>
-            Hover Popover
+            悬停弹出框
           </Typography>
           <Typography color="textSecondary">
-            The component is built on top of the Modal component.
+            此组件基于Modal组件构建。
           </Typography>
         </Box>
       </Popover>

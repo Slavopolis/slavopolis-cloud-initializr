@@ -1,22 +1,21 @@
-import { useState } from 'react';
 import {
-  IconButton,
-  Box,
-  Badge,
-  Menu,
-  MenuItem,
-  Avatar,
-  Typography,
-  Divider,
-  Button,
-  Stack
+    Avatar,
+    Badge,
+    Box,
+    Button,
+    Divider,
+    IconButton,
+    Menu,
+    MenuItem,
+    Stack,
+    Typography
 } from '@mui/material';
+import { useState } from 'react';
 import * as dropdownData from './data.ts';
 
 import { IconChecks, IconClock, IconMessageDots } from '@tabler/icons-react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
 
 const Message = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -129,7 +128,7 @@ const Message = () => {
         ))}
         <Box p={2} pb={1}>
           <Button variant="contained" color="primary" fullWidth>
-            See all messages
+            查看所有消息
           </Button>
         </Box>
       </Menu>

@@ -9,9 +9,9 @@ const ColorButtonGroup = () => (
       {/* item 1 */}
       <Stack spacing={1} direction={{ xs: 'column', sm: 'column', lg: 'row' }}>
         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
+          <Button>一</Button>
+          <Button>二</Button>
+          <Button>三</Button>
         </ButtonGroup>
 
         <ButtonGroup
@@ -19,16 +19,16 @@ const ColorButtonGroup = () => (
           color="secondary"
           aria-label="outlined primary button group"
         >
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
+          <Button>一</Button>
+          <Button>二</Button>
+          <Button>三</Button>
         </ButtonGroup>
 
       
         <ButtonGroup variant="contained" color="error" aria-label="outlined primary button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
+          <Button>一</Button>
+          <Button>二</Button>
+          <Button>三</Button>
         </ButtonGroup>
 
         <ButtonGroup
@@ -36,9 +36,9 @@ const ColorButtonGroup = () => (
           variant="contained"
           aria-label="outlined primary button group"
         >
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
+          <Button>一</Button>
+          <Button>二</Button>
+          <Button>三</Button>
         </ButtonGroup>
       </Stack>
       {/* item 2 */}

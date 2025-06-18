@@ -6,13 +6,13 @@ import { Button, Stack } from '@mui/material';
 const OutlinedSizeButton = () => (
   <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} alignItems="center" justifyContent="center">
     <Button variant="outlined" size="small">
-      Small
+      小
     </Button>
     <Button variant="outlined" size="medium">
-      Medium
+      中
     </Button>
     <Button variant="outlined" size="large">
-      Large
+      大
     </Button>
   </Stack>
 );

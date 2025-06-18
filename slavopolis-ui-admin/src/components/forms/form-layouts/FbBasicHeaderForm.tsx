@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+import { Alert, Box, Button, FormControl, FormControlLabel, Grid, MenuItem } from '@mui/material';
 import React from 'react';
-import { Box, FormControlLabel, Button, Grid, MenuItem, FormControl, Alert } from '@mui/material';
-import CustomTextField from '../theme-elements/CustomTextField.tsx';
-import CustomSelect from '../theme-elements/CustomSelect.tsx';
-import CustomRadio from '../theme-elements/CustomRadio.tsx';
-import CustomFormLabel from '../theme-elements/CustomFormLabel.tsx';
 import ParentCard from '../../shared/ParentCard.tsx';
+import CustomFormLabel from '../theme-elements/CustomFormLabel.tsx';
+import CustomRadio from '../theme-elements/CustomRadio.tsx';
+import CustomSelect from '../theme-elements/CustomSelect.tsx';
+import CustomTextField from '../theme-elements/CustomTextField.tsx';
 
 interface currencyType {
   value: string;
@@ -16,30 +16,30 @@ interface currencyType {
 const currencies: currencyType[] = [
   {
     value: 'female',
-    label: 'Female',
+    label: '女',
   },
   {
     value: 'male',
-    label: 'Male',
+    label: '男',
   },
   {
     value: 'other',
-    label: 'Other',
+    label: '其他',
   },
 ];
 
 const countries: currencyType[] = [
   {
     value: 'india',
-    label: 'India',
+    label: '印度',
   },
   {
     value: 'uk',
-    label: 'United Kingdom',
+    label: '英国',
   },
   {
     value: 'srilanka',
-    label: 'Srilanka',
+    label: '斯里兰卡',
   },
 ];
 
@@ -52,13 +52,13 @@ const FbBasicHeaderForm = () => {
 
   const [selectedValue, setSelectedValue] = React.useState('');
 
-  const handleChange3 = (event: any) => {
+  const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };
 
   const [country, setCountry] = React.useState('');
 
-  const handleChange4 = (event: any) => {
+  const handleChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCountry(event.target.value);
   };
 
@@ -68,7 +68,7 @@ const FbBasicHeaderForm = () => {
       {/* Basic Checkbox */}
       {/* ------------------------------------------------------------------------------------------------ */}
       <ParentCard
-        title="Basic Header Form"
+        title="基本表头表单"
         footer={
           <>
             <Button
@@ -78,22 +78,22 @@ const FbBasicHeaderForm = () => {
                 mr: 1,
               }}
             >
-              Cancel
+              取消
             </Button>
             <Button variant="contained" color="primary">
-              Submit
+              提交
             </Button>
           </>
         }
       >
         <>
-          <Alert severity="info">Person Info</Alert>
+          <Alert severity="info">个人信息</Alert>
           <form>
             <Grid container spacing={3} mb={3}>
               <Grid item lg={6} md={12} sm={12}>
-                <CustomFormLabel htmlFor="fname-text">First Name</CustomFormLabel>
+                <CustomFormLabel htmlFor="fname-text">名字</CustomFormLabel>
                 <CustomTextField id="fname-text" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="standard-select-currency">Select Gender</CustomFormLabel>
+                <CustomFormLabel htmlFor="standard-select-currency">选择性别</CustomFormLabel>
                 <CustomSelect
                   id="standard-select-currency"
                   value={currency}
@@ -107,7 +107,7 @@ const FbBasicHeaderForm = () => {
                     </MenuItem>
                   ))}
                 </CustomSelect>
-                <CustomFormLabel>Membership</CustomFormLabel>
+                <CustomFormLabel>会员资格</CustomFormLabel>
 
                 <FormControl
                   sx={{
@@ -119,7 +119,7 @@ const FbBasicHeaderForm = () => {
                       checked={selectedValue === 'a'}
                       onChange={handleChange3}
                       value="a"
-                      label="Free"
+                      label="免费"
                       name="radio-button-demo"
                       control={<CustomRadio />}
                      
@@ -128,7 +128,7 @@ const FbBasicHeaderForm = () => {
                       checked={selectedValue === 'b'}
                       onChange={handleChange3}
                       value="b"
-                      label="Paid"
+                      label="付费"
                       control={<CustomRadio />}
                       name="radio-button-demo"
                     />
@@ -136,10 +136,10 @@ const FbBasicHeaderForm = () => {
                 </FormControl>
               </Grid>
               <Grid item lg={6} md={12} sm={12}>
-                <CustomFormLabel htmlFor="lname-text">Last Name</CustomFormLabel>
+                <CustomFormLabel htmlFor="lname-text">姓氏</CustomFormLabel>
 
                 <CustomTextField id="lname-text" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="date">Date of Birth</CustomFormLabel>
+                <CustomFormLabel htmlFor="date">出生日期</CustomFormLabel>
 
                 <CustomTextField
                   id="date"
@@ -153,7 +153,7 @@ const FbBasicHeaderForm = () => {
               </Grid>
             </Grid>
           </form>
-          <Alert severity="info">Address</Alert>
+          <Alert severity="info">地址</Alert>
           <Grid container spacing={3} mb={3} mt={1}>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <CustomFormLabel
@@ -162,7 +162,7 @@ const FbBasicHeaderForm = () => {
                 }}
                 htmlFor="street-text"
               >
-                Street
+                街道
               </CustomFormLabel>
 
               <CustomTextField id="street-text" variant="outlined" fullWidth />
@@ -174,7 +174,7 @@ const FbBasicHeaderForm = () => {
                 }}
                 htmlFor="city-text"
               >
-                City
+                城市
               </CustomFormLabel>
               <CustomTextField id="city-text" variant="outlined" fullWidth />
             </Grid>
@@ -185,7 +185,7 @@ const FbBasicHeaderForm = () => {
                 }}
                 htmlFor="state-text"
               >
-                State
+                州/省
               </CustomFormLabel>
               <CustomTextField id="state-text" variant="outlined" fullWidth />
             </Grid>
@@ -196,7 +196,7 @@ const FbBasicHeaderForm = () => {
                 }}
                 htmlFor="post-text"
               >
-                Post Code
+                邮政编码
               </CustomFormLabel>
               <CustomTextField id="post-text" variant="outlined" fullWidth />
             </Grid>
@@ -207,7 +207,7 @@ const FbBasicHeaderForm = () => {
                 }}
                 htmlFor="country-text"
               >
-                Country
+                国家
               </CustomFormLabel>
               <CustomSelect
                 id="country-select"

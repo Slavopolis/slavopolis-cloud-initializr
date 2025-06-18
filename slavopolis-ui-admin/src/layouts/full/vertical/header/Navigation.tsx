@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import { Box, Menu, Typography, Button, Divider, Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Divider, Grid, Menu, Typography } from '@mui/material';
 import { IconChevronDown, IconHelp } from '@tabler/icons-react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AppLinks from './AppLinks.tsx';
 import QuickLinks from './QuickLinks.tsx';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
 
 const AppDD = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -35,7 +34,7 @@ const AppDD = () => {
           onClick={handleClick2}
           endIcon={<IconChevronDown size="15" style={{ marginLeft: '-5px', marginTop: '2px' }} />}
         >
-          Apps
+          应用程序
         </Button>
         {/* ------------------------------------------- */}
         {/* Message Dropdown */}
@@ -84,11 +83,11 @@ const AppDD = () => {
                       gap="4px"
                     >
                       <IconHelp width={24} />
-                      Frequently Asked Questions
+                      常见问题
                     </Typography>
                   </Link>
                   <Button variant="contained" color="primary">
-                    Check
+                    查看
                   </Button>
                 </Box>
               </Box>
@@ -103,13 +102,13 @@ const AppDD = () => {
         </Menu>
       </Box>
       <Button color="inherit" sx={{color: (theme) => theme.palette.text.secondary}} variant="text" to="/apps/chats" component={Link}>
-        Chat
+        聊天
       </Button>
       <Button color="inherit" sx={{color: (theme) => theme.palette.text.secondary}} variant="text" to="/apps/calendar" component={Link}>
-        Calendar
+        日历
       </Button>
       <Button color="inherit" sx={{color: (theme) => theme.palette.text.secondary}} variant="text" to="/apps/email" component={Link}>
-        Email
+        电子邮件    
       </Button>
     </>
   );

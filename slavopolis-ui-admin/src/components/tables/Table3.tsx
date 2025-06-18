@@ -37,25 +37,25 @@ interface rowsType {
 
 const rows: rowsType[] = [
   {
-    status: 'active',
+    status: '在线',
     avatar: img1,
     tag: 'rhye',
     cname: 'Olivia Rhye',
     email: 'olivia@ui.com',
     teams: [
-      { name: 'Design', bgcolor: 'primary.main' },
-      { name: 'Product', bgcolor: 'secondary.main' },
+      { name: '设计', bgcolor: 'primary.main' },
+      { name: '产品', bgcolor: 'secondary.main' },
     ],
   },
   {
-    status: 'offline',
+    status: '离线',
     avatar: img2,
     tag: 'steele',
     cname: 'Barbara Steele',
     email: 'steele@ui.com',
     teams: [
-      { name: 'Product', bgcolor: 'secondary.main' },
-      { name: 'Operations', bgcolor: 'error.main' },
+      { name: '产品', bgcolor: 'secondary.main' },
+      { name: '运营', bgcolor: 'error.main' },
     ],
   },
   {
@@ -65,8 +65,8 @@ const rows: rowsType[] = [
     cname: 'Leonard Gordon',
     email: 'olivia@ui.com',
     teams: [
-      { name: 'Finance', bgcolor: 'primary.main' },
-      { name: 'Customer Success', bgcolor: 'success.main' },
+      { name: '财务', bgcolor: 'primary.main' },
+      { name: '客户成功', bgcolor: 'success.main' },
     ],
   },
   {
@@ -76,8 +76,8 @@ const rows: rowsType[] = [
     cname: 'Evelyn Pope',
     email: 'steele@ui.com',
     teams: [
-      { name: 'Operations', bgcolor: 'error.main' },
-      { name: 'Design', bgcolor: 'primary.main' },
+      { name: '运营', bgcolor: 'error.main' },
+      { name: '设计', bgcolor: 'primary.main' },
     ],
   },
   {
@@ -86,7 +86,7 @@ const rows: rowsType[] = [
     tag: 'garza',
     cname: 'Tommy Garza',
     email: 'olivia@ui.com',
-    teams: [{ name: 'Product', bgcolor: 'secondary.main' }],
+    teams: [{ name: '产品', bgcolor: 'secondary.main' }],
   },
   {
     status: 'active',
@@ -94,7 +94,7 @@ const rows: rowsType[] = [
     tag: 'vasquez',
     cname: 'Isabel Vasquez',
     email: 'steele@ui.com',
-    teams: [{ name: 'Customer Success', bgcolor: 'success.main' }],
+    teams: [{ name: '客户成功', bgcolor: 'success.main' }],
   },
 ];
 
@@ -115,16 +115,16 @@ const Table3 = () => {
           <TableHead>
             <TableRow>
               <TableCell>
-                <Typography variant="h6">Customer</Typography>
+                <Typography variant="h6">客户</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Status</Typography>
+                <Typography variant="h6">状态</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Email Address</Typography>
+                <Typography variant="h6">邮箱地址</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Teams</Typography>
+                <Typography variant="h6">团队</Typography>
               </TableCell>
 
               <TableCell></TableCell>
@@ -149,11 +149,11 @@ const Table3 = () => {
                     label={row.status}
                     size="small"
                     icon={
-                      row.status == 'active' ? <IconCircle width={14} /> : <IconClock width={14} />
+                      row.status == '在线' ? <IconCircle width={14} /> : <IconClock width={14} />
                     }
                     sx={{
                       backgroundColor:
-                        row.status == 'active'
+                        row.status == '在线'
                           ? (theme) => theme.palette.success.light
                           : (theme) => theme.palette.grey[100],
                       color:
@@ -206,19 +206,19 @@ const Table3 = () => {
                       <ListItemIcon>
                         <IconPlus width={18} />
                       </ListItemIcon>
-                      Add
+                      添加
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconEdit width={18} />
                       </ListItemIcon>
-                      Edit
+                      编辑
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
                       <ListItemIcon>
                         <IconTrash width={18} />
                       </ListItemIcon>
-                      Delete
+                      删除
                     </MenuItem>
                   </Menu>
                 </TableCell>

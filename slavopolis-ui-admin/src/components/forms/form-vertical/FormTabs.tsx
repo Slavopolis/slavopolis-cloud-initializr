@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import React from 'react';
-import { Box, Button, Grid, IconButton, InputAdornment, MenuItem, Stack, Tab } from '@mui/material';
+import { Box, Button, Grid, IconButton, InputAdornment, MenuItem, Stack, Tab, Theme } from '@mui/material';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
@@ -94,12 +94,12 @@ const FormTabs = () => {
       {/* ------------------------------------------------------------------------------------------------ */}
       <BlankCard>
         <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: (theme: any) => theme.palette.divider }}>
+          <Box sx={{ borderBottom: 1, borderColor: (theme: Theme) => theme.palette.divider }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example" variant="scrollable"
               scrollButtons="auto">
-              <Tab label="Personal Info" value="1" />
-              <Tab label="Account Details" value="2" />
-              <Tab label="Social Links" value="3" />
+              <Tab label="个人信息" value="1" />
+              <Tab label="账户详情" value="2" />
+              <Tab label="社交链接" value="3" />
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -183,10 +183,10 @@ const FormTabs = () => {
               <Grid item xs={12}>
                 <Stack direction="row" spacing={2}>
                   <Button variant="contained" color="primary">
-                    Submit
+                    提交
                   </Button>
                   <Button variant="text" color="error">
-                    Cancel
+                    取消
                   </Button>
                 </Stack>
               </Grid>

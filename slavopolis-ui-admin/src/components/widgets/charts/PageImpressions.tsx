@@ -1,12 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, CardContent, Grid, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { CardContent, Typography, Avatar, Grid, Stack } from '@mui/material';
-import BlankCard from '../../shared/BlankCard.tsx';
 import { IconArrowDownRight } from '@tabler/icons-react';
-import { Props } from 'react-apexcharts';
+import Chart, { Props } from 'react-apexcharts';
+import BlankCard from '../../shared/BlankCard.tsx';
 
 const PageImpressions = () => {
   // chart color
@@ -80,14 +78,14 @@ const PageImpressions = () => {
   return (
     <BlankCard>
       <CardContent sx={{ p: '30px' }}>
-        <Typography variant="h5">Page Impressions</Typography>
+        <Typography variant="h5">页面展示次数</Typography>
 
         <Grid container spacing={3}>
           <Grid item xs={5}>
             
             <Typography variant="h4" mt={3} fontWeight={600}>$456,120</Typography>
             <Typography variant="subtitle2" fontSize="12px" color="textSecondary">
-              (Change Yesterday)
+              (昨日变化)
             </Typography>
             <Stack direction="row" spacing={1} mt={1} alignItems="center">
               <Avatar sx={{ bgcolor: 'error.light', width: 20, height: 20 }}>

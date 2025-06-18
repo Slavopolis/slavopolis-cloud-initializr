@@ -6,27 +6,27 @@ import { IconBell } from '@tabler/icons-react';
 
 const IconColorButtons = () => (
   <Stack spacing={1} direction="row" justifyContent="center">
-    <Tooltip title="Bell">
+    <Tooltip title="铃铛">
       <IconButton color="primary" aria-label="primary-bell">
         <IconBell width={18} />
       </IconButton>
     </Tooltip>
-    <Tooltip title="Bell">
+    <Tooltip title="铃铛">
       <IconButton color="secondary" aria-label="secondary-bell">
         <IconBell width={18} />
       </IconButton>
     </Tooltip>
-    <Tooltip title="Bell">
+    <Tooltip title="铃铛">
       <IconButton color="error" aria-label="error-bell">
         <IconBell width={18} />
       </IconButton>
     </Tooltip>
-    <Tooltip title="Bell">
+    <Tooltip title="铃铛">
       <IconButton color="warning" aria-label="warning-bell">
         <IconBell width={18} />
       </IconButton>
     </Tooltip>
-    <Tooltip title="Bell">
+    <Tooltip title="铃铛">
       <IconButton color="success" aria-label="success-bell">
         <IconBell width={18} />
       </IconButton>

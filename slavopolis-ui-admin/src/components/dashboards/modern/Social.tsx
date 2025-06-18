@@ -23,9 +23,9 @@ const Social = () => {
             sx={{ borderRadius: '8px', width: 70, height: 70 }}
           />
           <Box>
-            <Typography variant="h5">Super awesome, Vue coming soon!</Typography>
+            <Typography variant="h5">超赞，Vue即将推出！</Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              22 March, 2023
+              2023年3月22日
             </Typography>
           </Box>
         </Stack>

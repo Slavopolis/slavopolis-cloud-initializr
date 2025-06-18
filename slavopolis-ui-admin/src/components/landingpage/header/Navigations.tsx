@@ -51,7 +51,7 @@ const Navigations = () => {
                 onMouseEnter={handleOpen} onMouseLeave={handleClose}
                 endIcon={<IconChevronDown size="15" style={{ marginLeft: '-5px', marginTop: '2px' }} />}
             >
-                Demos
+                演示
             </StyledButton>
             {open && (
                 <Paper
@@ -79,7 +79,7 @@ const Navigations = () => {
                     }}
                     endIcon={<IconChevronDown size="15" style={{ marginLeft: '-5px', marginTop: '2px' }} />}
                 >
-                    Pages
+                    页面
                 </StyledButton>
                 {open2 && (
                     <Paper
@@ -111,13 +111,13 @@ const Navigations = () => {
                 )}
             </Box>
             <StyledButton color="inherit" variant="text" href="https://demos.adminmart.com/premium/react/modernize-react/docs/index.html">
-                Documentation
+                文档
             </StyledButton>
             <StyledButton color="inherit" variant="text" href="https://adminmart.com/support/">
-                Support
+                支持
             </StyledButton>
             <Button color="primary" target="_blank" variant="contained" href="#">
-                Buy Now
+                立即购买
             </Button>
         </>
     );

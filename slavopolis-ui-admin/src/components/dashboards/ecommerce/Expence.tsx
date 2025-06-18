@@ -1,10 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
-import { useTheme } from '@mui/material/styles';
 import { Typography } from '@mui/material';
-import { Props } from 'react-apexcharts';
+import { useTheme } from '@mui/material/styles';
+import Chart, { Props } from 'react-apexcharts';
 
 import DashboardCard from '../../shared/DashboardCard.tsx';
 
@@ -26,7 +24,7 @@ const Expence = () => {
       },
       height: 120,
     },
-    labels: ["Profit", "Revenue", "Expance"],
+    labels: ["利润", "收入", "支出"],
     colors: [primary, error, secondary],
     plotOptions: {
       pie: {
@@ -58,7 +56,7 @@ const Expence = () => {
       <>
         <Typography variant="h4">$10,230</Typography>
         <Typography variant="subtitle2" color="textSecondary" mb={2}>
-          Expense
+          支出
         </Typography>
         <Chart
           options={optionsexpencechart}

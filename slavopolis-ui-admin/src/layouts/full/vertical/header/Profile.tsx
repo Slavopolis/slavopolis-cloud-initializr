@@ -1,23 +1,23 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
-  Box,
-  Menu,
-  Avatar,
-  Typography,
-  Divider,
-  Button,
-  IconButton,
-  Stack
+    Avatar,
+    Box,
+    Button,
+    Divider,
+    IconButton,
+    Menu,
+    Stack,
+    Typography
 } from '@mui/material';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as dropdownData from './data.ts';
 
 import { IconMail } from '@tabler/icons-react';
 
-import ProfileImg from 'src/assets/images/profile/user-1.jpg';
 import unlimitedImg from 'src/assets/images/backgrounds/unlimited-bg.png';
+import ProfileImg from 'src/assets/images/profile/user-1.jpg';
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -75,10 +75,10 @@ const Profile = () => {
           <Avatar src={ProfileImg} alt={ProfileImg} sx={{ width: 95, height: 95 }} />
           <Box>
             <Typography variant="subtitle2" color="textPrimary" fontWeight={600}>
-              Mathew Anderson
+              马修·安德森
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-            Designer
+            设计师
             </Typography>
             <Typography
               variant="subtitle2"
@@ -150,18 +150,18 @@ const Profile = () => {
             <Box display="flex" justifyContent="space-between">
               <Box>
                 <Typography variant="h5" mb={2}>
-                  Unlimited <br />
-                  Access
+                  无限 <br />
+                  访问
                 </Typography>
                 <Button variant="contained" color="primary">
-                  Upgrade
+                  升级
                 </Button>
               </Box>
               <img src={unlimitedImg} alt="unlimited" className="signup-bg"></img>
             </Box>
           </Box>
           <Button to="/auth/login" variant="outlined" color="primary" component={Link} fullWidth>
-            Logout
+            登出
           </Button>
         </Box>
       </Menu>

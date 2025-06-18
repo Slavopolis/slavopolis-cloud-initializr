@@ -6,19 +6,19 @@ import { Button, ButtonGroup, Stack } from '@mui/material';
 const TextButtonGroup = () => (
   <Stack spacing={1} direction="column" justifyContent="center">
     <ButtonGroup variant="text" aria-label="text button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
     <ButtonGroup color="secondary" variant="text" aria-label="text button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
     <ButtonGroup color="error" variant="text" aria-label="text button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
   </Stack>
 );

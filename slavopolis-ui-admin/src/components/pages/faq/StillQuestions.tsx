@@ -21,14 +21,14 @@ const StillQuestions = () => {
           </Stack>
 
           <Typography variant="h3" textAlign="center" mt={3} mb={1}>
-            Still have questions
+            还有问题？
           </Typography>
           <Typography variant="h6" fontWeight={400} lineHeight="23px" color="textSecondary" textAlign="center">
-            Can't find the answer your're looking for ? Please chat to our friendly team.
+            找不到您要找的答案？请与我们友好的团队聊天。
           </Typography>
           <Box textAlign="center" mt={3}>
             <Button variant="contained" color="primary">
-              Chat with us
+              与我们聊天
             </Button>
           </Box>
         </Box>

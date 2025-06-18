@@ -1,21 +1,20 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
 import {
-  Box,
-  Typography,
-  FormGroup,
-  FormControlLabel,
-  Button,
-  Stack,
-  Divider,
+    Box,
+    Button,
+    Divider,
+    FormControlLabel,
+    FormGroup,
+    Stack,
+    Typography,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import { loginType } from 'src/types/auth/auth';
 import CustomCheckbox from '../../../components/forms/theme-elements/CustomCheckbox.tsx';
-import CustomTextField from '../../../components/forms/theme-elements/CustomTextField.tsx';
 import CustomFormLabel from '../../../components/forms/theme-elements/CustomFormLabel.tsx';
+import CustomTextField from '../../../components/forms/theme-elements/CustomTextField.tsx';
 
 import AuthSocialButtons from './AuthSocialButtons.tsx';
 
@@ -49,18 +48,18 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
 
     <Stack>
       <Box>
-        <CustomFormLabel htmlFor="username">Username</CustomFormLabel>
+        <CustomFormLabel htmlFor="username">用户名</CustomFormLabel>
         <CustomTextField id="username" variant="outlined" fullWidth />
       </Box>
       <Box>
-        <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
+        <CustomFormLabel htmlFor="password">密码</CustomFormLabel>
         <CustomTextField id="password" type="password" variant="outlined" fullWidth />
       </Box>
       <Stack justifyContent="space-between" direction="row" alignItems="center" my={2}>
         <FormGroup>
           <FormControlLabel
             control={<CustomCheckbox defaultChecked />}
-            label="Remeber this Device"
+            label="记住我"
           />
         </FormGroup>
         <Typography
@@ -72,7 +71,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
             color: 'primary.main',
           }}
         >
-          Forgot Password ?
+          忘记密码？
         </Typography>
       </Stack>
     </Stack>
@@ -86,7 +85,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         to="/"
         type="submit"
       >
-        Sign In
+        登录
       </Button>
     </Box>
     {subtitle}

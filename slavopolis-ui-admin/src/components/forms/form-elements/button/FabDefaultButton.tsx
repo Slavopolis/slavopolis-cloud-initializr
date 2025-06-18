@@ -6,12 +6,12 @@ import { IconClipboard, IconPlus, IconSend } from '@tabler/icons-react';
 
 const FabDefaultButton = () => (
   <Stack spacing={1} direction="row" justifyContent="center">
-    <Tooltip title="Send">
+    <Tooltip title="发送">
       <Fab color="primary" aria-label="send">
         <IconSend width={20} />
       </Fab>
     </Tooltip>
-    <Tooltip title="Add">
+    <Tooltip title="添加">
       <Fab color="secondary" aria-label="plus">
         <IconPlus width={20} />
       </Fab>

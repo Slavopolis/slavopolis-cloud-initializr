@@ -1,14 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
+import { Avatar, Box, Button, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Typography, Avatar, Box, Button } from '@mui/material';
+import React from 'react';
 import DashboardCard from '../../shared/DashboardCard.tsx';
 
-import icon1Img from "src/assets/images/svgs/icon-paypal.svg"
-import icon2Img from "src/assets/images/svgs/icon-office-bag.svg"
-import icon3Img from "src/assets/images/svgs/icon-master-card.svg"
-import icon4Img from "src/assets/images/svgs/icon-pie.svg"
+import icon3Img from "src/assets/images/svgs/icon-master-card.svg";
+import icon2Img from "src/assets/images/svgs/icon-office-bag.svg";
+import icon1Img from "src/assets/images/svgs/icon-paypal.svg";
+import icon4Img from "src/assets/images/svgs/icon-pie.svg";
 
 
 interface statType {
@@ -36,32 +36,32 @@ interface statType {
 
     const stats: statType[] = [
     {
-      title: 'Paypal',
-      subtitle: 'Big Brands',
+      title: '支付宝',
+      subtitle: '大品牌',
       price: 6235,
       color: primary,
       lightcolor: primarylight,
       icon: icon1Img,
     },
     {
-      title: 'Wallet',
-      subtitle: 'Bill payment',
+      title: '钱包',
+      subtitle: '账单支付',
       price: 345,
       color: secondary,
       lightcolor: secondarylight,
       icon: icon2Img,
     },
     {
-      title: 'Credit Card',
-      subtitle: 'Money reversed',
+      title: '信用卡',
+      subtitle: '资金返还',
       price: 2235,
       color: warning,
       lightcolor: warninglight,
       icon: icon3Img,
     },
     {
-      title: 'Refund',
-      subtitle: 'Bill Payment',
+      title: '退款',
+      subtitle: '账单支付',
       price: 32,
       color: error,
       lightcolor: errorlight,
@@ -70,7 +70,7 @@ interface statType {
   ];
 
   return (
-    <DashboardCard title="Payment Gateways" subtitle="Platform For Income">
+    <DashboardCard title="支付网关" subtitle="收入平台">
       <>
         <Stack spacing={3} mt={5}>
           {stats.map((stat, i) => (
@@ -109,7 +109,7 @@ interface statType {
             </Stack>
           ))}
           <Button variant="outlined" color="primary" sx={{mt: "40px !important"}}>
-            View all transactions
+            查看所有交易
           </Button>
         </Stack>
       </>

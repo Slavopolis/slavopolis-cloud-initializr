@@ -5,11 +5,11 @@ import { Button, Stack } from '@mui/material';
 
 const TextColorButtons = () => (
   <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
-    <Button color="primary">Primary</Button>
-    <Button color="secondary">Secondary</Button>
-    <Button color="error">Error</Button>
-    <Button color="warning">Warning</Button>
-    <Button color="success">Success</Button>
+    <Button color="primary">主要</Button>
+    <Button color="secondary">次要</Button>
+    <Button color="error">错误</Button>
+    <Button color="warning">警告</Button>
+    <Button color="success">成功</Button>
   </Stack>
 );
 

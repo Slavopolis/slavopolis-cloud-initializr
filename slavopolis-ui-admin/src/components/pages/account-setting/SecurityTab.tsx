@@ -25,15 +25,14 @@ const SecurityTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Two-factor Authentication
+                双重认证
               </Typography>
               <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis sapiente sunt
-                  earum officiis laboriosam ut.
+                  启用双重认证可以为您的账户提供额外的安全保护。
                 </Typography>
                 <Button variant="contained" color="primary">
-                  Enable
+                  启用
                 </Button>
               </Stack>
 
@@ -42,14 +41,14 @@ const SecurityTab = () => {
               {/* list 1 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">Authentication App</Typography>
+                  <Typography variant="h6">认证应用</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Google auth app
+                    谷歌认证器
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    设置
                   </Button>
                 </Box>
               </Stack>
@@ -57,14 +56,14 @@ const SecurityTab = () => {
               {/* list 2 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">Another e-mail</Typography>
+                  <Typography variant="h6">备用邮箱</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    E-mail to send verification link
+                    用于发送验证链接的邮箱
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    设置
                   </Button>
                 </Box>
               </Stack>
@@ -72,14 +71,14 @@ const SecurityTab = () => {
               {/* list 3 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">SMS Recovery</Typography>
+                  <Typography variant="h6">短信恢复</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Your phone number or something
+                    您的手机号码
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    设置
                   </Button>
                 </Box>
               </Stack>
@@ -97,13 +96,13 @@ const SecurityTab = () => {
               </Avatar>
 
               <Typography variant="h5" mt={2}>
-                Devices
+                设备
               </Typography>
               <Typography color="textSecondary" mt={1} mb={2}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit Rem.
+                管理您当前登录的所有设备。
               </Typography>
               <Button variant="contained" color="primary">
-                Sign out from all devices
+                从所有设备退出
               </Button>
 
               {/* list 1 */}
@@ -113,7 +112,7 @@ const SecurityTab = () => {
                 <Box>
                   <Typography variant="h6">iPhone 14</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    London UK, Oct 23 at 1:15 AM
+                    英国伦敦，10月23日 凌晨1:15
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -130,7 +129,7 @@ const SecurityTab = () => {
                 <Box>
                   <Typography variant="h6">Macbook Air </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Gujarat India, Oct 24 at 3:15 AM
+                    印度古吉拉特，10月24日 凌晨3:15
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -141,7 +140,7 @@ const SecurityTab = () => {
               </Stack>
               <Stack>
                 <Button variant="text" color="primary">
-                  Need Help ?
+                  需要帮助？
                 </Button>
               </Stack>
             </CardContent>
@@ -151,10 +150,10 @@ const SecurityTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: 'end' }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
-        </Button>
-        <Button size="large" variant="text" color="error">
-          Cancel
+          保存
+          </Button>
+          <Button size="large" variant="text" color="error">
+            取消
         </Button>
       </Stack>
     </>

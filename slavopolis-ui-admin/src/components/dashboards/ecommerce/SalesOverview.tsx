@@ -28,7 +28,7 @@ const SalesOverview = () => {
       },
       height: 275,
     },
-    labels: ["Profit", "Revenue", "Expance"],
+    labels: ["利润", "收入", "支出"],
     colors: [primary, primarylight, secondary],
     plotOptions: {
       pie: {
@@ -74,7 +74,7 @@ const SalesOverview = () => {
   const seriescolumnchart = [55, 55, 55];
 
   return (
-    <DashboardCard title="Sales Overview" subtitle="Every month">
+    <DashboardCard title="销售概览" subtitle="每月数据">
       <>
         <Box mt={3}>
           <Chart
@@ -109,7 +109,7 @@ const SalesOverview = () => {
                 $23,450
               </Typography>
               <Typography variant="subtitle2" color="textSecondary">
-                Profit
+                利润
               </Typography>
             </Box>
           </Stack>
@@ -136,7 +136,7 @@ const SalesOverview = () => {
                 $23,450
               </Typography>
               <Typography variant="subtitle2" color="textSecondary">
-                Expance
+                支出
               </Typography>
             </Box>
           </Stack>

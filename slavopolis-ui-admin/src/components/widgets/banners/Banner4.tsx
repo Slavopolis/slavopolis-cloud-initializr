@@ -13,15 +13,15 @@ const Banner4 = () => {
           <img src={oopsBg} alt="star" width={200} />
 
           <Typography variant="h5" mt={3}>
-            Oops something went wrong!
+            哎呀，出了点问题！
           </Typography>
           <Typography variant="subtitle1" color="textSecondary" mt={1} mb={2}>
-            Trying again to bypasses these
-            <br /> temporary error.
+            正在重试以绕过这些
+            <br /> 临时错误。
           </Typography>
 
           <Button color="error" variant="contained" size="large">
-            Retry
+            重试
           </Button>
         </Box>
       </CardContent>

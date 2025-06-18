@@ -21,8 +21,8 @@ interface ecocardType {
 
 const ecoCard: ecocardType[] = [
   {
-    title: 'Boat Headphone',
-    subheader: 'September 14, 2023',
+    title: '船牌耳机',
+    subheader: '2023年9月14日',
     photo: img1,
     salesPrice: 375,
     price: 285,
@@ -30,23 +30,23 @@ const ecoCard: ecocardType[] = [
   },
   {
     title: 'MacBook Air Pro',
-    subheader: 'September 14, 2023',
+    subheader: '2023年9月14日',
     photo: img2,
     salesPrice: 650,
     price: 900,
     rating: 5,
   },
   {
-    title: 'Red Valvet Dress',
-    subheader: 'September 14, 2023',
+    title: '红色丝绒连衣裙',
+    subheader: '2023年9月14日',
     photo: img3,
     salesPrice: 150,
     price: 200,
     rating: 3,
   },
   {
-    title: 'Cute Soft Teddybear',
-    subheader: 'September 14, 2023',
+    title: '可爱柔软泰迪熊',
+    subheader: '2023年9月14日',
     photo: img4,
     salesPrice: 285,
     price: 345,
@@ -77,7 +77,7 @@ const EcommerceCard = () => {
                 <img src={product.photo} alt="img" width="100%" />
               )}
             </Typography>
-            <Tooltip title="Add To Cart">
+            <Tooltip title="添加到购物车">
               <Fab
                 size="small"
                 color="primary"

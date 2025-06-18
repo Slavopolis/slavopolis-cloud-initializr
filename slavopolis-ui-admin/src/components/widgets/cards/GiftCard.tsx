@@ -55,7 +55,7 @@ const GiftCard = () => {
               )}
               <Stack spacing={2} mt={3}>
                 <Button size="large" variant="contained" color="primary">
-                  Gift to Friend ($50.00)
+                  赠送给好友 (¥50.00)
                 </Button>
               </Stack>
             </CardContent>

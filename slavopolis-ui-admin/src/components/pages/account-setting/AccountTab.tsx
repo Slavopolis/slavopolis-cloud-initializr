@@ -21,19 +21,19 @@ interface locationType {
 const locations: locationType[] = [
   {
     value: 'us',
-    label: 'United States',
+    label: '美国',
   },
   {
     value: 'uk',
-    label: 'United Kingdom',
+    label: '英国',
   },
   {
     value: 'india',
-    label: 'India',
+    label: '印度',
   },
   {
     value: 'russia',
-    label: 'Russia',
+    label: '俄罗斯',
   },
 ];
 
@@ -41,19 +41,19 @@ const locations: locationType[] = [
 const currencies: locationType[] = [
   {
     value: 'us',
-    label: 'US Dollar ($)',
+    label: '美元 ($)',
   },
   {
     value: 'uk',
-    label: 'United Kingdom (Pound)',
+    label: '英镑',
   },
   {
     value: 'india',
-    label: 'India (INR)',
+    label: '印度卢比 (INR)',
   },
   {
     value: 'russia',
-    label: 'Russia (Ruble)',
+    label: '俄罗斯卢布',
   },
 ];
 
@@ -78,9 +78,9 @@ const AccountTab = () => {
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Change Profile
+              更改个人资料
             </Typography>
-            <Typography color="textSecondary" mb={3}>Change your profile picture from here</Typography>
+            <Typography color="textSecondary" mb={3}>在此更改您的个人资料照片</Typography>
             <Box textAlign="center" display="flex" justifyContent="center">
               <Box>
                 <Avatar
@@ -90,15 +90,15 @@ const AccountTab = () => {
                 />
                 <Stack direction="row" justifyContent="center" spacing={2} my={3}>
                   <Button variant="contained" color="primary" component="label">
-                    Upload
+                    上传
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
                   <Button variant="outlined" color="error">
-                    Reset
+                    重置
                   </Button>
                 </Stack>
                 <Typography variant="subtitle1" color="textSecondary" mb={4}>
-                  Allowed JPG, GIF or PNG. Max size of 800K
+                  允许JPG、GIF或PNG格式。最大文件大小800K
                 </Typography>
               </Box>
             </Box>
@@ -110,9 +110,9 @@ const AccountTab = () => {
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Change Password
+              更改密码
             </Typography>
-            <Typography color="textSecondary" mb={3}>To change your password please confirm here</Typography>
+            <Typography color="textSecondary" mb={3}>请在此确认更改您的密码</Typography>
             <form>
               <CustomFormLabel
                 sx={{
@@ -120,7 +120,7 @@ const AccountTab = () => {
                 }}
                 htmlFor="text-cpwd"
               >
-                Current Password
+                当前密码
               </CustomFormLabel>
               <CustomTextField
                 id="text-cpwd"
@@ -130,7 +130,7 @@ const AccountTab = () => {
                 type="password"
               />
               {/* 2 */}
-              <CustomFormLabel htmlFor="text-npwd">New Password</CustomFormLabel>
+              <CustomFormLabel htmlFor="text-npwd">新密码</CustomFormLabel>
               <CustomTextField
                 id="text-npwd"
                 value="MathewAnderson"
@@ -139,7 +139,7 @@ const AccountTab = () => {
                 type="password"
               />
               {/* 3 */}
-              <CustomFormLabel htmlFor="text-conpwd">Confirm Password</CustomFormLabel>
+              <CustomFormLabel htmlFor="text-conpwd">确认密码</CustomFormLabel>
               <CustomTextField
                 id="text-conpwd"
                 value="MathewAnderson"
@@ -156,9 +156,9 @@ const AccountTab = () => {
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Personal Details
+              个人详细信息
             </Typography>
-            <Typography color="textSecondary" mb={3}>To change your personal detail , edit and save from here</Typography>
+            <Typography color="textSecondary" mb={3}>在此编辑和保存您的个人详细信息</Typography>
             <form>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
@@ -168,7 +168,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-name"
                   >
-                    Your Name
+                    您的姓名
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-name"
@@ -185,7 +185,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-store-name"
                   >
-                    Store Name
+                    商店名称
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-store-name"
@@ -202,7 +202,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-location"
                   >
-                    Location
+                    位置
                   </CustomFormLabel>
                   <CustomSelect
                     fullWidth
@@ -226,7 +226,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-currency"
                   >
-                    Currency
+                    货币
                   </CustomFormLabel>
                   <CustomSelect
                     fullWidth
@@ -267,7 +267,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-phone"
                   >
-                    Phone
+                    电话
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-phone"
@@ -284,7 +284,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-address"
                   >
-                    Address
+                    地址
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-address"
@@ -299,10 +299,10 @@ const AccountTab = () => {
         </BlankCard>
         <Stack direction="row" spacing={2} sx={{ justifyContent: 'end' }} mt={3}>
           <Button size="large" variant="contained" color="primary">
-            Save
+            保存
           </Button>
           <Button size="large" variant="text" color="error">
-            Cancel
+            取消
           </Button>
         </Stack>
       </Grid>

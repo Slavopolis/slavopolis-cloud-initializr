@@ -81,7 +81,7 @@ const Search = () => {
         <Divider />
         <Box p={2} sx={{ maxHeight: '60vh', overflow: 'auto' }}>
           <Typography variant="h5" p={1}>
-            Quick Page Links
+            快速页面链接
           </Typography>
           <Box>
             <List component="nav">

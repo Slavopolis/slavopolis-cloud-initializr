@@ -7,27 +7,27 @@ import { IconSend } from '@tabler/icons-react';
 const FabColorButtons = () => (
   <>
     <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center" alignItems="center">
-      <Tooltip title="Send">
+      <Tooltip title="发送">
         <Fab color="primary" aria-label="send">
           <IconSend width={20} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Send">
+      <Tooltip title="发送">
         <Fab color="secondary" aria-label="send">
           <IconSend width={20} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Send">
+      <Tooltip title="发送">
         <Fab color="warning" aria-label="send">
           <IconSend width={20} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Send">
+      <Tooltip title="发送">
         <Fab color="error" aria-label="send">
           <IconSend width={20} />
         </Fab>
       </Tooltip>
-      <Tooltip title="Send">
+      <Tooltip title="发送">
         <Fab color="success" aria-label="send">
           <IconSend width={20} />
         </Fab>

@@ -7,19 +7,19 @@ import LoadingButton from '@mui/lab/LoadingButton';
 
 const IconLoadingButtons = () => (
   <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
-    <LoadingButton loading loadingIndicator="Loading…"
+    <LoadingButton loading loadingIndicator="加载中…"
       variant="contained"
       color="error"
       startIcon={<IconTrash width={18} />}
     >
-      Left Icon
+      左侧图标
     </LoadingButton >
     <LoadingButton loading
       variant="contained"
       color="secondary"
       endIcon={<IconTrash width={18} />}
     >
-      Right Icon
+      右侧图标
     </LoadingButton >
   </Stack>
 );

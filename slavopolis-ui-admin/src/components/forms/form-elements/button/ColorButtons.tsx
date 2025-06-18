@@ -6,19 +6,19 @@ import { Button, Stack } from '@mui/material';
 const ColorButtons = () => (
   <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
     <Button variant="contained" color="primary">
-      Primary
+      主要
     </Button>
     <Button variant="contained" color="secondary">
-      Secondary
+      次要
     </Button>
     <Button variant="contained" color="error">
-      Error
+      错误
     </Button>
     <Button variant="contained" color="warning">
-      Warning
+      警告
     </Button>
     <Button variant="contained" color="success">
-      Success
+      成功
     </Button>
   </Stack>
 );

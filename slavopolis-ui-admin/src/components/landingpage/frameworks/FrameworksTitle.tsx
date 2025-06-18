@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
 import { Grid, Typography } from '@mui/material';
 
 
@@ -18,8 +17,7 @@ const FrameworksTitle = () => {
                         lg: '43px',
                         xs: '30px'
                     }
-                }}>Increase speed of your development and
-                    launch quickly with Modernize</Typography>
+                }}>使用 Slavopolis 提高开发速度并快速启动</Typography>
             </Grid>
         </Grid>
     );

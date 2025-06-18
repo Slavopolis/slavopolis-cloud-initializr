@@ -86,7 +86,7 @@ const FormSeparator = () => {
   return (
     <div>
       <Typography variant="h6" mb={3}>
-        Account Details
+        账户详情
       </Typography>
       {/* ------------------------------------------------------------------------------------------------ */}
       {/* Basic Layout */}
@@ -94,11 +94,11 @@ const FormSeparator = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <CustomFormLabel htmlFor="fs-uname" sx={{ mt: 0 }}>
-            Username
+            用户名
           </CustomFormLabel>
-          <CustomTextField id="fs-uname" placeholder="John Deo" fullWidth />
+          <CustomTextField id="fs-uname" placeholder="张三" fullWidth />
 
-          <CustomFormLabel htmlFor="fs-pwd">Password</CustomFormLabel>
+          <CustomFormLabel htmlFor="fs-pwd">密码</CustomFormLabel>
           <CustomOutlinedInput
             type={showPassword ? 'text' : 'password'}
             endAdornment={
@@ -158,10 +158,10 @@ const FormSeparator = () => {
 
         <Grid item xs={12} sm={6}>
           <CustomFormLabel htmlFor="fs-fname" sx={{ mt: 0 }}>
-            First Name
+            姓名
           </CustomFormLabel>
-          <CustomTextField id="fs-fname" placeholder="John" fullWidth />
-          <CustomFormLabel htmlFor="fs-country">Country</CustomFormLabel>
+          <CustomTextField id="fs-fname" placeholder="张三" fullWidth />
+          <CustomFormLabel htmlFor="fs-country">国家</CustomFormLabel>
           <CustomSelect
             id="standard-select-currency"
             value={country}
@@ -175,8 +175,8 @@ const FormSeparator = () => {
               </MenuItem>
             ))}
           </CustomSelect>
-          <CustomFormLabel htmlFor="fs-date">Birth Date</CustomFormLabel>
-          <CustomTextField type="date" id="fs-date" placeholder="John Deo" fullWidth />
+          <CustomFormLabel htmlFor="fs-date">出生日期</CustomFormLabel>
+          <CustomTextField type="date" id="fs-date" placeholder="张三" fullWidth />
         </Grid>
 
         <Grid item xs={12} sm={6}>

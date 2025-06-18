@@ -14,18 +14,18 @@ import CustomCheckbox from '../theme-elements/CustomCheckbox.tsx';
 const validationSchema = yup.object({
   firstName: yup
     .string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Firstname is Required'),
-  lastName: yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Lastname is Required'),
-  email: yup.string().email('Enter a valid email').required('Email is required'),
+    .min(2, '太短！')
+    .max(50, '太长！')
+    .required('名字是必填项'),
+  lastName: yup.string().min(2, '太短！').max(50, '太长！').required('姓氏是必填项'),
+  email: yup.string().email('请输入有效的邮箱地址').required('邮箱是必填项'),
   password: yup
     .string()
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .min(8, '密码长度至少为8个字符')
+    .required('密码是必填项'),
   changepassword: yup.string().when('password', {
     is: (val: string) => (val && val.length > 0 ? true : false),
-    then: yup.string().oneOf([yup.ref('password')], 'Both password need to be the same'),
+    then: yup.string().oneOf([yup.ref('password')], '两次输入的密码必须相同'),
   }),
 });
 
@@ -47,7 +47,7 @@ const FVRegister = () => {
     <form onSubmit={formik.handleSubmit}>
       <Stack>
         <Box>
-          <CustomFormLabel>Email Address</CustomFormLabel>
+          <CustomFormLabel>邮箱地址</CustomFormLabel>
           <CustomTextField
             fullWidth
             id="email"
@@ -59,7 +59,7 @@ const FVRegister = () => {
           />
         </Box>
         <Box mb={3}>
-          <CustomFormLabel>Password</CustomFormLabel>
+          <CustomFormLabel>密码</CustomFormLabel>
           <CustomTextField
             fullWidth
             id="password"
@@ -76,7 +76,7 @@ const FVRegister = () => {
         <FormGroup>
           <FormControlLabel
             control={<CustomCheckbox defaultChecked />}
-            label="Remeber this Device"
+            label="记住我"
           />
         </FormGroup>
         <Typography
@@ -88,11 +88,11 @@ const FVRegister = () => {
             color: 'primary.main',
           }}
         >
-          Forgot Password ?
+          忘记密码？
         </Typography>
       </Stack>
       <Button color="primary" variant="contained" type="submit">
-        Sign In
+        登录
       </Button>
     </form>
   );

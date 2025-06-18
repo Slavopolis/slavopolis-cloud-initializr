@@ -1,20 +1,20 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React, { useState } from 'react';
 import {
-  IconButton,
-  Box,
-  Badge,
-  Menu,
-  MenuItem,
-  Avatar,
-  Typography,
-  Button,
-  Chip,
-  Stack
+    Avatar,
+    Badge,
+    Box,
+    Button,
+    Chip,
+    IconButton,
+    Menu,
+    MenuItem,
+    Stack,
+    Typography
 } from '@mui/material';
-import * as dropdownData from './data.ts';
+import { useState } from 'react';
 import Scrollbar from 'src/components/custom-scroll/Scrollbar';
+import * as dropdownData from './data.ts';
 
 import { IconBellRinging } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
@@ -111,7 +111,7 @@ const Notifications = () => {
         </Scrollbar>
         <Box p={3} pb={1}>
           <Button to="/apps/email" variant="outlined" component={Link} color="primary" fullWidth>
-            See all Notifications
+            查看所有通知
           </Button>
         </Box>
       </Menu>

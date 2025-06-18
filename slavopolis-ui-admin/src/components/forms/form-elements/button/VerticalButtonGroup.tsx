@@ -10,21 +10,21 @@ const VerticalButtonGroup = () => (
       variant="contained"
       aria-label="outlined primary button group"
     >
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
 
     <ButtonGroup orientation="vertical" variant="outlined" aria-label="outlined button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
 
     <ButtonGroup orientation="vertical" variant="text" aria-label="text button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>一</Button>
+      <Button>二</Button>
+      <Button>三</Button>
     </ButtonGroup>
   </Stack>
 );

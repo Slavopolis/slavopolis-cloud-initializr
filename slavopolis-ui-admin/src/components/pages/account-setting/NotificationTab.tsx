@@ -26,17 +26,15 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Notification Preferences
+                通知偏好设置
               </Typography>
               <Typography color="textSecondary">
-                Select the notificaitons ou would like to receive via email. Please note that you
-                cannot opt out of receving service messages, such as payment, security or legal
-                notifications.
+                选择您希望通过电子邮件接收的通知。请注意，您无法选择不接收服务消息，如付款、安全或法律通知。
               </Typography>
 
-              <CustomFormLabel htmlFor="text-email">Email Address*</CustomFormLabel>
+              <CustomFormLabel htmlFor="text-email">电子邮箱地址*</CustomFormLabel>
               <CustomTextField id="text-email" variant="outlined" fullWidth />
-              <Typography color="textSecondary">Required for notificaitons.</Typography>
+              <Typography color="textSecondary">接收通知所必需。</Typography>
 
               {/* list 1 */}
               <Stack direction="row" spacing={2} mt={4}>
@@ -48,10 +46,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Our newsletter
+                    我们的通讯
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    We'll always let you know about important changes
+                    我们会及时通知您重要的变更
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -69,10 +67,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Confirmation
+                    订单确认
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified when customer order any product
+                    当客户订购任何产品时，您将收到通知
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -90,10 +88,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Status Changed
+                    订单状态变更
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified when customer make changes to the order
+                    当客户对订单进行更改时，您将收到通知
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -111,10 +109,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Delivered
+                    订单已送达
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified once the order is delivered
+                    订单送达后，您将收到通知
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -132,10 +130,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Email Notification
+                    邮件通知
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Turn on email notificaiton to get updates through email
+                    开启邮件通知以通过电子邮件获取更新
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -151,10 +149,10 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Date & Time
+                日期和时间
               </Typography>
               <Typography color="textSecondary">
-                Time zones and calendar display settings.
+                时区和日历显示设置。
               </Typography>
 
               {/* list 1 */}
@@ -167,14 +165,14 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Time zone
+                    时区
                   </Typography>
                   <Typography variant="h6" mb={1}>
-                    (UTC + 02:00) Athens, Bucharet
+                    (UTC + 02:00) 雅典，布加勒斯特
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
-                  <Tooltip title="Download">
+                  <Tooltip title="下载">
                     <IconButton>
                       <IconDownload size="22" />
                     </IconButton>
@@ -190,7 +188,7 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Ignore Tracking
+                忽略追踪
               </Typography>
 
               {/* list 1 */}
@@ -203,10 +201,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Ignore Browser Tracking
+                    忽略浏览器追踪
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Browser Cookie
+                    浏览器Cookie
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 'auto !important' }}>
@@ -220,10 +218,10 @@ const NotificationTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: 'end' }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
-        </Button>
-        <Button size="large" variant="text" color="error">
-          Cancel
+          保存
+          </Button>
+          <Button size="large" variant="text" color="error">
+            取消
         </Button>
       </Stack>
     </>

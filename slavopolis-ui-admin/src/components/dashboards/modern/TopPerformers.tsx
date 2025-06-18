@@ -31,8 +31,8 @@ const TopPerformers = () => {
 
   return (
     <DashboardCard
-      title="Top Projects"
-      subtitle="Best Products"
+      title="顶级项目"
+      subtitle="最佳产品"
       action={
         <CustomSelect
           labelId="month-dd"
@@ -41,9 +41,9 @@ const TopPerformers = () => {
           value={month}
           onChange={handleChange}
         >
-          <MenuItem value={1}>March 2023</MenuItem>
-          <MenuItem value={2}>April 2023</MenuItem>
-          <MenuItem value={3}>May 2023</MenuItem>
+          <MenuItem value={1}>2023年3月</MenuItem>
+          <MenuItem value={2}>2023年4月</MenuItem>
+          <MenuItem value={3}>2023年5月</MenuItem>
         </CustomSelect>
       }
     >
@@ -58,22 +58,22 @@ const TopPerformers = () => {
             <TableRow>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Assigned
+                  负责人
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Project
+                  项目
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Priority
+                  优先级
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Budget
+                  预算
                 </Typography>
               </TableCell>
             </TableRow>

@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import { Card, CardContent, Typography, Button, Box, Grid } from '@mui/material';
+import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material';
 import trackBg from 'src/assets/images/backgrounds/login-bg.svg';
 
 const Banner1 = () => {
@@ -26,12 +25,12 @@ const Banner1 = () => {
                 },
               }}
             >
-              <Typography variant="h5">Track your every Transaction Easily</Typography>
+              <Typography variant="h5">轻松追踪您的每一笔交易</Typography>
               <Typography variant="subtitle1" color="textSecondary" my={2}>
-                Track and record your every income and expence easily to control your balance
+                轻松追踪并记录您的每一笔收入和经历，掌控您的余额
               </Typography>
               <Button variant="contained" color="secondary">
-                Download
+                下载
               </Button>
             </Box>
           </Grid>

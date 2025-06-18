@@ -94,7 +94,7 @@ const Projects = () => {
     <DashboardCard>
       <>
         <Typography variant="subtitle2" color="textSecondary">
-          Projects
+          项目
         </Typography>
         <Typography variant="h4">78,298</Typography>
         <Stack direction="row" spacing={1} my={1} alignItems="center">

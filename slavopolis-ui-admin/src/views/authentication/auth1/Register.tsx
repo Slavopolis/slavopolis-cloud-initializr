@@ -74,13 +74,13 @@ const Register = () => (
                         title="Welcome to Slavopolis"
             subtext={
               <Typography variant="subtitle1" color="textSecondary" mb={1}>
-                Your Admin Dashboard
+                Slavopolis 管理后台
               </Typography>
             }
             subtitle={
               <Stack direction="row" spacing={1} mt={3}>
                 <Typography color="textSecondary" variant="h6" fontWeight="400">
-                  Already have an Account?
+                  已有账号？
                 </Typography>
                 <Typography
                   component={Link}
@@ -91,7 +91,7 @@ const Register = () => (
                     color: 'primary.main',
                   }}
                 >
-                  Sign In
+                  登录
                 </Typography>
               </Stack>
             }

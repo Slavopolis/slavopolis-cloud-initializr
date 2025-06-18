@@ -39,8 +39,8 @@ const Welcome = () => {
           variant="filled"
           sx={{ width: '100%', color: 'white' }}
         >
-          <AlertTitle>Welcome To Slavopolis</AlertTitle>
-          Slavopolis is a platform for managing and analyzing data.
+          <AlertTitle>欢迎使用 Slavopolis 管理后台</AlertTitle>
+          Slavopolis Cloud 脚手架系统致力于为开发者提供一个快速、高效、稳定的开发环境。
         </Alert>
       </Snackbar>
     </React.Fragment>

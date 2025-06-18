@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import { Box, Avatar, Typography, Card, CardContent, Grid, Divider, Stack } from '@mui/material';
+import { Avatar, Box, Card, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
 import { IconArrowUpRight } from '@tabler/icons-react';
 
 import welcomeImg from 'src/assets/images/backgrounds/welcome-bg.svg';
@@ -26,18 +25,18 @@ const WelcomeCard = () => {
               >
                 <Avatar src={userImg} alt="img" sx={{ width: 40, height: 40 }} />
                 <Typography variant="h5" whiteSpace="nowrap">
-                  Welcome back Mathew Anderson!
+                  欢迎回来，Slavopolis！
                 </Typography>
               </Box>
 
               <Stack spacing={2}  direction="row" divider={<Divider orientation="vertical" flexItem />}>
                 <Box>
                 <Typography variant="h2" whiteSpace="nowrap">$2,340 <span><IconArrowUpRight width={18} color="#39B69A" /></span></Typography>
-                <Typography variant="subtitle1" whiteSpace="nowrap">Today’s Sales</Typography>
+                <Typography variant="subtitle1" whiteSpace="nowrap">今日销售额</Typography>
                 </Box>
                 <Box>
                 <Typography variant="h2" whiteSpace="nowrap">35%<span><IconArrowUpRight width={18} color="#39B69A" /></span></Typography>
-                <Typography variant="subtitle1" whiteSpace="nowrap">Performance</Typography>
+                <Typography variant="subtitle1" whiteSpace="nowrap">性能</Typography>
                 </Box>
               </Stack>
             </Box>

@@ -27,7 +27,7 @@ const MobileSidebar = () => {
                             justifyContent: 'space-between'
                         }}>
 
-                        Demos
+                        演示
                     </Button>
                     {toggle && (
                         <Collapse in={toggle}>
@@ -44,7 +44,7 @@ const MobileSidebar = () => {
                         endIcon={<IconChevronDown width={20} />}
                         sx={{
                             justifyContent: 'space-between'
-                        }}>Pages</Button>
+                        }}>页面</Button>
                     {toggle2 && (
                         <Collapse in={toggle2}>
                             <Box overflow="hidden" ml={1}>
@@ -55,11 +55,11 @@ const MobileSidebar = () => {
                     )}
                     <Button color="inherit" href="#" sx={{
                         justifyContent: 'start'
-                    }}>Documentation</Button>
+                    }}>文档</Button>
                     <Button color="inherit" href="https://adminmart.com/support" sx={{
                         justifyContent: 'start'
-                    }}>Support</Button>
-                    <Button color="primary" variant="contained" href="#">Login</Button>
+                    }}>支持</Button>
+                    <Button color="primary" variant="contained" href="#">登录</Button>
                 </Stack>
             </Box>
         </>

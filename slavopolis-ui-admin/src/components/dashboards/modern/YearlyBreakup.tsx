@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Avatar, Grid, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Stack, Typography, Avatar } from '@mui/material';
 import { IconArrowUpLeft } from '@tabler/icons-react';
+import Chart from 'react-apexcharts';
 
-import DashboardCard from '../../shared/DashboardCard.tsx';
 import { Props } from 'react-apexcharts';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 const YearlyBreakup = () => {
   // chart color
@@ -64,7 +63,7 @@ const YearlyBreakup = () => {
   const seriescolumnchart = [38, 40, 25];
 
   return (
-    <DashboardCard title="Yearly Breakup">
+    <DashboardCard title="年度分解">
       <Grid container spacing={3}>
         {/* column */}
         <Grid item xs={7} sm={7}>
@@ -79,7 +78,7 @@ const YearlyBreakup = () => {
               +9%
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              last year
+              去年
             </Typography>
           </Stack>
           <Stack spacing={3} mt={5} direction="row">

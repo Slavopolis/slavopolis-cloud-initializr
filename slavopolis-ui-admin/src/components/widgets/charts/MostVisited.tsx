@@ -1,12 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
+import { Box, CardContent, MenuItem, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { CardContent, Typography, MenuItem, Stack, Box } from '@mui/material';
-import BlankCard from '../../shared/BlankCard.tsx';
+import React from 'react';
+import Chart, { Props } from 'react-apexcharts';
 import CustomSelect from '../../forms/theme-elements/CustomSelect.tsx';
-import { Props } from 'react-apexcharts';
+import BlankCard from '../../shared/BlankCard.tsx';
 
 const MostVisited = () => {
   // for select
@@ -85,7 +84,7 @@ const MostVisited = () => {
     <BlankCard>
       <CardContent sx={{ p: '30px' }}>
         <Stack direction="row" justifyContent="space-between">
-          <Typography variant="h5">Most Visited</Typography>
+          <Typography variant="h5">最常访问</Typography>
           <CustomSelect
             labelId="month-dd"
             id="month-dd"
@@ -93,9 +92,9 @@ const MostVisited = () => {
             value={month}
             onChange={handleChange}
           >
-            <MenuItem value={1}>March 2023</MenuItem>
-            <MenuItem value={2}>April 2023</MenuItem>
-            <MenuItem value={3}>May 2023</MenuItem>
+            <MenuItem value={1}>2023年3月</MenuItem>
+            <MenuItem value={2}>2023年4月</MenuItem>
+            <MenuItem value={3}>2023年5月</MenuItem>
           </CustomSelect>
         </Stack>
 
@@ -112,7 +111,7 @@ const MostVisited = () => {
               }}
             ></Box>
             <Typography variant="subtitle2" color="textSecondary">
-              San Francisco
+              旧金山
             </Typography>
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
@@ -125,7 +124,7 @@ const MostVisited = () => {
               }}
             ></Box>
             <Typography variant="subtitle2" color="textSecondary">
-              Diego
+              圣地亚哥
             </Typography>
           </Box>
         </Stack>

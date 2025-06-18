@@ -63,27 +63,27 @@ const demos: DemoTypes[] = [
   {
     link: 'https://modernize-react-main.netlify.app/dashboards/modern',
     img: mainDemo,
-    title: 'Main',
+    title: '主页',
   },
   {
     link: 'https://modernize-react-dark.netlify.app/dashboards/ecommerce',
     img: darkDemo,
-    title: 'Dark',
+    title: '暗色',
   },
   {
     link: 'https://modernize-react-horizontal.netlify.app/dashboards/modern',
     img: horizontalDemo,
-    title: 'Horizontal',
+    title: '水平布局',
   },
   {
     link: 'https://modernize-react-firebase.netlify.app/auth/login',
     img: minisidebarDemo,
-    title: 'Firebase',
+    title: 'Firebase认证',
   },
   {
     link: 'https://modernize-react-rtl.netlify.app/dashboards/modern',
     img: rtlDemo,
-    title: 'RTL',
+    title: '从右到左布局'
   },
 ];
 
@@ -91,67 +91,67 @@ const apps: DemoTypes[] = [
   {
     link: '/apps/calendar',
     img: app1,
-    title: 'Calendar App',
+    title: '日历应用',
   },
   {
     link: '/apps/chats',
     img: app2,
-    title: 'Chat App',
+    title: '聊天应用',
   },
   {
     link: 'apps/contacts',
     img: app3,
-    title: 'Contact App',
+    title: '联系人应用',
   },
   {
     link: 'apps/email',
     img: app4,
-    title: 'Email App',
+    title: '邮件应用',
   },
   {
     link: '/apps/notes',
     img: app5,
-    title: 'Note App',
+    title: '笔记应用',
   },
   {
     link: '/apps/user-profile',
     img: app6,
-    title: 'User Profile App',
+    title: '用户档案应用',
   },
   {
     link: '/apps/blog/posts',
     img: app7,
-    title: 'Blog App',
+    title: '博客应用',
   },
   {
     link: '/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow',
     img: app13,
-    title: 'Blog Detail App',
+    title: '博客详情应用',
   },
   {
     link: '/apps/tickets',
     img: app8,
-    title: 'Ticket App',
+    title: '工单应用',
   },
   {
     link: '/apps/ecommerce/shop',
     img: app9,
-    title: 'eCommerce Shop App',
+    title: '电商商城应用',
   },
   {
     link: '/apps/ecommerce/detail/1',
     img: app10,
-    title: 'eCommerce Detail App',
+    title: '电商详情应用',
   },
   {
     link: '/apps/ecommerce/eco-checkout',
     img: app11,
-    title: 'eCommerce Checkout App',
+    title: '电商结账应用'
   },
   {
     link: '/apps/ecommerce/eco-product-list',
     img: app12,
-    title: 'eCommerce List App',
+    title: '电商列表应用'
   },
 ];
 
@@ -194,7 +194,7 @@ const DemoSlider = () => {
                       href={demo.link}
                       target="_blank"
                     >
-                      Live Preview
+                      在线预览
                     </Button>
                   </StyledBox>
                   {/* </Link> */}
@@ -212,7 +212,7 @@ const DemoSlider = () => {
             ))}
           </Grid>
           <Box mb={2} mt={5} textAlign="center">
-            <Chip label="Apps" color="primary" />
+            <Chip label="应用" color="primary" />
           </Box>
           <Grid container spacing={3} justifyContent="center">
             {apps.map((demo, index) => (
@@ -235,7 +235,7 @@ const DemoSlider = () => {
                       href={demo.link}
                       target="_blank"
                     >
-                      Live Preview
+                      在线预览
                     </Button>
                   </StyledBox>
                   {/* </Link> */}

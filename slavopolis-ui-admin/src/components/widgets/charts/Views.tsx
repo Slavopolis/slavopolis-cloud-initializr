@@ -94,7 +94,7 @@ const Views = () => {
         <Typography variant="h4">15,480</Typography>
         <Stack direction="row" spacing={2} justifyContent="space-between" mb={2}>
           <Typography variant="subtitle2" color="textSecondary">
-            Views
+            意见
           </Typography>
           <Typography variant="subtitle2" color="error.main">
             -4.150%

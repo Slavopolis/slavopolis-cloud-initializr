@@ -11,14 +11,14 @@ const OutlinedIconButtons = () => (
         color="error"
         startIcon={<IconTrash width={18} />}
       >
-        Left Icon
+        左侧图标
       </Button>
       <Button
         variant="outlined"
         color="secondary"
         endIcon={<IconSend width={18} />}
       >
-        Right Icon
+        右侧图标
       </Button>
     </Stack>
 );

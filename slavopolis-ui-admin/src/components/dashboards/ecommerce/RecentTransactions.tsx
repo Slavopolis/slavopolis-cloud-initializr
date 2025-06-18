@@ -1,28 +1,21 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import React from 'react';
-import DashboardCard from '../../shared/DashboardCard.tsx';
 import {
-  Timeline,
-  TimelineItem,
-  TimelineOppositeContent,
-  TimelineSeparator,
-  TimelineDot,
-  TimelineConnector,
-  TimelineContent,
-  timelineOppositeContentClasses,
+    Timeline,
+    TimelineConnector,
+    TimelineContent,
+    TimelineDot,
+    TimelineItem,
+    TimelineOppositeContent,
+    timelineOppositeContentClasses,
+    TimelineSeparator,
 } from '@mui/lab';
 import { Link, Typography } from '@mui/material';
+import DashboardCard from '../../shared/DashboardCard.tsx';
 
 const RecentTransactions = () => {
   return (
-    <DashboardCard title="Recent Transactions">
-      <>
+    <DashboardCard title="最近交易">
         <Timeline
           className="theme-timeline"
-          nonce={undefined}
-          onResize={undefined}
-          onResizeCapture={undefined}
           sx={{
             p: 0,
             mb: '-40px',
@@ -31,35 +24,40 @@ const RecentTransactions = () => {
               paddingLeft: 0,
             },
           }}
+          onResize={undefined}
+          onResizeCapture={undefined}
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
         >
           <TimelineItem>
-            <TimelineOppositeContent>09:30 am</TimelineOppositeContent>
+            <TimelineOppositeContent>上午09:30</TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot color="primary" variant="outlined" />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Payment received from John Doe of $385.90</TimelineContent>
+            <TimelineContent>收到来自John Doe的$385.90付款</TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineOppositeContent>10:00 am</TimelineOppositeContent>
+            <TimelineOppositeContent>上午10:00</TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot color="secondary" variant="outlined" />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Typography fontWeight="600">New sale recorded</Typography>{' '}
+              <Typography fontWeight="600">新销售记录</Typography>{' '}
               <Link href="/" underline="none">
                 #ML-3467
               </Link>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineOppositeContent>12:00 am</TimelineOppositeContent>
+            <TimelineOppositeContent>上午12:00</TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot color="success" variant="outlined" />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Payment was made of $64.95 to Michael</TimelineContent>
+            <TimelineContent>向Michael支付了$64.95</TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent>09:30 am</TimelineOppositeContent>
@@ -68,7 +66,7 @@ const RecentTransactions = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Typography fontWeight="600">New sale recorded</Typography>{' '}
+              <Typography fontWeight="600">新销售记录</Typography>{' '}
               <Link href="/" underline="none">
                 #ML-3467
               </Link>
@@ -81,7 +79,7 @@ const RecentTransactions = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Typography fontWeight="600">New arrival recorded</Typography>{' '}
+              <Typography fontWeight="600">新到货记录</Typography>{' '}
               <Link href="/" underline="none">
                 #ML-3467
               </Link>
@@ -92,10 +90,9 @@ const RecentTransactions = () => {
             <TimelineSeparator>
               <TimelineDot color="success" variant="outlined" />
             </TimelineSeparator>
-            <TimelineContent>Payment Done</TimelineContent>
+            <TimelineContent>付款完成</TimelineContent>
           </TimelineItem>
         </Timeline>
-      </>
     </DashboardCard>
   );
 };

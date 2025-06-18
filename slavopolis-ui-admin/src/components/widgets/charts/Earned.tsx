@@ -67,7 +67,7 @@ const Earned = () => {
         <Typography variant="h4">2,545</Typography>
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Typography variant="subtitle2" color="textSecondary">
-            Earned
+            收益
           </Typography>
           <Typography variant="subtitle2" color="success.main">
             +1.20%

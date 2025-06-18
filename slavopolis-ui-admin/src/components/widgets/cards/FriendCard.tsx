@@ -17,22 +17,22 @@ interface Follower {
 const followerCard: Follower[] = [
   {
     title: 'Andrew Grant',
-    location: 'El Salvador',
+    location: '萨尔瓦多',
     avatar: img1,
   },
   {
     title: 'Leo Pratt',
-    location: 'Bulgaria',
+    location: '保加利亚',
     avatar: img2,
   },
   {
     title: 'Charles Nunez',
-    location: 'Nepal',
+    location: '尼泊尔',
     avatar: img3,
   },
   {
     title: 'Lora Powers',
-    location: 'Nepal',
+    location: '尼泊尔',
     avatar: img4,
   },
 ];
@@ -57,17 +57,17 @@ const FriendCard = () => {
                       <Avatar sx={{ height: 28, width: 28 }} alt="Cindy Baker" src={img3} />
                     </AvatarGroup>
                     <Typography variant="subtitle2" color="textSecondary">
-                      3 mutual friends
+                      3个共同好友
                     </Typography>
                   </Stack>
                 </Box>
               </Stack>
               <Stack spacing={2} mt={3}>
                 <Button size="large" variant="text" color="primary">
-                  Add Friend
+                  添加好友
                 </Button>
                 <Button size="large" variant="text" color="secondary">
-                  Remove
+                  移除
                 </Button>
               </Stack>
             </CardContent>

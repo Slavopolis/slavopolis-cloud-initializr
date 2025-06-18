@@ -33,13 +33,13 @@ const SimpleDialog = () => {
   return (
     <>
       <Button variant="contained" color="primary" fullWidth onClick={handleClickOpen}>
-        Open Simple Dialog
+        打开简单对话框
       </Button>
       <Typography variant="subtitle1" component="div" mb={1} textAlign="center">
-        Selected: {selectedValue}
+        已选择：{selectedValue}
       </Typography>
       <Dialog onClose={() => handleClose(selectedValue)} open={open}>
-        <DialogTitle>Set backup account</DialogTitle>
+        <DialogTitle>设置备份账号</DialogTitle>
         <List sx={{ pt: 0 }}>
           {emails.map((email) => (
             <ListItem button onClick={() => handleClose(email)} key={email}>
@@ -58,7 +58,7 @@ const SimpleDialog = () => {
                 <IconPlus width={20} height={20} />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Add account" />
+            <ListItemText primary="添加账号" />
           </ListItem>
         </List>
       </Dialog>

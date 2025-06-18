@@ -31,40 +31,40 @@ const UpcomingActivity = () => {
 
   const stats: statType[] = [
     {
-      title: 'Trip to singapore',
-      subtitle: 'working on',
+      title: '新加坡之旅',
+      subtitle: '进行中',
       time: 5,
       color: primary,
       lightcolor: primarylight,
       icon: <IconMapPin width={20} />,
     },
     {
-      title: 'Archived Data',
-      subtitle: 'working on',
+      title: '归档数据',
+      subtitle: '进行中',
       time: 10,
       color: secondary,
       lightcolor: secondarylight,
       icon: <IconDatabase width={20} />,
     },
     {
-      title: 'Meeting with client',
-      subtitle: 'pending',
+      title: '与客户会面',
+      subtitle: '待处理',
       time: 15,
       color: warning,
       lightcolor: warninglight,
       icon: <IconPhone width={20} />,
     },
     {
-      title: 'Screening Task Team',
-      subtitle: 'working on',
+      title: '筛选任务团队',
+      subtitle: '进行中',
       time: 20,
       color: error,
       lightcolor: errorlight,
       icon: <IconScreenShare width={20} />,
     },
     {
-      title: 'Send envelope to John',
-      subtitle: 'done',
+      title: '发送信封给John',
+      subtitle: '已完成',
       time: 20,
       color: success,
       lightcolor: successlight,
@@ -73,7 +73,7 @@ const UpcomingActivity = () => {
   ];
 
   return (
-    <DashboardCard title="Upcoming Activity" subtitle='In New year'>
+    <DashboardCard title="即将进行的活动" subtitle='在新年'>
       <>
         <Stack spacing={3} mt={5}>
           {stats.map((stat, i) => (
@@ -102,7 +102,7 @@ const UpcomingActivity = () => {
               </Stack>
 
               <Typography variant="subtitle2" color="textSecondary">
-                {stat.time} mins
+                {stat.time} 分钟
               </Typography>
             </Stack>
           ))}

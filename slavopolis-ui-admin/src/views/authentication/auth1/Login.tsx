@@ -1,10 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { Grid, Box, Stack, Typography } from '@mui/material';
-import PageContainer from 'src/components/container/PageContainer';
 import img1 from 'src/assets/images/backgrounds/login-bg.svg';
+import PageContainer from 'src/components/container/PageContainer';
 import Logo from 'src/layouts/full/shared/logo/Logo';
 import AuthLogin from '../authForms/AuthLogin.tsx';
 
@@ -72,13 +71,13 @@ const Login = () => (
             title="Welcome to Slavopolis"
             subtext={
               <Typography variant="subtitle1" color="textSecondary" mb={1}>
-                Your Admin Dashboard
+                Slavopolis 管理后台
               </Typography>
             }
             subtitle={
               <Stack direction="row" spacing={1} mt={3}>
                 <Typography color="textSecondary" variant="h6" fontWeight="500">
-                  New to Modernize?
+                  还未注册？
                 </Typography>
                 <Typography
                   component={Link}
@@ -89,7 +88,7 @@ const Login = () => (
                     color: 'primary.main',
                   }}
                 >
-                  Create an account
+                  立即注册
                 </Typography>
               </Stack>
             }

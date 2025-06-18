@@ -10,7 +10,11 @@ export interface TableType {
   name?: string;
   post?: string;
   pname?: string;
-  teams?: any[];
+  teams?: {
+    id: string;
+    color: string;
+    text: string;
+  }[];
   status?: string;
   budget?: string;
 }
@@ -36,8 +40,8 @@ const basicsTableData: TableType[] = [
     id: '1',
     imgsrc: img1,
     name: 'Sunil Joshi',
-    post: 'Web Designer',
-    pname: 'Elite Admin',
+    post: '网页设计师',
+    pname: '精英管理',
     teams: [
       {
         id: '1.1',
@@ -50,15 +54,15 @@ const basicsTableData: TableType[] = [
         text: 'D',
       },
     ],
-    status: 'Active',
+    status: '活跃',
     budget: '3.9',
   },
   {
     id: '2',
     imgsrc: img2,
     name: 'Andrew McDownland',
-    post: 'Project Manager',
-    pname: 'Real Homes WP Theme',
+    post: '项目经理',
+    pname: 'Real Homes WP主题',
     teams: [
       {
         id: '2.1',
@@ -76,15 +80,15 @@ const basicsTableData: TableType[] = [
         text: 'N',
       },
     ],
-    status: 'Pending',
+    status: '待处理',
     budget: '24.5',
   },
   {
     id: '3',
     imgsrc: img3,
     name: 'Christopher Jamil',
-    post: 'Project Manager',
-    pname: 'MedicalPro WP Theme',
+    post: '项目经理',
+    pname: 'MedicalPro WP主题',
     teams: [
       {
         id: '3.1',
@@ -92,14 +96,14 @@ const basicsTableData: TableType[] = [
         text: 'X',
       },
     ],
-    status: 'Completed',
+    status: '已完成',
     budget: '12.8',
   },
   {
     id: '4',
     imgsrc: img4,
     name: 'Mathew Anderson',
-    post: 'Frontend Engineer',
+    post: '前端工程师',
     pname: 'Hosting Press HTML',
     teams: [
       {
@@ -120,8 +124,8 @@ const basicsTableData: TableType[] = [
     id: '5',
     imgsrc: img5,
     name: 'Micheal Doe',
-    post: 'Content Writer',
-    pname: 'Helping Hands WP Theme',
+    post: '内容撰写人',
+    pname: '助人为乐WP主题',
     teams: [
       {
         id: '5.1',
@@ -129,7 +133,7 @@ const basicsTableData: TableType[] = [
         text: 'S',
       },
     ],
-    status: 'Cancel',
+    status: '取消',
     budget: '9.3',
   },
 ];
@@ -140,7 +144,7 @@ const EnhancedTableData: EnTableType[] = [
     imgsrc: img1,
     name: 'Sunil Joshi',
     email: 'sunil@gmail.com',
-    pname: 'Elite Admin',
+    pname: '精英管理',
     teams: [
       {
         id: '1.1',
@@ -162,7 +166,7 @@ const EnhancedTableData: EnTableType[] = [
     imgsrc: img2,
     name: 'Andrew McDownland',
     email: 'andrew@gmail.com',
-    pname: 'Real Homes WP Theme',
+    pname: 'Real Homes WP主题',
     teams: [
       {
         id: '2.1',
@@ -189,7 +193,7 @@ const EnhancedTableData: EnTableType[] = [
     imgsrc: img3,
     name: 'Christopher Jamil',
     email: 'jamil@gmail.com',
-    pname: 'MedicalPro WP Theme',
+    pname: 'MedicalPro WP主题',
     teams: [
       {
         id: '3.1',
@@ -228,7 +232,7 @@ const EnhancedTableData: EnTableType[] = [
     imgsrc: img5,
     name: 'Micheal Doe',
     email: 'micheal@gmail.com',
-    pname: 'Helping Hands WP Theme',
+    pname: '助人为乐WP主题',
     teams: [
       {
         id: '5.1',

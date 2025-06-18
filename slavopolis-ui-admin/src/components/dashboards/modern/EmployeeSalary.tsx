@@ -1,11 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import Chart from 'react-apexcharts';
 import { useTheme } from '@mui/material/styles';
+import Chart from 'react-apexcharts';
 
-import DashboardWidgetCard from '../../shared/DashboardWidgetCard.tsx';
 import { Props } from 'react-apexcharts';
+import DashboardWidgetCard from '../../shared/DashboardWidgetCard.tsx';
 
 const EmployeeSalary = () => {
   // chart color
@@ -47,7 +46,7 @@ const EmployeeSalary = () => {
       },
     },
     xaxis: {
-      categories: [['Apr'], ['May'], ['June'], ['July'], ['Aug'], ['Sept']],
+      categories: [['四月'], ['五月'], ['六月'], ['七月'], ['八月'], ['九月']],
       axisBorder: {
         show: false,
       },
@@ -70,11 +69,11 @@ const EmployeeSalary = () => {
 
   return (
     <DashboardWidgetCard
-      title="Employee Salary"
-      subtitle="Every month"
-      dataLabel1="Salary"
+      title="员工薪资"
+      subtitle="每月数据"
+      dataLabel1="薪资"
       dataItem1="$36,358"
-      dataLabel2="Profit"
+      dataLabel2="利润"
       dataItem2="$5,296"
     >
       <>

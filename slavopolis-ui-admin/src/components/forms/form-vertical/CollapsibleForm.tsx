@@ -96,15 +96,15 @@ const CollapsibleForm = () => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography variant="h6">Delivery Address</Typography>
+          <Typography variant="h6">配送地址</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <CustomFormLabel htmlFor="cs-fname" sx={{ mt: 0 }}>
-                Full Name
+                姓名
               </CustomFormLabel>
-              <CustomTextField id="cs-fname" placeholder="John Deo" fullWidth />
+              <CustomTextField id="cs-fname" placeholder="张三" fullWidth />
             </Grid>
             <Grid item xs={12} sm={6}>
               <CustomFormLabel htmlFor="cs-phone" sx={{ mt: 0 }}>
@@ -193,7 +193,7 @@ const CollapsibleForm = () => {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography variant="h6">Payment Method</Typography>
+          <Typography variant="h6">支付方式</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Grid container spacing={3}>
@@ -202,12 +202,12 @@ const CollapsibleForm = () => {
                 <FormControlLabel
                   value="radio1"
                   control={<CustomRadio />}
-                  label="Credit/Debit/ATM Card"
+                  label="信用卡/借记卡/ATM卡"
                 />
                 <FormControlLabel
                   value="radio2"
                   control={<CustomRadio />}
-                  label="Cash on Delivery"
+                  label="货到付款"
                 />
               </RadioGroup>
             </Grid>

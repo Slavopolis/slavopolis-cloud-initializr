@@ -6,7 +6,7 @@ import { Popover, Typography, Button, Box } from '@mui/material';
 const ClickPopover = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -20,7 +20,7 @@ const ClickPopover = () => {
   return (
     <>
       <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-        Open Popover
+        打开弹出框
       </Button>
       <Popover
         id={id}
@@ -34,10 +34,10 @@ const ClickPopover = () => {
       >
         <Box p={2}>
           <Typography variant="h6" mb={1}>
-            Basic Popover
+            基础弹出框
           </Typography>
           <Typography color="textSecondary">
-            The component is built on top of the Modal component.
+            此组件基于Modal组件构建。
           </Typography>
         </Box>
       </Popover>

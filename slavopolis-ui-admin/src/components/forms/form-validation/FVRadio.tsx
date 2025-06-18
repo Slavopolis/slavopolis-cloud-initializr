@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 
 const validationSchema = yup.object({
-  color: yup.string().required('Color selection is required'),
+  color: yup.string().required('颜色选择是必填项'),
 });
 
 const FVRadio = () => {
@@ -53,7 +53,7 @@ const FVRadio = () => {
                     }}
                   />
                 }
-                label="Primary"
+                label="主要"
               />
               <FormControlLabel
                 value="error"
@@ -65,7 +65,7 @@ const FVRadio = () => {
                     }}
                   />
                 }
-                label="Error"
+                label="错误"
               />
               <FormControlLabel
                 value="secondary"
@@ -77,7 +77,7 @@ const FVRadio = () => {
                     }}
                   />
                 }
-                label="Secondary"
+                label="次要"
               />
             </RadioGroup>
           </FormControl>
@@ -90,7 +90,7 @@ const FVRadio = () => {
         </Box>
         <Stack direction="row" justifyContent="flex-end">
           <Button variant="contained" type="submit">
-            Submit
+            提交
           </Button>
         </Stack>
       </Stack>

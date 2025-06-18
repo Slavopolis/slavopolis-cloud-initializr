@@ -17,17 +17,17 @@ interface Follower {
 const followerCard: Follower[] = [
   {
     title: 'Andrew Grant',
-    location: 'El Salvador',
+    location: '萨尔瓦多',
     avatar: img1,
   },
   {
     title: 'Leo Pratt',
-    location: 'Bulgaria',
+    location: '保加利亚',
     avatar: img2,
   },
   {
     title: 'Charles Nunez',
-    location: 'Nepal',
+    location: '尼泊尔',
     avatar: img3,
   },
 ];
@@ -56,7 +56,7 @@ const FollowerCard = () => {
                   </Box>
                 </Stack>
                 <Button variant="contained" color="primary">
-                  Follow
+                  关注
                 </Button>
               </Stack>
             </CardContent>

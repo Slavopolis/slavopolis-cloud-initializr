@@ -24,7 +24,7 @@ const TestimonialTitle = () => {
               },
             }}
           >
-            Don’t just take our words for it, See what developers like you are saying
+            不要只听我们说，看看像您这样的开发者都在说什么
           </Typography>
         </AnimationFadeIn>
       </Grid>

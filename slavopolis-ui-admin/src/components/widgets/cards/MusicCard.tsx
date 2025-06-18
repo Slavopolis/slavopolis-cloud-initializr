@@ -14,17 +14,17 @@ interface musiccardType {
 
 const musicCard: musiccardType[] = [
   {
-    title: 'Uptown Funk',
+    title: '放克音乐',
     subheader: 'Jon Bon Jovi',
     img: img1,
   },
   {
-    title: 'Blank Space',
+    title: '空白空间',
     subheader: 'Madonna',
     img: img2,
   },
   {
-    title: 'Lean On',
+    title: '依靠',
     subheader: 'Jennifer Lopez',
     img: img3,
   },

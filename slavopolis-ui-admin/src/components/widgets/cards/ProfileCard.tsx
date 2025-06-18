@@ -47,17 +47,17 @@ const SocialIcons: SocialIcon[] = [
 const profileCard: ProfileCard[] = [
   {
     name: 'Andrew Grant',
-    role: 'Technology Director',
+    role: '技术总监',
     avatar: img1,
   },
   {
     name: 'Leo Pratt',
-    role: 'Telecom Analyst',
+    role: '电信分析师',
     avatar: img2,
   },
   {
     name: 'Charles Nunez',
-    role: 'Environmental Specialist',
+    role: '环境专家',
     avatar: img3,
   },
 ];

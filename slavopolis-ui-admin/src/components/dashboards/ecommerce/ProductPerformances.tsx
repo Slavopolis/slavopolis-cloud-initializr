@@ -75,7 +75,7 @@ const ProductPerformances = () => {
   };
   const seriesrow1chart = [
     {
-      name: 'Customers',
+      name: '客户',
       color: primary,
       data: [30, 25, 35, 20, 30],
     },
@@ -202,7 +202,7 @@ const ProductPerformances = () => {
 
   return (
     <DashboardCard
-      title="Product Performance"
+      title="产品表现"
       action={
         <CustomSelect
           labelId="month-dd"
@@ -211,9 +211,9 @@ const ProductPerformances = () => {
           value={month}
           onChange={handleChange}
         >
-          <MenuItem value={1}>March 2023</MenuItem>
-          <MenuItem value={2}>April 2023</MenuItem>
-          <MenuItem value={3}>May 2023</MenuItem>
+          <MenuItem value={1}>2023年3月</MenuItem>
+          <MenuItem value={2}>2023年4月</MenuItem>
+          <MenuItem value={3}>2023年5月</MenuItem>
         </CustomSelect>
       }
     >
@@ -228,27 +228,27 @@ const ProductPerformances = () => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Product
+                  产品
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Progress
+                  进度
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Status
+                  状态
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Sales
+                  销售额
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Growth
+                  增长
                 </Typography>
               </TableCell>
             </TableRow>
@@ -260,10 +260,10 @@ const ProductPerformances = () => {
                   <Avatar src={img1} variant="rounded" alt={img1} sx={{ width: 48, height: 48 }} />
                   <Box>
                     <Typography variant="subtitle2" fontWeight={600}>
-                      Gaming Console
+                      游戏主机
                     </Typography>
                     <Typography color="textSecondary" fontSize="12px" variant="subtitle2">
-                      Electronics
+                      电子产品
                     </Typography>
                   </Box>
                 </Stack>
@@ -282,7 +282,7 @@ const ProductPerformances = () => {
                     width: 80,
                   }}
                   size="small"
-                  label="Low"
+                  label="低"
                 />
               </TableCell>
               <TableCell>
@@ -305,10 +305,10 @@ const ProductPerformances = () => {
                   <Avatar src={img2} variant="rounded" alt={img1} sx={{ width: 48, height: 48 }} />
                   <Box>
                     <Typography variant="subtitle2" fontWeight={600}>
-                      Leather Purse
+                      皮革钱包
                     </Typography>
                     <Typography color="textSecondary" fontSize="12px" variant="subtitle2">
-                      Fashion
+                      时尚
                     </Typography>
                   </Box>
                 </Stack>
@@ -327,7 +327,7 @@ const ProductPerformances = () => {
                     width: 80,
                   }}
                   size="small"
-                  label="Medium"
+                  label="中"
                 />
               </TableCell>
               <TableCell>
@@ -350,10 +350,10 @@ const ProductPerformances = () => {
                   <Avatar src={img3} variant="rounded" alt={img1} sx={{ width: 48, height: 48 }} />
                   <Box>
                     <Typography variant="subtitle2" fontWeight={600}>
-                      Red Velvate Dress
+                      红色丝绒连衣裙
                     </Typography>
                     <Typography color="textSecondary" fontSize="12px" variant="subtitle2">
-                      Womens Fashion
+                      女装
                     </Typography>
                   </Box>
                 </Stack>
@@ -372,7 +372,7 @@ const ProductPerformances = () => {
                     width: 80,
                   }}
                   size="small"
-                  label="Very High"
+                  label="非常高"
                 />
               </TableCell>
               <TableCell>
@@ -395,7 +395,7 @@ const ProductPerformances = () => {
                   <Avatar src={img4} variant="rounded" alt={img1} sx={{ width: 48, height: 48 }} />
                   <Box>
                     <Typography variant="subtitle2" fontWeight={600}>
-                      Headphone Boat
+                      船型耳机
                     </Typography>
                     <Typography color="textSecondary" fontSize="12px" variant="subtitle2">
                       Electronics
@@ -417,7 +417,7 @@ const ProductPerformances = () => {
                     width: 80,
                   }}
                   size="small"
-                  label="High"
+                  label="高"
                 />
               </TableCell>
               <TableCell>

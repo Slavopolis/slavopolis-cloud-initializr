@@ -29,7 +29,7 @@ const DemoTitle = () => {
               </AvatarGroup>
               <Typography variant="h6">52,589+</Typography>
               <Typography variant="h6" color="textSecondary">
-                developers & agencies using our templates
+                开发商和机构使用我们的模板
               </Typography>
             </Stack>
             <Typography
@@ -47,7 +47,7 @@ const DemoTitle = () => {
                 },
               }}
             >
-              Production Ready & Developer Friendly Material UI React Admin Template
+              生产就绪且开发人员友好的 Material UI React 管理模板
             </Typography>
           </>
         </AnimationFadeIn>

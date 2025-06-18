@@ -33,19 +33,19 @@ const Table5 = () => {
           <TableHead>
             <TableRow>
               <TableCell>
-                <Typography variant="h6">Users</Typography>
+                <Typography variant="h6">用户</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Project Name</Typography>
+                <Typography variant="h6">项目名称</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Team</Typography>
+                <Typography variant="h6">团队</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Status</Typography>
+                <Typography variant="h6">状态</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">Budget</Typography>
+                <Typography variant="h6">预算</Typography>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -93,23 +93,23 @@ const Table5 = () => {
                   <Chip
                     sx={{
                       bgcolor:
-                        basic.status === 'Active'
+                        basic.status === '活跃'
                           ? (theme) => theme.palette.success.light
-                          : basic.status === 'Pending'
+                          : basic.status === '待处理'
                           ? (theme) => theme.palette.warning.light
-                          : basic.status === 'Completed'
+                          : basic.status === '已完成'
                           ? (theme) => theme.palette.primary.light
-                          : basic.status === 'Cancel'
+                          : basic.status === '取消'
                           ? (theme) => theme.palette.error.light
                           : (theme) => theme.palette.secondary.light,
                       color:
-                        basic.status === 'Active'
+                        basic.status === '活跃'
                           ? (theme) => theme.palette.success.main
-                          : basic.status === 'Pending'
+                          : basic.status === '待处理'
                           ? (theme) => theme.palette.warning.main
-                          : basic.status === 'Completed'
+                          : basic.status === '已完成'
                           ? (theme) => theme.palette.primary.main
-                          : basic.status === 'Cancel'
+                          : basic.status === '取消'
                           ? (theme) => theme.palette.error.main
                           : (theme) => theme.palette.secondary.main,
                       borderRadius: '8px',

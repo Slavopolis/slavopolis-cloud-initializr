@@ -10,11 +10,11 @@ import CustomTextField from '../theme-elements/CustomTextField.tsx';
 import CustomFormLabel from '../theme-elements/CustomFormLabel.tsx';
 
 const validationSchema = yup.object({
-  emailInstant: yup.string().email('Enter a valid email').required('Email is required'),
+  emailInstant: yup.string().email('请输入有效的邮箱').required('邮箱是必填项'),
   passwordInstant: yup
     .string()
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .min(8, '密码长度至少为8个字符')
+    .required('密码是必填项'),
 });
 
 const FVOnLeave = () => {
@@ -33,7 +33,7 @@ const FVOnLeave = () => {
     <form onSubmit={formik.handleSubmit}>
       <Stack>
         <Box mt="-10px">
-          <CustomFormLabel>Email Address</CustomFormLabel>
+          <CustomFormLabel>邮箱地址</CustomFormLabel>
           <CustomTextField
             fullWidth
             id="emailInstant"
@@ -46,7 +46,7 @@ const FVOnLeave = () => {
           />
         </Box>
         <Box mb={3}>
-          <CustomFormLabel>Password</CustomFormLabel>
+          <CustomFormLabel>密码</CustomFormLabel>
           <CustomTextField
             fullWidth
             id="passwordInstant"
@@ -61,7 +61,7 @@ const FVOnLeave = () => {
         </Box>
         <Stack direction="row" justifyContent="flex-end">
           <Button variant="contained" type="submit">
-            Submit
+            提交
           </Button>
         </Stack>
       </Stack>

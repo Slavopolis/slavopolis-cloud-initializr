@@ -16,7 +16,7 @@ const BasicIcons = () => {
         {/* 1 */}
         <Grid item xs={12}>
           <CustomFormLabel htmlFor="bi-name" sx={{ mt: 0 }}>
-            Name
+            姓名
           </CustomFormLabel>
         </Grid>
         <Grid item xs={12}>
@@ -27,14 +27,14 @@ const BasicIcons = () => {
               </InputAdornment>
             }
             id="bi-name"
-            placeholder="John Deo"
+            placeholder="张三"
             fullWidth
           />
         </Grid>
         {/* 2 */}
         <Grid item xs={12}>
           <CustomFormLabel htmlFor="bi-company">
-            Company
+            公司
           </CustomFormLabel>
         </Grid>
         <Grid item xs={12}>
@@ -52,7 +52,7 @@ const BasicIcons = () => {
         {/* 3 */}
         <Grid item xs={12}>
           <CustomFormLabel htmlFor="bi-email">
-            Email
+            邮箱
           </CustomFormLabel>
         </Grid>
         <Grid item xs={12}>
@@ -63,14 +63,14 @@ const BasicIcons = () => {
               </InputAdornment>
             }
             id="bi-email"
-            placeholder="john.deo"
+            placeholder="zhangsan"
             fullWidth
           />
         </Grid>
         {/* 4 */}
         <Grid item xs={12}>
           <CustomFormLabel htmlFor="bi-phone">
-            Phone No
+            电话号码
           </CustomFormLabel>
         </Grid>
         <Grid item xs={12}>
@@ -88,7 +88,7 @@ const BasicIcons = () => {
         {/* 5 */}
         <Grid item xs={12}>
           <CustomFormLabel htmlFor="bi-message">
-            Message
+            消息
           </CustomFormLabel>
         </Grid>
         <Grid item xs={12}>
@@ -99,14 +99,14 @@ const BasicIcons = () => {
                 <IconMessage2 size="20" />
               </InputAdornment>
             }
-            placeholder="Hi, Do you  have a moment to talk Jeo ?"
+            placeholder="嗨，你有时间聊聊吗？"
             multiline
             fullWidth
           />
         </Grid>
         <Grid item xs={12} mt={3}>
           <Button variant="contained" color="primary">
-            Send
+            发送
           </Button>
         </Grid>
       </Grid>

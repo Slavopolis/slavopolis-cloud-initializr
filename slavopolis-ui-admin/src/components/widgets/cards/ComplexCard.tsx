@@ -1,26 +1,26 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+import {
+    Avatar,
+    Box,
+    CardContent,
+    CardMedia,
+    Chip,
+    Grid,
+    Skeleton,
+    Stack,
+    Tooltip,
+    Typography
+} from '@mui/material';
+import { IconEye, IconMessage2, IconPoint } from '@tabler/icons-react';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  CardContent,
-  Typography,
-  Avatar,
-  Grid,
-  CardMedia,
-  Stack,
-  Tooltip,
-  Chip,
-  Box,
-  Skeleton
-} from '@mui/material';
-import { IconMessage2, IconEye, IconPoint } from '@tabler/icons-react';
-import user1 from 'src/assets/images/profile/user-1.jpg';
-import user2 from 'src/assets/images/profile/user-2.jpg';
-import user3 from 'src/assets/images/profile/user-3.jpg';
 import img1 from 'src/assets/images/blog/blog-img1.jpg';
 import img2 from 'src/assets/images/blog/blog-img2.jpg';
 import img3 from 'src/assets/images/blog/blog-img3.jpg';
+import user1 from 'src/assets/images/profile/user-1.jpg';
+import user2 from 'src/assets/images/profile/user-2.jpg';
+import user3 from 'src/assets/images/profile/user-3.jpg';
 
 import BlankCard from '../../shared/BlankCard.tsx';
 
@@ -39,32 +39,32 @@ const complexCard: cardType[] = [
   {
     avatar: user1,
     coveravatar: img1,
-    title: 'As yen tumbles, gadget-loving Japan goes for secondhand iPhones',
-    category: 'Social',
+    title: '随着日元贬值，热爱电子产品的日本转向二手iPhone',
+    category: '社交',
     name: 'Georgeanna Ramero',
     view: '9,125',
     comments: '3',
-    time: 'Mon, Dec 19',
+    time: '周一, 12月19日',
   },
   {
     avatar: user2,
     coveravatar: img2,
-    title: 'Intel loses bid to revive antitrust case against patent foe Fortress',
-    category: 'Gadget',
+    title: '英特尔失去恢复针对专利对手Fortress的反垄断案的机会',
+    category: '电子产品',
     name: 'Georgeanna Ramero',
     view: '4,150',
     comments: '38',
-    time: 'Sun, Dec 18',
+    time: '周日, 12月18日',
   },
   {
     avatar: user3,
     coveravatar: img3,
-    title: 'COVID outbreak deepens as more lockdowns loom in China',
-    category: 'Health',
+    title: '随着中国更多地区面临封锁，新冠疫情加剧',
+    category: '健康',
     name: 'Georgeanna Ramero',
     view: '9,480',
     comments: '12',
-    time: 'Sat, Dec 17',
+    time: '周六, 12月17日',
   },
 ];
 
@@ -104,7 +104,7 @@ const ComplexCard = () => {
                   </Tooltip>
                   <Chip
                     sx={{ marginLeft: 'auto', marginTop: '-21px', backgroundColor: 'white' }}
-                    label="2 min Read"
+                    label="阅读时间2分钟"
                     size="small"
                   ></Chip>
                 </Stack>

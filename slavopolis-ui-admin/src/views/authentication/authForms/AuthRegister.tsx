@@ -38,15 +38,15 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => (
 
     <Box>
       <Stack mb={3}>
-        <CustomFormLabel htmlFor="name">Name</CustomFormLabel>
+        <CustomFormLabel htmlFor="name">姓名</CustomFormLabel>
         <CustomTextField id="name" variant="outlined" fullWidth />
-        <CustomFormLabel htmlFor="email">Email Adddress</CustomFormLabel>
+        <CustomFormLabel htmlFor="email">邮箱地址</CustomFormLabel>
         <CustomTextField id="email" variant="outlined" fullWidth />
-        <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
+        <CustomFormLabel htmlFor="password">密码</CustomFormLabel>
         <CustomTextField id="password" variant="outlined" fullWidth />
       </Stack>
       <Button color="primary" variant="contained" size="large" fullWidth component={Link} to="/auth/login">
-        Sign Up
+        注册
       </Button>
     </Box>
     {subtitle}

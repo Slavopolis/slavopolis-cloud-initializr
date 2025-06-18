@@ -61,7 +61,7 @@ const Cart = () => {
       >
         <Box display="flex" alignItems="center" p={3} pb={0} justifyContent="space-between">
           <Typography variant="h5" fontWeight={600}>
-            Shopping Cart
+            购物车
           </Typography>
           <Box>
             <IconButton

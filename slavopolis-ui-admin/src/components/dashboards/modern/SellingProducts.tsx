@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React from 'react';
-import { Box, CardContent, Chip, Paper, Stack, Typography, LinearProgress } from '@mui/material';
+import { Box, CardContent, Chip, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import SavingsImg from '../../../assets/images/backgrounds/piggy.png';
 
@@ -9,7 +8,7 @@ interface sellsData {
   product: string;
   price: string;
   percent: number;
-  color: string;
+  color: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit';
 }
 
 const sells: sellsData[] = [
@@ -39,10 +38,10 @@ const SellingProducts = () => {
     <Paper sx={{ bgcolor: 'primary.main', border: `1px solid ${borderColor}` }} variant="outlined">
       <CardContent>
         <Typography variant="h5" color="white">
-          Best selling products
+          最畅销产品
         </Typography>
         <Typography variant="subtitle1" color="white" mb={4}>
-          Overview 2023
+          2023年概览
         </Typography>
 
         <Box textAlign="center" mt={2} mb="-90px">
@@ -52,7 +51,7 @@ const SellingProducts = () => {
       <Paper sx={{ overflow: 'hidden', zIndex: '1', position: 'relative', margin: '10px' }}>
         <Box p={3}>
           <Stack spacing={3}>
-            {sells.map((sell: any, i: number) => (
+            {sells.map((sell: sellsData, i: number) => (
               <Box key={i}>
                 <Stack
                   direction="row"
