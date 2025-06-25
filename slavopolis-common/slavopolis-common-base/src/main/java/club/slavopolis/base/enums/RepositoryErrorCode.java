@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
  * All rights reserved.
  */
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public enum RepoErrorCode implements ErrorCode {
+public enum RepositoryErrorCode implements ErrorCode {
 
     UNKNOWN_ERROR("UNKNOWN_ERROR", "未知错误"),
     INSERT_FAILED("INSERT_FAILED", "数据库插入失败"),
