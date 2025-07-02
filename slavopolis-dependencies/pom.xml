@@ -77,9 +77,10 @@
         
         <!-- 缓存相关 -->
         <redisson.version>3.27.2</redisson.version>
-        <redisson.spring.starter.version>3.49.0</redisson.spring.starter.version>
+        <redisson.spring.starter.version>3.24.3</redisson.spring.starter.version>
         <caffeine.version>3.1.8</caffeine.version>
         <lettuce.version>6.4.0.RELEASE</lettuce.version>
+        <jetcache.version>2.7.5</jetcache.version>
         
         <!-- Reactor -->
         <reactor.netty.version>1.2.7</reactor.netty.version>
@@ -132,6 +133,18 @@
             <dependency>
                 <groupId>club.slavopolis</groupId>
                 <artifactId>slavopolis-common</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-common-base</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>club.slavopolis</groupId>
+                <artifactId>slavopolis-common-cache</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
@@ -493,6 +506,12 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>${redisson.spring.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redisson</artifactId>
+                <version>${jetcache.version}</version>
             </dependency>
 
             <!-- Caffeine 本地缓存 -->

@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>club.slavopolis</groupId>
+        <artifactId>slavopolis-common</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>slavopolis-common-lock</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Slavopolis Common Lock</name>
+    <description>Slavopolis Common Lock: 分布式锁</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-common-cache</artifactId>
+        </dependency>
+    </dependencies>
+</project>
