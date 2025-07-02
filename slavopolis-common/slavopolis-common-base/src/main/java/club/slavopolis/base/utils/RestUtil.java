@@ -28,7 +28,7 @@ import java.util.function.Function;
  * @version 2.0.0
  * @since 2025-06-25
  * <p>
- * Copyright (c) 2025 Slavopolis Cloud Platform
+ * Copyright (c) 2025 slavopolis-cloud-initializr
  * All rights reserved.
  */
 @Slf4j
