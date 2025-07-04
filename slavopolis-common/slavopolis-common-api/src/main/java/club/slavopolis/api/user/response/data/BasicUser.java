@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-public class BasicUserInfo implements Serializable {
+public class BasicUser implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class BasicUserInfo implements Serializable {
     private String nikeName;
 
     /**
-     * 用户头像
+     * 用户头像地址
      */
     private String profilePictureUrl;
 }
