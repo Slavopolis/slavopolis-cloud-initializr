@@ -44,6 +44,14 @@
         <mysql.version>8.3.0</mysql.version>
         <hikaricp.version>5.1.0</hikaricp.version>
         <spring.jdbc.version>6.2.0</spring.jdbc.version>
+
+        <!-- 文件上传  -->
+        <aliyun-sdk-oss>3.15.1</aliyun-sdk-oss>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+        <jaxb-runtime.version>2.3.3</jaxb-runtime.version>
+        <minio.version>8.5.17</minio.version>
+        <tika-core.version>3.2.0</tika-core.version>
+        <thumbnailator.version>0.4.20</thumbnailator.version>
         
         <!-- 日志相关 -->
         <slf4j.version>2.0.16</slf4j.version>
@@ -81,6 +89,9 @@
         <caffeine.version>3.1.8</caffeine.version>
         <lettuce.version>6.4.0.RELEASE</lettuce.version>
         <jetcache.version>2.7.5</jetcache.version>
+
+        <!-- 限流相关 -->
+        <sentinel.datasource.nacos.version>1.8.6</sentinel.datasource.nacos.version>
         
         <!-- Reactor -->
         <reactor.netty.version>1.2.7</reactor.netty.version>
@@ -148,34 +159,27 @@
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
-            <!-- 基础设施模块 -->
             <dependency>
                 <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-infrastructure-core</artifactId>
+                <artifactId>slavopolis-common-api</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-infrastructure-cache</artifactId>
+                <artifactId>slavopolis-common-file</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-infrastructure-messaging</artifactId>
+                <artifactId>slavopolis-common-web</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-infrastructure-persistence</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>slavopolis-infrastructure-integration</artifactId>
+                <artifactId>slavopolis-common-persistence</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
@@ -214,68 +218,6 @@
             <dependency>
                 <groupId>club.slavopolis</groupId>
                 <artifactId>auth-interface</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-
-            <!-- 租户服务模块 -->
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>tenant-api</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>tenant-domain</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>tenant-application</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>tenant-infrastructure</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>tenant-interface</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-
-            <!-- 审计服务模块 -->
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>audit-api</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>audit-domain</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>audit-application</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>audit-infrastructure</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>club.slavopolis</groupId>
-                <artifactId>audit-interface</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
@@ -339,6 +281,45 @@
                 <artifactId>sa-token-redis-jackson</artifactId>
                 <version>${sa-token.version}</version>
             </dependency>
+
+            <!-- File Upload -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss}</version>
+            </dependency>
+            <!-- OSS: 如果项目 JDK > 9 则需要添加以下依赖 -->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jaxb-runtime.version}</version>
+            </dependency>
+
+            <!-- MinIO 存储依赖 -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!-- 文件类型检测 -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika-core.version}</version>
+            </dependency>
+
+            <!-- 图片处理 -->
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
             
             <!-- Nimbus JOSE+JWT -->
             <dependency>
@@ -399,6 +380,13 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+
+            <!-- 限流相关 -->
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-nacos</artifactId>
+                <version>${sentinel.datasource.nacos.version}</version>
             </dependency>
 
             <!-- 日志相关 -->
