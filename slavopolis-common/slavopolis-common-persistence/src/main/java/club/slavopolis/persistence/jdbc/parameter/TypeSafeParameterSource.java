@@ -1,4 +1,4 @@
-package club.slavopolis.infrastructure.persistence.jdbc.parameter;
+package club.slavopolis.persistence.jdbc.parameter;
 
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
