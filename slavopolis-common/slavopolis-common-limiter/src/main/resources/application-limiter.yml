@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: ${slavopolis.sentinel.url}
+        port: ${slavopolis.sentinel.port}
+      datasource:
+        ds:
+          nacos:
+            # nacos 地址
+            server-addr: ${slavopolis.nacos.server-addr}
+            # 配置数据ID
+            data-id: ${slavopolis.nacos.data-id}
+            # 配置组: 默认 DEFAULT_GROUP
+            group-id: ${slavopolis.nacos.group-id}
+            # 配置数据类型: json|acl
+            data-type: json
+            # 配置规则: flow|degrade|param-flow|system|authority
+            rule-type: flow
