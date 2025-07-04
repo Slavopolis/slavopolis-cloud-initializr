@@ -122,32 +122,32 @@ public final class FileConstants {
     /**
      * 图片文件扩展名
      */
-    protected static final String[] IMAGE_EXTENSIONS = {"jpg", "jpeg", "png", "gif", "bmp", "webp", "svg"};
+    public static final String[] IMAGE_EXTENSIONS = {"jpg", "jpeg", "png", "gif", "bmp", "webp", "svg"};
 
     /**
      * 文档文件扩展名
      */
-    protected static final String[] DOCUMENT_EXTENSIONS = {"pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "rtf"};
+    public static final String[] DOCUMENT_EXTENSIONS = {"pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "rtf"};
 
     /**
      * 视频文件扩展名
      */
-    protected static final String[] VIDEO_EXTENSIONS = {"mp4", "avi", "mov", "wmv", "flv", "webm", "mkv"};
+    public static final String[] VIDEO_EXTENSIONS = {"mp4", "avi", "mov", "wmv", "flv", "webm", "mkv"};
 
     /**
      * 音频文件扩展名
      */
-    protected static final String[] AUDIO_EXTENSIONS = {"mp3", "wav", "aac", "flac", "ogg", "wma"};
+    public static final String[] AUDIO_EXTENSIONS = {"mp3", "wav", "aac", "flac", "ogg", "wma"};
 
     /**
      * 压缩文件扩展名
      */
-    protected static final String[] ARCHIVE_EXTENSIONS = {"zip", "rar", "7z", "tar", "gz", "bz2"};
+    public static final String[] ARCHIVE_EXTENSIONS = {"zip", "rar", "7z", "tar", "gz", "bz2"};
 
     /**
      * 危险文件扩展名（禁止上传）
      */
-    protected static final String[] DANGEROUS_EXTENSIONS = {"exe", "bat", "cmd", "sh", "com", "scr", "pif", "vbs", "js"};
+    public static final String[] DANGEROUS_EXTENSIONS = {"exe", "bat", "cmd", "sh", "com", "scr", "pif", "vbs", "js"};
 
     // ================================ 存储路径常量 ================================
 

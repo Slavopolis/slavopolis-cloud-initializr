@@ -42,16 +42,16 @@ import java.util.Map;
 @AutoConfiguration(after = DataSourceAutoConfiguration.class)
 @EnableConfigurationProperties(CurrentSystemProperties.class)
 @ComponentScan(basePackages = {
-    "club.slavopolis.file.storage",
-    "club.slavopolis.file.service",
-    "club.slavopolis.file.config",
-    "club.slavopolis.file.repository"
+        "club.slavopolis.file.storage",
+        "club.slavopolis.file.service",
+        "club.slavopolis.file.config",
+        "club.slavopolis.file.repository"
 })
 @ConditionalOnProperty(
-    prefix = "biz.file",
-    name = "enabled", 
-    havingValue = "true", 
-    matchIfMissing = true
+        prefix = "biz.file",
+        name = "enabled",
+        havingValue = "true",
+        matchIfMissing = true
 )
 @RequiredArgsConstructor
 public class FileAutoConfiguration {
@@ -113,14 +113,17 @@ public class FileAutoConfiguration {
             NamedParameterJdbcTemplate namedParameterJdbcTemplate,
             DataSourceTransactionManager transactionManager,
             TransactionDefinition defaultTransactionDefinition,
-            FileUploadSessionRepository fileUploadSessionRepository) {
+            CurrentSystemProperties systemProperties,
+            FileUploadSessionRepository fileUploadSessionRepository,
+            FileInfoRepository fileInfoRepository) {
         return new MultipartUploadManager(
-            storageStrategies,
-            namedParameterJdbcTemplate,
-            transactionManager,
-            defaultTransactionDefinition,
-            systemProperties,
-            fileUploadSessionRepository
+                storageStrategies,
+                namedParameterJdbcTemplate,
+                transactionManager,
+                defaultTransactionDefinition,
+                systemProperties,
+                fileUploadSessionRepository,
+                fileInfoRepository
         );
     }
 
@@ -137,13 +140,13 @@ public class FileAutoConfiguration {
             MultipartUploadManager multipartUploadManager,
             FileInfoRepository fileInfoRepository) {
         return new FileServiceImpl(
-            storageStrategies,
-            namedParameterJdbcTemplate,
-            transactionManager,
-            defaultTransactionDefinition,
-            systemProperties,
-            multipartUploadManager,
-            fileInfoRepository
+                storageStrategies,
+                namedParameterJdbcTemplate,
+                transactionManager,
+                defaultTransactionDefinition,
+                systemProperties,
+                multipartUploadManager,
+                fileInfoRepository
         );
     }
 } 
