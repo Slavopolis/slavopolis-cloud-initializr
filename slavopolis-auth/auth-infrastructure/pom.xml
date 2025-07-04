@@ -23,11 +23,6 @@
         <!-- 基础设施模块依赖 -->
         <dependency>
             <groupId>club.slavopolis</groupId>
-            <artifactId>slavopolis-infrastructure-persistence</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>club.slavopolis</groupId>
             <artifactId>slavopolis-infrastructure-cache</artifactId>
         </dependency>
 

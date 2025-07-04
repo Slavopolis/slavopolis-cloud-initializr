@@ -1,35 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>club.slavopolis</groupId>
-        <artifactId>slavopolis-audit</artifactId>
+        <artifactId>slavopolis-biz</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>audit-application</artifactId>
+    <artifactId>slavopolis-biz-user</artifactId>
+    <packaging>jar</packaging>
 
-    <name>Audit Application</name>
-    <description>审计服务应用层 - 应用服务与业务编排</description>
+    <name>Slavopolis Biz User</name>
+    <description>Slavopolis Biz User - 用户模块</description>
 
     <dependencies>
-        <!-- 领域层依赖 -->
-        <dependency>
-            <groupId>club.slavopolis</groupId>
-            <artifactId>audit-domain</artifactId>
-        </dependency>
-
-        <!-- Spring Boot支持 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- 事务支持 -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
+            <groupId>club.slavopolis</groupId>
+            <artifactId>slavopolis-common-base</artifactId>
         </dependency>
     </dependencies>
 </project>
