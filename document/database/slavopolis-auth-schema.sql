@@ -7,10 +7,10 @@
 -- =====================================================
 
 -- 使用数据库
-CREATE DATABASE IF NOT EXISTS `slavopolis_auth` 
+CREATE DATABASE IF NOT EXISTS `slavopolis_biz`
 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE `slavopolis_auth`;
+USE `slavopolis_biz`;
 
 -- =====================================================
 -- 1. 租户管理表
