@@ -1,6 +1,7 @@
 package club.slavopolis.auth;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 鉴权服务启动类
@@ -12,6 +13,7 @@ import org.springframework.boot.SpringApplication;
  * Copyright (c) 2025 slavopolis-boot
  * All rights reserved.
  */
+@SpringBootApplication
 public class AuthServiceApplication {
 
     public static void main(String[] args) {

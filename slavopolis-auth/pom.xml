@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <name>Slavopolis Auth Service</name>
-    <description>认证授权服务 - 基于DDD的用户身份认证与权限管理</description>
+    <description>Slavopolis Auth Service - 基于DDD的用户身份认证与权限管理</description>
 
     <modules>
         <!-- 对外接口层 -->
