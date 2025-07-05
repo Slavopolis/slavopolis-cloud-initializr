@@ -1,10 +1,10 @@
 package club.slavopolis.web.vo;
 
+import java.util.List;
+
 import club.slavopolis.base.enums.ResponseCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 /**
  * 多值结果 VO
@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class MultiResult<T> extends Result<T> {
+public class MultiResult<T> extends Result<List<T>> {
 
     /**
      * 总记录数
@@ -51,6 +51,6 @@ public class MultiResult<T> extends Result<T> {
     }
 
     public static <T> MultiResult<T> errorMulti(String errorCode, String errorMsg) {
-        return new MultiResult<>(true, errorCode, errorMsg, null, 0, 0, 0);
+        return new MultiResult<>(false, errorCode, errorMsg, null, 0, 0, 0);
     }
 }

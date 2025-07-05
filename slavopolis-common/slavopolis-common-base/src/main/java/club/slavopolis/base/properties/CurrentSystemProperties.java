@@ -33,6 +33,11 @@ public class CurrentSystemProperties {
     private FileConfig file = new FileConfig();
 
     /**
+     * Web层配置
+     */
+    private WebConfig web = new WebConfig();
+
+    /**
      * 文件管理配置类
      */
     @Data
@@ -330,4 +335,54 @@ public class CurrentSystemProperties {
          */
         private int maxErrorRetry = 3;
     }
+
+    /**
+     * Web层配置类
+     */
+    @Data
+    public static class WebConfig {
+
+        /**
+         * Token过滤器配置
+         */
+        private TokenFilterConfig tokenFilter = new TokenFilterConfig();
+    }
+
+    /**
+     * Token过滤器配置
+     */
+    @Data
+    public static class TokenFilterConfig {
+
+        /**
+         * 是否启用过滤器
+         */
+        private boolean enabled = true;
+
+        /**
+         * 过滤器匹配的URL模式
+         */
+        private List<String> urlPatterns = List.of("/api/**");
+
+        /**
+         * 过滤器执行顺序
+         */
+        private int order = 10;
+
+        /**
+         * Token在Redis中的key前缀
+         */
+        private String tokenKeyPrefix = "token:";
+
+        /**
+         * 是否启用压测模式
+         */
+        private boolean stressTestEnabled = false;
+
+        /**
+         * Token过期时间
+         */
+        private Duration tokenExpiry = Duration.ofHours(2);
+    }
+
 }

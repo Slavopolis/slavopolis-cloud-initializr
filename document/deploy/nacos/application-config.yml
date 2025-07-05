@@ -106,3 +106,20 @@ biz:
       maxConnections: 1024
       # 最大错误重试次数
       maxErrorRetry: 3
+  # Web层配置
+  web:
+    # Token过滤器配置
+    tokenFilter:
+      # 是否启用过滤器
+      enabled: true
+      # 过滤器匹配的URL模式
+      urlPatterns:
+        - /api/**
+      # 过滤器执行顺序
+      order: 10
+      # Token在Redis中的key前缀
+      tokenKeyPrefix: "token:"
+      # 是否启用压测模式
+      stressTestEnabled: false
+      # Token过期时间
+      tokenExpiry: "PT2H"
