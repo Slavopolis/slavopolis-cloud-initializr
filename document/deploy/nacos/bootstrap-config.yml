@@ -1,0 +1,108 @@
+#=========================================================================================================
+# 业务配置
+#=========================================================================================================
+biz:
+  # 调试模式开关, 默认 false
+  debug: true
+  # 文件管理配置
+  file:
+    # 存储类型：OSS(默认)、MINIO、DATABASE、LOCAL
+    storageType: OSS
+    # 文件调试开关
+    debug: true
+    # 分片上传配置
+    chunk:
+      # 默认分片大小（5MB）
+      defaultChunkSize: 5242880
+      # 最大分片大小（100MB）
+      maxChunkSize: 104857600
+      # 最小分片大小（1MB）
+      minChunkSize: 1048576
+      # 并发上传线程数
+      concurrentUploads: 3
+      # 分片上传会话过期时间（默认24小时）
+      sessionExpiry: "PT24H"
+      # 最大重试次数
+      maxRetries: 3
+    # 安全配置
+    security:
+      # 允许的文件类型
+      allowedFileTypes: jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx,txt
+      # 禁止的文件类型
+      blockedFileTypes: exe,bat,cmd,sh,com,scr,pif
+      # 最大文件大小（默认100MB）
+      maxFileSize: 104857600
+      # 最小文件大小（默认1KB）
+      minFileSize: 1024
+      # 是否启用病毒扫描
+      enableVirusScan: false
+      # 是否启用文件内容检测
+      enableContentDetection: true
+      # 临时下载链接过期时间（默认1小时）
+      downloadLinkExpiry: "PT1H"
+    # 性能配置
+    performance:
+      # 文件元数据缓存过期时间（默认1小时）
+      metadataCacheExpiry: "PT1H"
+      # 上传超时时间（默认30分钟）
+      uploadTimeout: "PT30M"
+      # 下载超时时间（默认5分钟）
+      downloadTimeout: "PT5M"
+      # 连接池大小
+      connectionPoolSize: 20
+      # 是否启用异步处理
+      enableAsyncProcessing: true
+      # 异步处理线程池大小
+      asyncThreadPoolSize: 10
+    # 存储配置
+    storage:
+      # 根路径
+      rootPath: /data/files
+      # 临时文件目录
+      tempPath: /tmp/uploads
+      # 是否启用文件去重
+      enableDeduplication: true
+      # 是否启用文件压缩
+      enableCompression: false
+      # 压缩级别（0-9）
+      compressionLevel: 6
+    # MinIO配置
+    minio:
+      # 服务端点
+      endpoint: 
+      # 访问密钥
+      accessKey: 
+      # 秘密密钥
+      secretKey: 
+      # 存储桶名称
+      bucketName: 
+      # 是否使用SSL
+      secure: false
+      # 区域
+      region: 
+      # 连接超时时间（毫秒）
+      connectTimeout: 10000
+      # 写入超时时间（毫秒）
+      writeTimeout: 60000
+      # 读取超时时间（毫秒）
+      readTimeout: 10000
+    # OSS配置
+    oss:
+      # 服务端点
+      endpoint: 
+      # 访问密钥ID
+      accessKeyId: 
+      # 访问密钥秘密
+      accessKeySecret: 
+      # 存储桶名称
+      bucketName: 
+      # 是否使用HTTPS
+      secure: true
+      # 连接超时时间（毫秒）
+      connectionTimeout: 50000
+      # 套接字超时时间（毫秒）
+      socketTimeout: 50000
+      # 最大连接数
+      maxConnections: 1024
+      # 最大错误重试次数
+      maxErrorRetry: 3
