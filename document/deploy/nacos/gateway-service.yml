@@ -1,5 +1,5 @@
 # Slavopolis Gateway Service - 开发环境配置
-# Data ID: slavopolis-gateway-dev.yml
+# Data ID: gateway-service.yml
 # Group: DEFAULT_GROUP
 
 spring:

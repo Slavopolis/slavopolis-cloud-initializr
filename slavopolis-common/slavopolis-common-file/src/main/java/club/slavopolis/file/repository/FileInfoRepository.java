@@ -1,11 +1,11 @@
 package club.slavopolis.file.repository;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import club.slavopolis.file.domain.FileInfo;
 import club.slavopolis.file.domain.request.FileListRequest;
 import club.slavopolis.persistence.jdbc.core.EnhancedJdbcTemplate;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * 文件信息数据访问接口
@@ -54,6 +54,15 @@ public interface FileInfoRepository {
      * @return 文件信息列表
      */
     List<FileInfo> findByRequest(EnhancedJdbcTemplate namedJdbc, FileListRequest request);
+
+    /**
+     * 根据查询条件统计文件总数
+     *
+     * @param namedJdbc JDBC模板
+     * @param request   查询请求
+     * @return 符合条件的文件总数
+     */
+    long countByRequest(EnhancedJdbcTemplate namedJdbc, FileListRequest request);
 
     /**
      * 更新文件访问信息

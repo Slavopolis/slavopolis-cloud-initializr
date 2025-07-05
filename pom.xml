@@ -72,14 +72,22 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <!-- 注解处理器路径配置，处理顺序很重要 -->
                     <annotationProcessorPaths>
+                        <!-- MapStruct 处理器，负责生成映射实现类 -->
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                        </path>
+                        <!-- Lombok 处理器，负责生成 getter/setter 等代码 -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                         </path>
+                        <!-- Lombok 与 MapStruct 的兼容性绑定 -->
                         <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>

@@ -1,5 +1,21 @@
 package club.slavopolis.file.service;
 
+import java.io.InputStream;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import org.apache.tika.Tika;
+import org.springframework.http.HttpMethod;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.util.DigestUtils;
+import org.springframework.util.StringUtils;
+
 import club.slavopolis.base.enums.StorageType;
 import club.slavopolis.base.properties.CurrentSystemProperties;
 import club.slavopolis.file.api.FileService;
@@ -12,31 +28,15 @@ import club.slavopolis.file.domain.request.FileListRequest;
 import club.slavopolis.file.domain.request.FileUploadRequest;
 import club.slavopolis.file.domain.result.ChunkUploadResult;
 import club.slavopolis.file.domain.result.FileUploadResult;
-import club.slavopolis.file.repository.FileInfoRepository;
 import club.slavopolis.file.enums.FileStatus;
 import club.slavopolis.file.enums.UploadMethod;
 import club.slavopolis.file.exception.FileOperationException;
+import club.slavopolis.file.repository.FileInfoRepository;
 import club.slavopolis.file.util.FileUtils;
 import club.slavopolis.persistence.jdbc.core.EnhancedJdbcTemplate;
 import club.slavopolis.persistence.jdbc.transaction.TransactionStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tika.Tika;
-import org.springframework.http.HttpMethod;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.util.DigestUtils;
-import org.springframework.util.StringUtils;
-
-import java.io.InputStream;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * 文件服务统一实现: 提供文件上传、下载、删除等核心功能的统一实现
@@ -283,6 +283,21 @@ public class FileServiceImpl implements FileService {
             throw new FileOperationException(
                 FileConstants.DOWNLOAD_FAILED, 
                 "查询文件列表失败: " + e.getMessage(), 
+                e
+            );
+        }
+    }
+
+    @Override
+    public long countFiles(FileListRequest request) {
+        try {
+            EnhancedJdbcTemplate namedJdbc = new EnhancedJdbcTemplate(namedParameterJdbcTemplate);
+            return fileInfoRepository.countByRequest(namedJdbc, request);
+        } catch (Exception e) {
+            log.error("统计文件总数失败", e);
+            throw new FileOperationException(
+                FileConstants.DOWNLOAD_FAILED, 
+                "统计文件总数失败: " + e.getMessage(), 
                 e
             );
         }

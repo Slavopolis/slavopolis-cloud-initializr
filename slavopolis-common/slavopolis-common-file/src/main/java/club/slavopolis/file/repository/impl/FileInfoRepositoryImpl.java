@@ -1,5 +1,13 @@
 package club.slavopolis.file.repository.impl;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
+
 import club.slavopolis.base.properties.CurrentSystemProperties;
 import club.slavopolis.base.utils.UniqueIdUtil;
 import club.slavopolis.file.domain.FileInfo;
@@ -9,13 +17,6 @@ import club.slavopolis.file.repository.FileInfoRepository;
 import club.slavopolis.persistence.jdbc.core.EnhancedJdbcTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
-
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 文件信息数据访问实现类
@@ -132,25 +133,8 @@ public class FileInfoRepositoryImpl implements FileInfoRepository {
                 WHERE delete_flag = 0
                 """);
             
-            Map<String, Object> params = new HashMap<>();
-            
-            // 添加文件名过滤条件
-            if (StringUtils.hasText(request.getFileName())) {
-                sql.append(" AND original_name LIKE :fileName");
-                params.put("fileName", "%" + request.getFileName() + "%");
-            }
-            
-            // 添加租户ID过滤条件
-            if (StringUtils.hasText(request.getTenantId())) {
-                sql.append(" AND tenant_id = :tenantId");
-                params.put("tenantId", request.getTenantId());
-            }
-            
-            // 添加创建者过滤条件
-            if (StringUtils.hasText(request.getCreatedBy())) {
-                sql.append(" AND created_by = :createdBy");
-                params.put("createdBy", request.getCreatedBy());
-            }
+            Map<String, Object> params = buildQueryParams(request);
+            appendQueryConditions(sql, request);
             
             // 添加排序
             sql.append(" ORDER BY upload_time DESC");
@@ -165,6 +149,68 @@ public class FileInfoRepositoryImpl implements FileInfoRepository {
         } catch (Exception e) {
             log.error("根据条件查询文件列表失败", e);
             return List.of();
+        }
+    }
+
+    @Override
+    public long countByRequest(EnhancedJdbcTemplate namedJdbc, FileListRequest request) {
+        try {
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT COUNT(*) FROM file_info WHERE delete_flag = 0");
+            
+            Map<String, Object> params = buildQueryParams(request);
+            appendQueryConditions(sql, request);
+
+            Long count = namedJdbc.queryForLong(sql.toString(), params, systemProperties.isDebug());
+            return count != null ? count : 0L;
+            
+        } catch (Exception e) {
+            log.error("根据条件统计文件总数失败", e);
+            return 0L;
+        }
+    }
+
+    /**
+     * 构建查询参数
+     */
+    private Map<String, Object> buildQueryParams(FileListRequest request) {
+        Map<String, Object> params = new HashMap<>();
+        
+        // 添加文件名过滤条件
+        if (StringUtils.hasText(request.getFileName())) {
+            params.put("fileName", "%" + request.getFileName() + "%");
+        }
+        
+        // 添加租户ID过滤条件
+        if (StringUtils.hasText(request.getTenantId())) {
+            params.put("tenantId", request.getTenantId());
+        }
+        
+        // 添加创建者过滤条件
+        if (StringUtils.hasText(request.getCreatedBy())) {
+            params.put("createdBy", request.getCreatedBy());
+        }
+        
+        return params;
+    }
+
+    /**
+     * 添加查询条件
+     */
+    private void appendQueryConditions(StringBuilder sql, FileListRequest request) {
+        // 添加文件名过滤条件
+        if (StringUtils.hasText(request.getFileName())) {
+            sql.append(" AND original_name LIKE :fileName");
+        }
+        
+        // 添加租户ID过滤条件
+        if (StringUtils.hasText(request.getTenantId())) {
+            sql.append(" AND tenant_id = :tenantId");
+        }
+        
+        // 添加创建者过滤条件
+        if (StringUtils.hasText(request.getCreatedBy())) {
+            sql.append(" AND created_by = :createdBy");
         }
     }
 

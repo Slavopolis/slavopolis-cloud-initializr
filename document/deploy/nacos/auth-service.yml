@@ -1,5 +1,5 @@
 # Slavopolis Auth Service - 开发环境配置
-# Data ID: slavopolis-auth-dev.yml
+# Data ID: auth-service.yml
 # Group: DEFAULT_GROUP
 
 spring:

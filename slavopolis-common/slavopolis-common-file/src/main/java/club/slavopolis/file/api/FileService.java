@@ -1,15 +1,15 @@
 package club.slavopolis.file.api;
 
+import java.io.InputStream;
+import java.time.Duration;
+import java.util.List;
+
 import club.slavopolis.file.domain.FileInfo;
 import club.slavopolis.file.domain.request.ChunkUploadRequest;
 import club.slavopolis.file.domain.request.FileListRequest;
 import club.slavopolis.file.domain.request.FileUploadRequest;
 import club.slavopolis.file.domain.result.ChunkUploadResult;
 import club.slavopolis.file.domain.result.FileUploadResult;
-
-import java.io.InputStream;
-import java.time.Duration;
-import java.util.List;
 
 /**
  * 统一文件服务接口
@@ -102,6 +102,14 @@ public interface FileService {
      * @return 文件列表
      */
     List<FileInfo> listFiles(FileListRequest request);
+
+    /**
+     * 获取文件列表总数
+     *
+     * @param request 列表请求
+     * @return 符合条件的文件总数
+     */
+    long countFiles(FileListRequest request);
 
     // ================================ 高级功能 ================================
 
