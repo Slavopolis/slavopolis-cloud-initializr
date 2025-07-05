@@ -1,6 +1,5 @@
 package club.slavopolis.persistence.jdbc.mapping;
 
-import club.slavopolis.common.core.constants.CommonConstants;
 import club.slavopolis.persistence.jdbc.enums.MappingStrategy;
 import club.slavopolis.persistence.jdbc.exception.MappingException;
 import lombok.Getter;
@@ -145,7 +144,7 @@ public class BeanRowMapper<T> implements IntelligentRowMapper<T> {
 
         for (int index = 1; index <= columnCount; index++) {
             String column = JdbcUtils.lookupColumnName(rsmd, index);
-            String field = lowerCaseName(StringUtils.delete(column, CommonConstants.SPACE));
+            String field = lowerCaseName(StringUtils.delete(column, " "));
             PropertyDescriptor pd = getPropertyDescriptor(field);
             
             if (pd != null) {
@@ -187,7 +186,7 @@ public class BeanRowMapper<T> implements IntelligentRowMapper<T> {
         if (populatedProperties != null && !populatedProperties.equals(this.mappedProperties)) {
             throw new InvalidDataAccessApiUsageException(
                     "Given ResultSet does not contain all fields necessary to populate object of " +
-                            this.mappedClass.getSimpleName() + CommonConstants.COLON_WITH_SPACE + this.mappedProperties);
+                            this.mappedClass.getSimpleName() +  ": " + this.mappedProperties);
         }
 
         return mappedObject;
@@ -251,7 +250,7 @@ public class BeanRowMapper<T> implements IntelligentRowMapper<T> {
      */
     private static String underscoreName(String name) {
         if (!StringUtils.hasLength(name)) {
-            return CommonConstants.EMPTY;
+            return "";
         }
         StringBuilder result = new StringBuilder();
         result.append(Character.toLowerCase(name.charAt(0)));
@@ -274,7 +273,7 @@ public class BeanRowMapper<T> implements IntelligentRowMapper<T> {
      */
     private static String underscoreToCamelCase(String name) {
         if (!StringUtils.hasLength(name)) {
-            return CommonConstants.EMPTY;
+            return "";
         }
         StringBuilder result = new StringBuilder();
         boolean nextUpperCase = false;

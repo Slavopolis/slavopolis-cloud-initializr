@@ -1,6 +1,5 @@
 package club.slavopolis.persistence.jdbc.mapping;
 
-import club.slavopolis.common.core.constants.CommonConstants;
 import club.slavopolis.persistence.jdbc.enums.MappingStrategy;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -51,7 +50,7 @@ public interface IntelligentRowMapper<T> extends RowMapper<T> {
      * @return 缓存键
      */
     default String getCacheKey() {
-        return targetType().getName() + CommonConstants.UNDERSCORE + getMappingStrategy().name();
+        return targetType().getName() + ":" + getMappingStrategy().name();
     }
 
     /**

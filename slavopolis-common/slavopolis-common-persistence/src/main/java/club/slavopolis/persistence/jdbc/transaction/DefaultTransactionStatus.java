@@ -1,6 +1,5 @@
 package club.slavopolis.persistence.jdbc.transaction;
 
-import club.slavopolis.common.core.constants.CommonConstants;
 import lombok.Getter;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.util.Assert;
@@ -133,7 +132,7 @@ public class DefaultTransactionStatus implements TransactionStatus {
      * 生成事务名称
      */
     private String generateTransactionName() {
-        return "tx-" + Thread.currentThread().threadId() + CommonConstants.HYPHEN + System.currentTimeMillis();
+        return "tx-" + Thread.currentThread().threadId() + "-" + System.currentTimeMillis();
     }
 
     @Override
